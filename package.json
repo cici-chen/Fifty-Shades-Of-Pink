@@ -1,0 +1,36 @@
+{
+  "name": "fifty-shades-of-pink",
+  "version": "1.0.0",
+  "description": "A personal romance story generator",
+  "main": "index.js",
+  "scripts": {
+    "knex": "knex",
+    "dev": "nodemon index",
+    "start": "node index",
+    "debug": "node --inspect --debug-brk index.js",
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cici-chen/Fifty-Shades-Of-Pink.git"
+  },
+  "author": "Cici-Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cici-chen/Fifty-Shades-Of-Pink/issues"
+  },
+  "homepage": "https://github.com/cici-chen/Fifty-Shades-Of-Pink#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "knex": "^0.13.0"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "cheerio": "^0.22.0",
+    "nodemon": "^1.11.0",
+    "sqlite3": "^3.1.8",
+    "supertest": "^3.0.0"
+  }
+}
