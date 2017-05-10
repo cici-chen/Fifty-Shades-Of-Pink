@@ -1,5 +1,6 @@
 # Fifty-Shades-Of-Pink
 **A personal romance story generator.**<br />
+![alt text](https://s-media-cache-ak0.pinimg.com/originals/87/c7/1a/87c71a1ec89343acb4ed76fb06873ec2.jpg "image taken from googles") <br />
 -Built for personal project at Enspiral Dev Academy
 
 
@@ -21,4 +22,4 @@
 - [ ] As a user, I can type in other things other than names and gender such as places, to see them being incorporated in the story.
 
 ## Site visual style
-Somewhat over the top tacky 
+Somewhat over the top tacky
