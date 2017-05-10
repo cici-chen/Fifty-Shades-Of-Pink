@@ -23,8 +23,11 @@
 - [ ] As a user, I can type in other things other than names and gender such as places, to see them being incorporated in the story.
 
 ##Super Stretch goal
- * As a user I can fill a questionnaire for better customization of stories
- * Allow user to log-in with their Facebook and incorporate preferences and info from Facebook into stories
+  * As a user I can fill a questionnaire for better customization of stories
+  * Allow user to log-in with their Facebook and incorporate preferences and info from Facebook into stories
 
 ## Site visual style
 Somewhat over the top tacky
+
+## References
+  * basic set up boiler plate taken from https://github.com/joshuavial/knex-relationships
