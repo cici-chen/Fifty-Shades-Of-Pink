@@ -1,38 +1,24 @@
 # Fifty-Shades-Of-Pink
-personal romance story generator - built for personal project at Dev Academy
+**A personal romance story generator.**<br />
+-Built for personal project at Enspiral Dev Academy
+
 
 ## MVP User stories
-_As a user, I would like to type in my name and another person's name, and see the chapter one one of a story about us.
-_As a user, the story is so invigorating that I will most likely to click through all three chapters of the story.
-_As an administrator, I can see how many users finished reading their stories and how many did not.
-_As a user, I would like to be able to read at least three different stories.
-_As an administrator, I can change current story templates.
-_As an administrator, I can add new story templates.
+- [ ] As a user, I would like to type in my name and gender and another person's name and gender, and see chapter 1 of a story about us.
+- [ ] As a user, the story is interesting enough that I will most likely to click through all three chapters of the story.
+- [ ] As an administrator, I can see how many users finished reading their stories and how many did not.
+- [ ] As a user, I would like to be able to read at least three different stories.
+- [ ] As a user, I can click on a share button and send the story generated via email.
+- [ ] As an administrator, I can change current story templates.
+- [ ] As an administrator, I can add new story templates.
 
 ## Stretch goal #1
-_As a user, I can choose to not have my browser save the names I have typed in.
-_As a user, I can choose to not have the administrator see my 
-_As an administrator, if the user has chosen to remain private, I am not able to see the inputs users have typed in. Especially the names of 
+- [ ] As a user, I can choose to not have the names I've typed in to be seen by the administrator.
+- [ ] As an administrator, if the user has chosen the privacy setting, I am not able to see the names users have typed in.
+- [ ] As an administrator, I am able to store datas (names, places, etc) users have typed in for future fun  analytic purposes.
 
-## Stretch goal #1
-_As a user, I would like to visit an `assignments` route listing which wombles have been assigned to pick up which rubbish so that I can ensure they are doing their job._
- - This will need a join between `wombles` and `rubbish`.
- - There is no `rubbish_id` in `wombles`, so you'll need to make a new migration to add a column to that table.
-## Stretch goal #
+## Stretch goal #2
+- [ ] As a user, I can type in other things other than names and gender such as places, to see them being incorporated in the story.
 
-That's MVP! If you're done already, implement the stories below.
-
-
-## Stretch stories:
-
-_As a user, I would like to add wombles to the wombles table as they are born (including their characteristics) so that I may track new wombles._
-
-_As a user, I would like to delete wombles from the wombles table when one of them croaks._
-
-_As a user, I would like to modify a womble's characteristics so that they can change costumes when they like._
-
-_As a user, I would like to change a womble's rubbish type assignment so I can make the best use of their meagre resources._
-
-_As an administrator, I would like to add new rubbish types because the rubbish collection needs on Wimbledon Commons are always changing._
-
-_As an administrator, I would like to add new characteristics because wombles must always be stylish._
+## Site visual style
+Somewhat over the top tacky 
