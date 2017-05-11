@@ -1,7 +1,7 @@
 var createServer = require('./server')
 
 var environment = process.env.NODE_ENV || 'development'
-var config = require('./knexlife')[environment]
+var config = require('./knexfile')[environment]
 var connection = require('knex')(config)
 
 var server = createServer(connection)

@@ -16,6 +16,6 @@ module.exports = (test, createServer) => {
 
   //Destroy the database connection after each test
   test.afterEach((t) => {
-    t.context.connection.destroy()s
+    t.context.connection.destroy()
   })
 }

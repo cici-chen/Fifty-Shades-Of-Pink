@@ -9,7 +9,8 @@ module.exports = {
     pool: {
      afterCreate: (conn, cb) =>
        conn.run('PRAGMA foreign_keys = ON', cb)
-   }
+   },
+   production: process.env.DATABASE_URL
   },
 
   test: {

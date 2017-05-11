@@ -4,7 +4,7 @@ var cheerio = require('cheerio')
 
 var createServer = require('../server')
 
-var configureDatabase = require('.helpters/databse-config')
+var configureDatabase = require('./helpers/database-config')
 configureDatabase(test, createServer)
 
 test('GET /', (t) => {

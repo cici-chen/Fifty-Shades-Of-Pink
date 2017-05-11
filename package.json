@@ -24,7 +24,8 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
-    "knex": "^0.13.0"
+    "knex": "^0.13.0",
+    "pg": "^6.1.5"
   },
   "devDependencies": {
     "ava": "^0.19.1",
