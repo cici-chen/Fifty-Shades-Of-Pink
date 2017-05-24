@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Form extends React.Component {
+export default class Form extends React.Component {
   constructor(props) {
     super(props)
     this.state={
@@ -29,10 +29,10 @@ class Form extends React.Component {
     )
   }
 
-save (e){
-  e.preventDefault()
-  this.props.readChapOneCallback()
-}
+  save (e){
+    e.preventDefault()
+    this.props.readChapOneCallback()
+  }
 
   render(){
     console.log(this.state);
@@ -83,5 +83,3 @@ save (e){
   }
 
 }
-
-export default Form

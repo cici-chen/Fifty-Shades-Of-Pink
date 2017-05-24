@@ -1,7 +1,10 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
-import Form from './Form'
+
+import Header from './Header'
 import ErrorMessage from './ErrorMessage'
+import Form from './Form'
+import ChapOne from './ChapOne'
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +25,9 @@ class App extends React.Component {
       <Router>
         <div className='app'>
           <ErrorMessage error={this.state.error} />
-          <h1 className='Header'> Fifty Shades of Pink</h1>
+          <div className='Header'>
+            <Header />
+          </div>
           <div className='content'>
             <Route exact path='/' component={() => <Form readChapOneCallback={this.readChapOne.bind(this)} /> }
               />
