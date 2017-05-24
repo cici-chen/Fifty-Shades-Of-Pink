@@ -6,7 +6,7 @@
 
 
 ## MVP User stories
-- [ ] As a user, I would like to type in my name and gender and another person's name and gender, and see chapter 1 of a story about us.
+- [x] As a user, I would like to type in my name and gender and another person's name and gender, and see chapter 1 of a story about us.
 - [ ] As a user, the story is interesting enough that I will most likely to click through all three chapters of the story.
 - [ ] As an administrator, I can see how many users finished reading their stories and how many did not.
 - [ ] As a user, I would like to be able to read at least three different stories.
