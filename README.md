@@ -31,3 +31,4 @@ Somewhat over the top tacky
 
 ## References
   * basic set up boiler plate taken from https://github.com/joshuavial/knex-relationships
+  * massive technical assistance from my teachers JV and Harrison
