@@ -7,7 +7,8 @@ export default class Form extends React.Component {
       userName: '',
       userGender: '',
       loverName:'',
-      loverGender:''
+      loverGender:'',
+      friendName:''
     }
   }
 
@@ -31,11 +32,12 @@ export default class Form extends React.Component {
 
   save (e){
     e.preventDefault()
-    this.props.readChapOneCallback()
+    const userInput=this.state
+    this.props.readChapOneCallback(userInput)
   }
 
   render(){
-    console.log(this.state);
+    console.log("Data is being entered into the form: ", this.state);
     return(
       <div className='form'>
         <p>Welcome! We've been waiting to tell your story!</p>
@@ -72,6 +74,14 @@ export default class Form extends React.Component {
               checked={this.state.loverGender==='man'}
               onChange={e => this.handleOptionChange(e)}/>
             man
+          </div>
+          <p>
+            Add more elements!
+          </p>
+          <div>
+            My friend's name is <input type='text' name='friendName'
+            onChange={e => this.fieldChanged(e)}
+            value={this.state.friendName}/>
           </div>
           <p></p>
           <div>
