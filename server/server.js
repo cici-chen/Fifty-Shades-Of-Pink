@@ -2,9 +2,9 @@ var path = require('path')
 var express = require('express')
 var bodyParser = require('body-parser')
 
-var server = express()
+var app = express()
 
-server.use(bodyParser.json())
-server.use(express.static(path.join(__dirname, '../public')))
+app.use(bodyParser.json())
+app.use(express.static(path.join(__dirname, '../public')))
 
-module.exports = server
+module.exports = app
