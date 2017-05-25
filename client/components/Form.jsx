@@ -33,7 +33,7 @@ export default class Form extends React.Component {
   save (e){
     e.preventDefault()
     const userInput=this.state
-    this.props.readChapOneCallback(userInput)
+    this.props.passPropGotoStoryLibrary(userInput)
   }
 
   render(){
@@ -85,7 +85,7 @@ export default class Form extends React.Component {
           </div>
           <p></p>
           <div>
-          <button onClick={e => this.save(e)}>Read My Story!</button>
+          <button onClick={e => this.save(e)}>Read My Stories!</button>
           </div>
         </form>
       </div>
