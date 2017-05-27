@@ -10,7 +10,7 @@ export default class StoryLibraryItem extends React.Component {
     return (
       <div className="story-library-item">
         <div className="bookcover">
-          <Link to={this.props.story.storyUrl}><img src={this.props.story.image} alt="a book cover"></img></Link>
+          <Link to={this.props.story.firstchapUrl}><img src={this.props.story.image} alt="a book cover"></img></Link>
         </div>
         <h3>{this.props.story.name}</h3>
         <p className="story-description">{this.props.story.description}</p>
