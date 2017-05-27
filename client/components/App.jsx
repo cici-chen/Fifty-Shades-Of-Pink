@@ -7,6 +7,7 @@ import Form from './Form'
 import StoryLibrary from './StoryLibrary'
 import ChapOne from './ChapOne'
 import ChapTwo from './ChapTwo'
+import ChapterNav from './ChapterNav'
 
 class App extends React.Component {
   constructor(props) {
@@ -16,21 +17,25 @@ class App extends React.Component {
       user: { },
       stories:[
         {id:1,
-        name:"Fifty Shades of Pink", image:"http://www.victoriajanssen.com/wp-content/uploads/2011/08/beaconBB138.jpg",
+        name:"fifty-shades-of-pink",
+        title:"Fifty Shades of Pink",
+        image:"http://www.victoriajanssen.com/wp-content/uploads/2011/08/beaconBB138.jpg",
         description:"The hotel room was a white dream of cleanliness. The coolness of the air conditioner tickled Ariel’s skin as she lay on the soft mattress, surrounded by pillows, sinking further into the thick, downy duvet. The blanket puffed up around her, as if she were floating on a cloud.",
-        storyUrl:"/chapter/1"},
+        storyUrl:"/stories/fifty-shades-of-pink/chapter/:id"},
 
         {id:2,
-        name:"Hotel Room",
+        name:"hotel-room",
+        title:"Hotel Room",
         image:"http://www.victoriajanssen.com/wp-content/uploads/2011/08/hereis-GM0218.jpg",
         description:"It was hard to hear over the music, and Kelly thought she’d heard wrong. A Jager buzz verging on full-out drunk combined with the flashing lights, throbbing bass and cigarette smoke hanging in the air made the world feel as if it were turning upside down.",
-        storyUrl:"/chapter/1"},
+        storyUrl:"/stories/hotel-room/chapter/1"},
 
         {id:3,
-        name:"Behind the Mask",
+        name:"behind-the-mask",
+        title:"Behind the Mask",
         image:"http://www.victoriajanssen.com/wp-content/uploads/2011/08/softcoverB0890.jpg",
         description:"bby swirled the amber liquid in her glass. It was a fine scotch, full of aroma and spice. A nice finish, not much kick on the back end - overall very smooth. She always felt sexy drinking it. It made her very aware of the way the silky, navy blue fabric felt on her skin.",
-        storyUrl:"/chapter/1"}
+        storyUrl:"/stories/behind-the-mask/chapter/1"}
       ]
     }
   }
@@ -60,11 +65,11 @@ class App extends React.Component {
           <Route path = '/story-library' component={() =>
               <StoryLibrary passStories={this.state.stories} /> }
             />
-          <Route path='/chapter/1' component={()=>
-              <ChapOne userInfo={this.state.user}/> }
+          <Route path = '/stories' component={()=>
+              <ChapterNav />}
             />
-          <Route path='/chapter/2' component={()=>
-              <ChapTwo userInfo={this.state.user}/> }
+          <Route path= {this.state.stories[0].storyUrl} component={(props)=>
+              <ChapOne userInfo={this.state.user} chap_id={props.match.params.id} />  }
             />
           </div>
         </div>

@@ -5,7 +5,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    query: {presets:['react']},
+    // query: {presets:['react']},
     loaders: [{
       test: /\.jsx?$/,
       loader: 'babel-loader',

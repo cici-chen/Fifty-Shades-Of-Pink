@@ -2,6 +2,7 @@ body {
   text-align: center;
 }
 
+/* Header for entire site */
 a:link {
   text-decoration: none;
   color:black;
@@ -15,12 +16,20 @@ a:hover {
   color:hotpink;
 }
 
+/* /stories/single chapter layout */
+
+.chapter-nav button {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
 .story-container {
   margin:auto;
   width:50%;
   font-size: 1.2em
 }
 
+/* /story-library page layout */
 .row {
   display: flex;
   justify-content: center;

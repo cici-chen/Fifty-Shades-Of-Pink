@@ -9,7 +9,6 @@ export default (props) => {
       key={story.id}
       story={story}
       />
-    // return <h1>Hi</h1>
   }
 
   function renderStories() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-export default class ChapOne extends React.Component{
+export default class ChapTwo extends React.Component{
   constructor(props) {
     super(props)
     this.state={
@@ -14,7 +14,8 @@ export default class ChapOne extends React.Component{
         he : this.props.userInfo.loverGender === 'man'? 'he':'she',
         NewYork: 'New York',
         GongYoo: this.props.userInfo.loverName
-      }
+      },
+      chapter:2
     }
   }
 
@@ -84,8 +85,8 @@ export default class ChapOne extends React.Component{
         <p>
           "Oh..." {Sabrina} also laughed, feeling embarrased. "Thank you. That would be great."
         </p>
-        <Link to={"/chapter/1"}><button>Previous Chapter</button></Link>
-        <Link to={"/chapter/3"}><button>Next Chapter</button></Link>
+        <Link to={`/stories/fifty-shades-of-pink/chapter/${this.state.chapter-1}`}><button>Previous Chapter</button></Link>
+        <Link to={`/stories/fifty-shades-of-pink/chapter/${this.state.chapter+1}`}><button>Next Chapter</button></Link>
       </div>
     )
   }

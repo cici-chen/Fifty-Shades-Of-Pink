@@ -12,7 +12,8 @@ export default class ChapOne extends React.Component{
         Lily : this.props.userInfo.friendName === ''? 'Lily': this.props.userInfo.friendName,
         his : this.props.userInfo.loverGender === 'man'? 'his':'her',
         he : this.props.userInfo.loverGender === 'man'? 'he':'she'
-      }
+      },
+      chapter:this.props.chap_id
     }
   }
 
@@ -53,7 +54,7 @@ export default class ChapOne extends React.Component{
           In a hurry, {Sabrina} threw on a lightblue cotton shirt and a pair of jeans, and jumped into a taxi.
         </p>
 
-        <Link to={"/chapter/2"}><button>Next Chapter</button></Link>
+        <Link to={`/stories/fifty-shades-of-pink/chapter/${this.state.chapter+1}`}><button>Next Chapter</button></Link>
 
       </div>
     )
