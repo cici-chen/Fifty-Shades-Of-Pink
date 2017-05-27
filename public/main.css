@@ -1,0 +1,44 @@
+body {
+  text-align: center;
+}
+
+a:link {
+  text-decoration: none;
+  color:black;
+}
+
+a:visited {
+  color:black;
+}
+
+a:hover {
+  color:hotpink;
+}
+
+.story-container {
+  margin:auto;
+  width:50%;
+  font-size: 1.2em
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.story-library-item {
+  width:20%;
+}
+
+.bookcover {
+  margin: auto;
+  width: 251px;
+  height: 428px;
+  overflow: hidden;
+}
+
+.story-description {
+  text-align: left;
+  padding-left: 2em;
+  padding-right: 2em;
+}

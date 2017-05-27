@@ -2,36 +2,46 @@
   "name": "fifty-shades-of-pink",
   "version": "1.0.0",
   "description": "A personal romance story generator",
-  "main": "index.js",
-  "scripts": {
-    "knex": "knex",
-    "dev": "nodemon index",
-    "start": "node index",
-    "debug": "node --inspect --debug-brk index.js",
-    "test": "ava"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cici-chen/Fifty-Shades-Of-Pink.git"
   },
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "nodemon --watch server server/index & webpack --watch",
+    "start": "node 'server/index.js'",
+    "test": "tape -r babel-register 'test/**/*.test.js' | tap-diff",
+    "watch": "nodemon -e js,jsx -x npm test"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
   "author": "Cici-Chen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cici-chen/Fifty-Shades-Of-Pink/issues"
-  },
-  "homepage": "https://github.com/cici-chen/Fifty-Shades-Of-Pink#readme",
-  "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "express-handlebars": "^3.0.0",
-    "knex": "^0.13.0",
-    "pg": "^6.1.5"
-  },
   "devDependencies": {
-    "ava": "^0.19.1",
-    "cheerio": "^0.22.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.18.0",
+    "enzyme": "^2.7.0",
     "nodemon": "^1.11.0",
-    "sqlite3": "^3.1.8",
-    "supertest": "^3.0.0"
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router-dom": "^4.1.1",
+    "webpack": "^2.1.0-beta.21",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "handles": "^0.1.1",
+    "knex": "^0.13.0",
+    "superagent": "^3.5.2"
   }
 }
