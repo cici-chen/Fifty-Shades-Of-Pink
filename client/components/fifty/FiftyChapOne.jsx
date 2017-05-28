@@ -23,8 +23,8 @@ export default class FiftyChapOne extends React.Component{
   render() {
     let {Sabrina, her, she, Lily, his, he, NewYork, GongYoo} = this.state.userInfo
     return(
-        <div className="story-container">
-          <div>
+        <div >
+          <div className="story-container">
             <p>
               {Sabrina} woke up this morning being damn annoyed at {her} hair. It always looks like a mess after a night's sleep. But this morning is particularly stressful because {she} is running late to a meeting, a meeting which {she} didn't sign up for. Early this morning {Sabrina} got a phone call from {her} friend {Lily} who is an internationally renowned photographer.
             </p>

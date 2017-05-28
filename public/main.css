@@ -29,8 +29,9 @@ a:hover {
 }
 
 .story-container {
+  text-align: left;
   margin:auto;
-  width:50%;
+  width:100vh;
   font-size: 1.2em
 }
 

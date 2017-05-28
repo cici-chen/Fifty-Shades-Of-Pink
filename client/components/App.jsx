@@ -9,7 +9,8 @@ import FiftyChapterHeader from './headers/FiftyChapterHeader'
 import FiftyChapOne from './fifty/FiftyChapOne'
 import FiftyChapTwo from './fifty/FiftyChapTwo'
 import ChapterNav from './navigation/ChapterNav'
-// import HotelChapOne from './hotel/HotelChapOne'
+import HotelChapOne from './hotel/HotelChapOne'
+import HotelChapTwo from './hotel/HotelChapTwo'
 
 class App extends React.Component {
   constructor(props) {
@@ -71,7 +72,7 @@ class App extends React.Component {
             component={()=> <ChapterNav /> }
             />
           <Route path = '/stories/fifty-shades-of-pink' component={()=>
-              <ChapterHeader storyTitle={this.state.stories[0].title} /> }
+              <FiftyChapterHeader storyTitle={this.state.stories[0].title} /> }
             />
           <Route path= '/stories/fifty-shades-of-pink/chapter/1' component={(props)=>
               <FiftyChapOne userInfo={this.state.user} />}
@@ -80,7 +81,13 @@ class App extends React.Component {
               <FiftyChapTwo userInfo={this.state.user} />}
             />
           <Route path= '/stories/hotel-room/chapter/1' component={(props)=>
-              <FiftyChapOne userInfo={this.state.user} />}
+              <HotelChapOne userInfo={this.state.user} />}
+            />
+          <Route path= '/stories/hotel-room/chapter/2' component={(props)=>
+              <HotelChapTwo userInfo={this.state.user} />}
+            />
+          <Route path= '/stories/hotel-room/chapter/2' component={(props)=>
+              <HotelChapTwo userInfo={this.state.user} />}
             />
           </div>
         </div>
