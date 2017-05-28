@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default (props) => {
-  console.log(props.userInfo);
   let {Sabrina, her, she, Lily, his, he, NewYork, GongYoo} = props.userInfo
   return(
     <div>
