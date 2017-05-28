@@ -3,6 +3,10 @@ body {
 }
 
 /* Header for entire site */
+.site-header {
+  background-color: rgb(255, 0, 0);opacity:0.2;
+}
+
 a:link {
   text-decoration: none;
   color:black;
@@ -17,6 +21,7 @@ a:hover {
 }
 
 /* /stories/single chapter layout */
+.chapter-header
 
 .chapter-nav button {
   margin-left: 1em;

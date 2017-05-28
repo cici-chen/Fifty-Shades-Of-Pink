@@ -1,9 +1,12 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export default (props) => {
+
   let {Sabrina, her, she, Lily, his, he, NewYork, GongYoo} = props.userInfo
   return(
-    <div>
+    <div className="story-container">
+      <h4>CHAPTER 2</h4>
       <p>
         As the cab cruised through the streets of {NewYork} on this crisp morning, {Sabrina} felt a little bit calmer. {Lily} had her assistant text {Sabrina} the address of the photoshoot who would be bringing all the equipments.
       </p>
@@ -64,6 +67,8 @@ export default (props) => {
       <p>
         "Oh..." {Sabrina} also laughed, feeling embarrased. "Thank you. That would be great."
       </p>
+      <Link to="/stories/fifty-shades-of-pink/chapter/1"><button>Previous Chapter</button></Link>
+      <Link to="/stories/fifty-shades-of-pink/chapter/2"><button>Next Chapter</button></Link>
     </div>
   )
 }
