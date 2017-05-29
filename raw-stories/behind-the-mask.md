@@ -64,10 +64,7 @@ She looks amazing too. Her deep red cocktail dress clings to her curves and is c
 
 "Here girls," he says, giving them both another glass of champagne.
 "Sod it," I think, it's a party.
-Jess grins widely. "I don't want you throwing up in the flower beds like you did at my 21st," she laughs.
-"Don't remind me," I groan. "I've not touched tequila since."
-
-Two hours later and the party is in full swing. While Jess' parents are settled in the library – which has been turned into a 'chill out' area for the more mature party guests – the rest of us have been tearing up the dance floor with Beyonce.
+Jess grins widely. "I don't want you throwing up in the flowearents are settled in the library – which has been turned into a 'chill out' area for the more mature party guests – the rest of us have been tearing up the dance floor with Beyonce.
 
 It's so hot. I open the French doors and slip outside. It's a beautiful night, the dark sky littered with stars blinking in Morse code. The cold air hits me straight away and the champagne I've been necking makes its effects known immediately. With goose bumps prickling my skin, I start making my way down the path to one of the benches dotted around the grounds. I can still hear Lady Gaga singing about her Pokerface as I begin to lift the velvet mask off my face to let my skin breath. Suddenly, there's am arm snaking round my waist. I laugh and turn, expecting to see Allie.
 

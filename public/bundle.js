@@ -11084,6 +11084,10 @@ var _HotelChapTwo = __webpack_require__(106);
 
 var _HotelChapTwo2 = _interopRequireDefault(_HotelChapTwo);
 
+var _MaskChapOne = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./mask/MaskChapOne\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _MaskChapOne2 = _interopRequireDefault(_MaskChapOne);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11189,6 +11193,10 @@ var App = function (_React$Component) {
             }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/stories/hotel-room/chapter/2', component: function component(props) {
                 return _react2.default.createElement(_HotelChapTwo2.default, { userInfo: _this2.state.user });
+              }
+            }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/stories/behind-the-mask/chapter/1', component: function component(props) {
+                return _react2.default.createElement(_MaskChapOne2.default, { userInfo: _this2.state.user });
               }
             })
           )

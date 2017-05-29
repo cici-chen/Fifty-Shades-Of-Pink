@@ -11,6 +11,8 @@ import FiftyChapTwo from './fifty/FiftyChapTwo'
 import ChapterNav from './navigation/ChapterNav'
 import HotelChapOne from './hotel/HotelChapOne'
 import HotelChapTwo from './hotel/HotelChapTwo'
+import MaskChapOne from './mask/MaskChapOne'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -88,6 +90,9 @@ class App extends React.Component {
             />
           <Route path= '/stories/hotel-room/chapter/2' component={(props)=>
               <HotelChapTwo userInfo={this.state.user} />}
+            />
+          <Route path= '/stories/behind-the-mask/chapter/1' component={(props)=>
+              <MaskChapOne userInfo={this.state.user} />}
             />
           </div>
         </div>
