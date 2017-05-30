@@ -23,7 +23,7 @@ export default class HotelChapOne extends React.Component{
   render() {
     let {Ariel, Micah, her, she, his, he} = this.state.userInfo
     return(
-        <div>
+        <div className='single-chapter'>
           <div className="story-container">
             <p>
             The hotel room was a white dream of cleanliness. The coolness of the air conditioner tickled {Ariel}{"’"}s skin as {she} lay on the soft mattress, surrounded by pillows, sinking further into the thick, downy duvet. The blanket puffed up around {her}, as if {she} were floating on a cloud.
@@ -50,7 +50,7 @@ export default class HotelChapOne extends React.Component{
             Laying on {her} back, {Ariel} lazily stretched her arms up, then tilted her head to the side to look at the top of {Micah}{"'"} head. {Ariel} ran {her} fingers through {his} soft hair, and {he} smiled up at {her}. {Micah}{"'s'"} face is clean shaven after {his} shower, {Ariel} could feel {his} smooth skin rubbing against {her} thigh.
             </p>
           </div>
-          <Link to="/stories/hotel-room/chapter/2"><button>Next Chapter</button></Link>
+          <Link to="/stories/hotel-room/chapter/2"><button className='next-chapter'>Next Chapter</button></Link>
         </div>
     )
   }

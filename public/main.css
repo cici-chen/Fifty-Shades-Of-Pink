@@ -1,15 +1,45 @@
 body {
   text-align: center;
+  background: #1d191f;
+  color: #fff
+}
+
+p {
+	color: #fff;
+	font-family: 'Droid Serif', serif;
+	font-weight: 400;
+	max-width: 640px;
+	margin: 0 auto 48px;
+	text-align: center;
 }
 
 /* Header for entire site */
-.site-header {
-  background-color: rgb(255, 0, 0);opacity:0.2;
+h1 {
+	color: #fff;
+	font-family: 'Cormorant Garamond';
+	border-bottom: 3px solid #e66c7e;
+	font-size: 48px;
+	font-weight: 400;
+	line-height: 72px;
+	letter-spacing: 35px;
+	margin-bottom: 57px;
+	text-align: center;
+	text-indent: 24px;
+	text-transform: uppercase;
+}
+
+a {
+	color: #e66c7e;	border-bottom: 2px solid #e66c7e;
+	font-family: 'Cormorant Garamond';
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
 a:link {
   text-decoration: none;
-  color:black;
 }
 
 a:visited {
@@ -17,25 +47,124 @@ a:visited {
 }
 
 a:hover {
-  color:hotpink;
+	color: #fff;
+	border-bottom: 2px solid #fff;
 }
 
-/* /stories/single chapter layout */
-.chapter-header
+/* form on homepage */
+.content {
+  text-align: center;
+}
 
-.chapter-nav button {
+.form {
+  margin: auto;
+  background-color: #e66c7e;
+  width: 40%;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.form p {
+	font-family: 'Cormorant Garamond';
+	font-size: 28px;
+	font-style: italic;
+	font-weight: 400;
+	line-height: 48px;
+	max-width: 640px;
+	text-align: center;
+}
+
+.form-sub-title {
+  margin-bottom: 0.6em;
+}
+
+.input-field {
+  font-family: 'Cormorant Garamond';
+  font-size: 1.2em;
+  margin: auto;
+  width: 50%;
+  text-align: left;
+}
+
+.submit-button {
+  font-family: 'Cormorant Garamond';
+  font-weight: 800;
+  font-size: 1.2em;
+  color:white;
+  background-color: #e66c7e;
+  border-radius: 8px;
+  padding:0.3em;
+  border-color: white;
+}
+/* /stories/single chapter layout */
+.chapter-nav {
+  margin-top: -2em;
+  margin-bottom: 1em;
+}
+
+.chapter-nav a{
+  border-bottom: none;
+}
+
+.next-chapter {
+  font-size:1.2em;
+  border-style: none;
   margin-left: 1em;
   margin-right: 1em;
+  border-radius: 0.3em;
+  background-color: transparent;
+  color: white;
+  padding: 0.3em;
+  border:0.1em solid #e66c7e;
+}
+
+.single-chapter a{
+  border-bottom: none;
+}
+
+.chapter-header{
+  font-size: 2.5em;
+  font-family: 'Cormorant Garamond';
+  font-weight: 300;
+  margin-bottom: 1em;
 }
 
 .story-container {
+  color: white;
   text-align: left;
   margin:auto;
-  width:100vh;
   font-size: 1.2em
 }
 
+.story-container p {
+  text-align: left;
+	color: #fff;
+	font-family: 'Ubuntu';
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1.5em;;
+	margin: 0 auto 36px;
+}
+
+.chapter-nav button {
+  font-size:1.2em;
+  border-style: none;
+  margin-left: 1em;
+  margin-right: 1em;
+  border-radius: 0.3em;
+  background-color: transparent;
+  color: white;
+  padding: 0.3em;
+  border:0.1em solid #e66c7e;
+}
+
 /* /story-library page layout */
+.story-library h2 {
+  font-family: 'Cormorant Garamond';
+  font-size:2em;
+  font-style:italic;
+}
+
 .row {
   display: flex;
   justify-content: center;
@@ -52,8 +181,14 @@ a:hover {
   overflow: hidden;
 }
 
+.story-library h3 {
+  font-size: 1.4em;
+}
+
 .story-description {
+  font-size: 1em;
   text-align: left;
   padding-left: 2em;
   padding-right: 2em;
+  line-height: 1.4em;
 }

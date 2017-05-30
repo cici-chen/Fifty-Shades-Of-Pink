@@ -19,7 +19,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       error: null,
-      user: { },
+      user: "",
       stories:[
         {id:1,
         name:"fifty-shades-of-pink",
@@ -63,10 +63,10 @@ class App extends React.Component {
         <div className='app'>
           <ErrorMessage error={this.state.error} />
           <Header />
-          <div className='content'>
           <Route exact path='/' component={() =>
               <Form passPropGotoStoryLibrary={this.gotoStoryLibrary.bind(this)} /> }
             />
+          <div className='content'>
           <Route path = '/story-library' component={() =>
               <StoryLibrary passStories={this.state.stories} /> }
             />
@@ -84,9 +84,6 @@ class App extends React.Component {
             />
           <Route path= '/stories/hotel-room/chapter/1' component={(props)=>
               <HotelChapOne userInfo={this.state.user} />}
-            />
-          <Route path= '/stories/hotel-room/chapter/2' component={(props)=>
-              <HotelChapTwo userInfo={this.state.user} />}
             />
           <Route path= '/stories/hotel-room/chapter/2' component={(props)=>
               <HotelChapTwo userInfo={this.state.user} />}
