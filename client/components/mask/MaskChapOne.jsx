@@ -22,7 +22,7 @@ export default class HotelChapOne extends React.Component{
   }
 
   render() {
-    let {, her, she, his, he} = this.state.userInfo
+    let {her, she, his, he} = this.state.userInfo
     return(
         <div>
           <div className="story-container">

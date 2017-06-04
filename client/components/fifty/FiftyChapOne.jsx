@@ -23,8 +23,9 @@ export default class FiftyChapOne extends React.Component{
   render() {
     let {Sabrina, her, she, Lily, his, he, NewYork, GongYoo} = this.state.userInfo
     return(
-        <div >
+        <div className='single-chapter'>
           <div className="story-container">
+            <p className="chapter-number">CHAPTER ONE</p>
             <p>
               {Sabrina} woke up this morning being damn annoyed at {her} hair. It always looks like a mess after a night's sleep. But this morning is particularly stressful because {she} is running late to a meeting, a meeting which {she} didn't sign up for. Early this morning {Sabrina} got a phone call from {her} friend {Lily} who is an internationally renowned photographer.
             </p>
@@ -56,7 +57,7 @@ export default class FiftyChapOne extends React.Component{
               In a hurry, {Sabrina} threw on a lightblue cotton shirt and a pair of jeans, and jumped into a taxi.
             </p>
           </div>
-          <Link to="/stories/fifty-shades-of-pink/chapter/2"><button>Next Chapter</button></Link>
+          <Link to="/stories/fifty-shades-of-pink/chapter/2"><button className='next-chapter'>Next Chapter</button></Link>
         </div>
     )
   }
