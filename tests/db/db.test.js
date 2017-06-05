@@ -17,3 +17,28 @@ test('getUser gets a single user by id in the database', function (t) {
       t.is(expected, actual)
     })
 })
+
+var object={
+  id:'',
+  user_name:'Mary',
+  user_gender:'woman',
+  lover_name:'George Clooney',
+  lover_gender:'man'
+}
+
+test('saveUser saves a gingle user to the database', function (t){
+  return db.saveUser(object, t.context.connection)
+    .then((res)=>{
+      t.is(res.length,1) //the length of array of id of items inserted should be only one
+    })
+})
+
+test('saveUser saves user info into the database', function (t){
+  return db.saveUser(object, t.context.connection)
+    .then((res)=>{
+      return t.context.connection('users').select().where('id',2).first()
+    })
+    .then((res)=>{
+      t.is(res.user_name,"Mary")
+    })
+})

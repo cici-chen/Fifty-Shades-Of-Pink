@@ -2,6 +2,18 @@ function getUser(id, connection){
   return connection('users').where('id', id)
 }
 
+function saveUser(object, connection){
+  return connection('users').insert(
+    {
+    user_name:object.user_name,
+    user_gender:object.user_gender,
+    lover_name:object.lover_name,
+    lover_gender:object.lover_gender
+    }
+  )
+}
+
 module.exports = {
-  getUser
+  getUser,
+  saveUser
 }
