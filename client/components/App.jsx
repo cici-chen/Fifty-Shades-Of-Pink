@@ -57,7 +57,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("props in app now is: ", this.state.user);
+    console.log("react state in app now is: ", this.state.user);
     return (
       <Router>
         <div className='app'>

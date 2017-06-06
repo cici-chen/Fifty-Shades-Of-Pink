@@ -1,9 +1,9 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
 import StoryLibraryItem from './StoryLibraryItem'
 
-export default (props) => {
+const StoryLibrary = (props) => {
   function renderStory (story) {
     return <StoryLibraryItem
       key={story.id}
@@ -24,3 +24,11 @@ export default (props) => {
       </div>
     )
 }
+
+function mapStateToProps(state){
+  return{
+    StoryLibrary:state.StoryLibrary
+  }
+}
+
+export default connect(mapStateToProps)(StoryLibrary)
