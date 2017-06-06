@@ -19,7 +19,6 @@ test('getUser gets a single user by id in the database', function (t) {
 })
 
 var object={
-  id:'',
   user_name:'Mary',
   user_gender:'woman',
   lover_name:'George Clooney',

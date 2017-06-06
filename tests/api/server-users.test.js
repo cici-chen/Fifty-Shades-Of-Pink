@@ -15,9 +15,9 @@ configureDatabase(test, function (db) {
   app.set('knex-database', db)
 })
 
-test.cb('GET /api/users/:id gets single user', function (t) {
+test.cb('GET /api/v1/users/:id gets single user', function (t) {
   request(app)
-    .get('/api/users/1')
+    .get('/api/v1/users/1')
     .expect('Content-Type', /json/)
     .expect(200)
     .end(function (err, res) {
@@ -36,9 +36,9 @@ var object={
   lover_gender:'man'
 }
 
-test.cb('POST /api/users adds a new user to database', (t) => {
+test.cb('POST /api/v1/users adds a new user to database', (t) => {
   request(app)
-    .post('/api/users')
+    .post('/api/v1/users')
     .send(object)
     .expect(201)
     .end((err, res) => {

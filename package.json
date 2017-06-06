@@ -10,9 +10,9 @@
   "scripts": {
     "dev": "nodemon --watch server server/index & webpack --watch",
     "start": "node 'server/index.js'",
-    "test": "ava -v tests/**/*.test.js",
-    "test-db":"ava -v tests//db/db.test.js",
-    "test-api":"ava -v tests/api/users.test.js",
+    "test": "ava -v --serial 'tests/**/*.test.js'",
+    "test-db": "ava -v --serial tests/db/*.test.js",
+    "test-api": "ava -v --serial tests/api/*.test.js",
     "watch": "nodemon -e js,jsx -x npm test"
   },
   "ava": {
@@ -37,6 +37,7 @@
     "babel-register": "^6.18.0",
     "enzyme": "^2.7.0",
     "jsdom": "^11.0.0",
+    "nock": "^9.0.13",
     "nodemon": "^1.11.0",
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",

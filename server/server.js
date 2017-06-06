@@ -17,6 +17,6 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../public')))
 
 // You must make sure that you define all configurations BEFORE defining routes.
-app.use('/api',api)
+app.use('/api/v1',api)
 
 module.exports = app
