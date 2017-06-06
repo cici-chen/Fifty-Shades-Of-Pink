@@ -12,8 +12,11 @@ var app = express()
 
 app.set('knex-database', knex)
 
-app.use('/api',api)
+//Configure to handles post requests
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../public')))
+
+// You must make sure that you define all configurations BEFORE defining routes.
+app.use('/api',api)
 
 module.exports = app

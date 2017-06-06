@@ -36,20 +36,17 @@ var object={
   lover_gender:'man'
 }
 
-test.cb('POST /api/users sends data of the user added', (t) => {
+test.cb('POST /api/users adds a new user to database', (t) => {
   request(app)
     .post('/api/users')
     .send(object)
-    .expect('Content-Type', /json/)
     .expect(201)
     .end((err, res) => {
       if (err) throw err
-      return t.context.db('users')
-        .select()
-        .then((result) => {
-          t.is(result.length, 2)
-          t.is(result[1].user_name, 'Mary')
-          t.end()
-        })
+      return t.context.connection('users').select().then((result)=>{
+        t.is(result.length, 2)
+        t.is(result[1].user_name, 'Mary')
+        t.end()
+      })
     })
 })
