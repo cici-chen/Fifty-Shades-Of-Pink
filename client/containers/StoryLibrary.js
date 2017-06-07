@@ -4,19 +4,27 @@ import { connect } from 'react-redux';
 import StoryLibrary from '../components/StoryLibrary.jsx'
 import {fetchStories} from '../actions'
 
-const StoryLibrary = (props) => (
+class StoryLibraryContainer extends React.Component{
+
+  constructor(props) {
+   super(props);
+ }
 
   componentWillMount(){
-    props.dispatch(fetchStories())
+    this.props.dispatch(fetchStories())
   }
 
-  <div>
-    <StoryLibrary stories={props.stories}/>
-  </div>
-)
-
-function mapStateToProps(state) {
-   return { stories: state.stories };
+  render(){
+    return(
+      <div>
+        <StoryLibrary stories={this.props}/>
+      </div>
+    )
+  }
 }
 
-export default connect(mapStateToProps)(StoryLibrary)
+function mapStateToProps(state) {
+   return { stories: state.StoryLibrary };
+}
+
+export default connect(mapStateToProps)(StoryLibraryContainer)

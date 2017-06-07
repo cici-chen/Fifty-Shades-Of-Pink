@@ -1,12 +1,12 @@
-import request from 'superagent'
+// import request from 'superagent'
+//
+// export function getStories(callback){
+//   request
+//     .get('/api/v1/stories')
+//     .then(res => callback(dispatch,res.body)
+//     .catch(err => callback())
+//       }
+//     })
+// }
 
-export function getStories(callback){
-  request
-    .get('/api/v1/stories')
-    .end((err,res) => {
-      if (err) console.log("error occured while trying to get stories from server api", err)
-      else {
-        callback(null,res.body)
-      }
-    })
-}
+//We are calling the api in actions now using fetch to be same as official redux doc
