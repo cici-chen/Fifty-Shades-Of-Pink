@@ -32,3 +32,19 @@ Somewhat over the top tacky
 ## References
   * basic set up boiler plate taken from https://github.com/joshuavial/knex-relationships
   * massive technical assistance from my teachers JV and Harrison
+
+
+## Actions
+
+| Type | Reducer | Use |
+| ---- | ------- | --- |
+| 'RECEIVE_STORIES' | storyLibrary | dispatch after receiving the stories from the API, to add the stories to the state.storyLibrary reducer |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |

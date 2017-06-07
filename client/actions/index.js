@@ -1,4 +1,8 @@
-import {FETCH_STORIES_REQUEST,RECEIVE_STORIES} from './actionTypes'
+import {
+  FETCH_STORIES_REQUEST,
+  FETCH_STORIES_SUCCESS,
+  FETCH_STORIES_FAILURE
+} from './actionTypes'
 
 import {getStories} from '../api/stories'
 
@@ -8,16 +12,25 @@ function fetchStoriesRequest(){
   }
 }
 
-export function receiveStories(stories){
+function fetchStoriesSuccess(stories){
   return{
-    type:RECEIVE_STORIES,
+    type: FETCH_STORIES_SUCCESS,
     stories
+  }
+}
+
+function fetchStoriesFailure(err){
+  return{
+    type: FETCH_STORIES_FAILURE,
+    err
   }
 }
 
 export function fetchStories(){
   return dispatch => {
     dispatch(fetchStoriesRequest())
-    return getStories(dispatch)
+    return getStories((err,stories)=>{
+      dispatch(fetchStoriesSuccess(stories))
+    })
   }
 }
