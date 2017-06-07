@@ -41,3 +41,11 @@ test('saveUser saves user info into the database', function (t){
       t.is(res.user_name,"Mary")
     })
 })
+
+test('getStories get all stories in the database', function (t){
+  return db.getStories(t.context.connection)
+    .then((result)=>{
+      t.is(result.length,3)
+      t.is(result[1].name,"hotel-room")
+    })
+})

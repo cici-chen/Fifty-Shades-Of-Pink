@@ -13,7 +13,12 @@ function saveUser(object, connection){
   )
 }
 
+function getStories(connection){
+  return connection('stories').select()
+}
+
 module.exports = {
   getUser,
-  saveUser
+  saveUser,
+  getStories
 }
