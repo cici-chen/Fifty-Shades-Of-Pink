@@ -7,12 +7,23 @@ const initalState = {
 export default function storyLibrary (state=initalState, action){
   switch (action.type){
     case 'FETCH_STORIES_REQUEST':
-      return {...state,loading:true}
+      return {
+        ...state,
+        loading:true
+      }
+
     case 'FETCH_STORIES_SUCCESS':
-      return {...state,stories:action.stories}
+      return {
+        ...state,
+        stories:action.stories,
+        loading:false
+      }
     case 'FETCH_STORIES_FAILURE':
-      return {...state,error:action.err}
+      return {
+        ...state,
+        err:action.err
+      }
     default:
-      return initalState
+      return state
   }
 }

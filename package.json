@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "nodemon --watch server server/index & webpack --watch",
     "start": "node 'server/index.js'",
-    "test-jest": "jest tests/redux/*.test.js",
+    "test-jest": "jest --verbose tests/redux/*.test.js",
     "test:watch": "npm test-jest -- --watch",
     "test-ava": "ava -v --serial tests/**/*.test.js",
     "test-db": "ava -v --serial tests/db/*.test.js",

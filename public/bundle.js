@@ -13918,13 +13918,21 @@ function storyLibrary() {
 
   switch (action.type) {
     case 'FETCH_STORIES_REQUEST':
-      return _extends({}, state, { loading: true });
+      return _extends({}, state, {
+        loading: true
+      });
+
     case 'FETCH_STORIES_SUCCESS':
-      return _extends({}, state, { stories: action.stories });
+      return _extends({}, state, {
+        stories: action.stories,
+        loading: false
+      });
     case 'FETCH_STORIES_FAILURE':
-      return _extends({}, state, { error: action.err });
+      return _extends({}, state, {
+        err: action.err
+      });
     default:
-      return initalState;
+      return state;
   }
 }
 
