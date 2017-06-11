@@ -1,9 +1,42 @@
+/*Mobile First*/
 body {
   text-align: center;
   background: #1d191f;
   color: #fff
 }
+.site-header h1 {
+	color: #fff;
+  font-family: 'Cormorant Garamond';
+  font-size: 4em;
+  margin-top: 1em;
+  border-bottom: 0.1em solid #e66c7e;
+  font-weight: 800;
+  line-height: 72px;
+  letter-spacing: 20px;
+  margin-bottom: 57px;
+  text-align: center;
+  text-indent: 24px;
+  text-transform: uppercase;
+}
 
+a:link {
+  text-decoration: none;
+}
+
+.form {
+  font-size: 2.5em;
+  font-family: 'Garamond';
+}
+
+/*Not sure what should be the min-width here*/
+/*DESKTOP VERSION*/
+@media (min-width: 1000px){
+  body {
+    text-align: center;
+    background: #1d191f;
+    color: #fff
+  }
+/* Header for entire site */
 p {
 	color: #fff;
 	font-family: 'Droid Serif', serif;
@@ -13,7 +46,6 @@ p {
 	text-align: center;
 }
 
-/* Header for entire site */
 h1 {
 	color: #fff;
 	font-family: 'Cormorant Garamond';
@@ -191,4 +223,5 @@ a:hover {
   padding-left: 2em;
   padding-right: 2em;
   line-height: 1.4em;
+}
 }
