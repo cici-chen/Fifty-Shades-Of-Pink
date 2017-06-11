@@ -43,7 +43,7 @@ class App extends React.Component {
             />
           <div className='content'>
           <Route path = '/story-library' component={() =>
-              <StoryLibrary passStories={this.state.stories} /> }
+              <StoryLibrary /> }
             />
           <Route path = '/stories'
             component={()=> <ChapterNav /> }

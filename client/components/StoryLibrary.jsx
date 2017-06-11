@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import StoryLibraryItem from './StoryLibraryItem'
 
-const StoryLibrary = (props) => {
+const StoryLibrary = ({stories}) => {
   function renderStory (story) {
     return <StoryLibraryItem
       key={story.id}
@@ -12,7 +12,7 @@ const StoryLibrary = (props) => {
   }
 
   function renderStories() {
-    return props.passStories.map(renderStory)
+    return stories.map((story)=>renderStory(story))
   }
 
   return(
@@ -25,10 +25,4 @@ const StoryLibrary = (props) => {
     )
 }
 
-function mapStateToProps(state){
-  return{
-    StoryLibrary:state.StoryLibrary
-  }
-}
-
-export default connect(mapStateToProps)(StoryLibrary)
+export default StoryLibrary

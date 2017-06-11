@@ -1,20 +1,17 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 
-export default class StoryLibraryItem extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
+const StoryLibraryItem = ({story})=> {
     return (
       <div className="story-library-item">
         <div className="bookcover">
-          <Link to={this.props.story.firstchapUrl}><img src={this.props.story.image} alt="a book cover"></img></Link>
+          <a href={story.storyUrl}>
+            <img src={story.image} alt="a book cover"></img>
+          </a>
         </div>
-        <h3>{this.props.story.title}</h3>
-        <p className="story-description">{this.props.story.description}</p>
+        <h3>{story.title}</h3>
+        <p className="story-description">{story.description}</p>
       </div>
-    )
-  }
+  )
 }
+
+export default StoryLibraryItem

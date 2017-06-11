@@ -30,7 +30,8 @@ export function fetchStories(){
   return dispatch => {
     dispatch(fetchStoriesRequest())
     return fetch('/api/v1/stories')
-      .then(res => dispatch(fetchStoriesSuccess(res.body)))
+      .then(res => res.json())
+      .then(data=>dispatch(fetchStoriesSuccess(data)))
       .catch(ex => dispatch(fetchStoriesFailure(ex)))
   }
 }

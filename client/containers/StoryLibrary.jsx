@@ -17,14 +17,14 @@ class StoryLibraryContainer extends React.Component{
   render(){
     return(
       <div>
-        <StoryLibrary stories={this.props}/>
+        <StoryLibrary stories={this.props.stories}/>
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-   return { stories: state.StoryLibrary };
+   return { stories:state.storyLibrary.stories };
 }
 
 export default connect(mapStateToProps)(StoryLibraryContainer)
