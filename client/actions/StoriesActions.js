@@ -6,20 +6,21 @@ import {
   FETCH_STORIES_FAILURE
 } from './actionTypes'
 
-function fetchStoriesRequest(){
+//the first three actions are only exported for testing. We don't actually need to export them for the app
+export function fetchStoriesRequest(){
   return{
     type: FETCH_STORIES_REQUEST
   }
 }
 
-function fetchStoriesSuccess(stories){
+export function fetchStoriesSuccess(stories){
   return{
     type: FETCH_STORIES_SUCCESS,
     stories:stories
   }
 }
 
-function fetchStoriesFailure(err){
+export function fetchStoriesFailure(err){
   return{
     type: FETCH_STORIES_FAILURE,
     err:err

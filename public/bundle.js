@@ -12232,59 +12232,7 @@ var FETCH_STORIES_SUCCESS = exports.FETCH_STORIES_SUCCESS = 'FETCH_STORIES_SUCCE
 var FETCH_STORIES_FAILURE = exports.FETCH_STORIES_FAILURE = 'FETCH_STORIES_FAILURE';
 
 /***/ }),
-/* 113 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.fetchStories = fetchStories;
-
-var _isomorphicFetch = __webpack_require__(147);
-
-var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
-
-var _actionTypes = __webpack_require__(112);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function fetchStoriesRequest() {
-  return {
-    type: _actionTypes.FETCH_STORIES_REQUEST
-  };
-}
-
-function fetchStoriesSuccess(stories) {
-  return {
-    type: _actionTypes.FETCH_STORIES_SUCCESS,
-    stories: stories
-  };
-}
-
-function fetchStoriesFailure(err) {
-  return {
-    type: _actionTypes.FETCH_STORIES_FAILURE,
-    err: err
-  };
-}
-
-function fetchStories() {
-  return function (dispatch) {
-    dispatch(fetchStoriesRequest());
-    return (0, _isomorphicFetch2.default)('/api/v1/stories').then(function (res) {
-      return res.json();
-    }).then(function (data) {
-      return dispatch(fetchStoriesSuccess(data));
-    }).catch(function (ex) {
-      return dispatch(fetchStoriesFailure(ex));
-    });
-  };
-}
-
-/***/ }),
+/* 113 */,
 /* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13838,7 +13786,7 @@ var _StoryLibrary = __webpack_require__(117);
 
 var _StoryLibrary2 = _interopRequireDefault(_StoryLibrary);
 
-var _actions = __webpack_require__(113);
+var _StoriesActions = __webpack_require__(281);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13860,7 +13808,7 @@ var StoryLibraryContainer = function (_React$Component) {
   _createClass(StoryLibraryContainer, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      this.props.dispatch((0, _actions.fetchStories)());
+      this.props.dispatch((0, _StoriesActions.fetchStories)());
     }
   }, {
     key: 'render',
@@ -29873,6 +29821,63 @@ module.exports = function(module) {
   self.fetch.polyfill = true
 })(typeof self !== 'undefined' ? self : this);
 
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.fetchStoriesRequest = fetchStoriesRequest;
+exports.fetchStoriesSuccess = fetchStoriesSuccess;
+exports.fetchStoriesFailure = fetchStoriesFailure;
+exports.fetchStories = fetchStories;
+
+var _isomorphicFetch = __webpack_require__(147);
+
+var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
+
+var _actionTypes = __webpack_require__(112);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//the first three actions are only exported for testing. We don't actually need to export them for the app
+function fetchStoriesRequest() {
+  return {
+    type: _actionTypes.FETCH_STORIES_REQUEST
+  };
+}
+
+function fetchStoriesSuccess(stories) {
+  return {
+    type: _actionTypes.FETCH_STORIES_SUCCESS,
+    stories: stories
+  };
+}
+
+function fetchStoriesFailure(err) {
+  return {
+    type: _actionTypes.FETCH_STORIES_FAILURE,
+    err: err
+  };
+}
+
+function fetchStories() {
+  return function (dispatch) {
+    dispatch(fetchStoriesRequest());
+    return (0, _isomorphicFetch2.default)('/api/v1/stories').then(function (res) {
+      return res.json();
+    }).then(function (data) {
+      return dispatch(fetchStoriesSuccess(data));
+    }).catch(function (ex) {
+      return dispatch(fetchStoriesFailure(ex));
+    });
+  };
+}
 
 /***/ })
 /******/ ]);

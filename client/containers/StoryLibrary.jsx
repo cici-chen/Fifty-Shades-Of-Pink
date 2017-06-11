@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 
 import StoryLibrary from '../components/StoryLibrary.jsx'
-import {fetchStories} from '../actions'
+import {fetchStories} from '../actions/StoriesActions'
 
 class StoryLibraryContainer extends React.Component{
 
