@@ -15007,84 +15007,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reduxForm = __webpack_require__(464);
 
+var _validationHomepageForm = __webpack_require__(507);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var validate = function validate(values) {
-  var errors = {};
-  if (!values.userName) {
-    errors.userName = 'Required';
-  }
-  if (!values.userGender) {
-    errors.userGender = 'Required';
-  }
-  if (!values.loverName) {
-    errors.loverName = 'Required';
-  }
-  if (!values.loverGender) {
-    errors.loverName = 'Required';
-  }
-  return errors;
-};
-
-var renderField = function renderField(_ref) {
-  var input = _ref.input,
-      label = _ref.label,
-      type = _ref.type,
-      _ref$meta = _ref.meta,
-      touched = _ref$meta.touched,
-      error = _ref$meta.error;
-
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'label',
-      null,
-      label
-    ),
-    _react2.default.createElement(
-      'div',
-      { id: 'required' },
-      _react2.default.createElement('input', _extends({}, input, { placeholder: label, type: type })),
-      touched && error && _react2.default.createElement(
-        'span',
-        null,
-        error
-      )
-    )
-  );
-};
-
-var radioRenderField = function radioRenderField(_ref2) {
-  var input = _ref2.input,
-      label = _ref2.label,
-      type = _ref2.type,
-      _ref2$meta = _ref2.meta,
-      touched = _ref2$meta.touched,
-      error = _ref2$meta.error;
-
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'div',
-      { id: 'required' },
-      touched && error && _react2.default.createElement(
-        'span',
-        null,
-        error
-      )
-    )
-  );
-};
 
 var HomepageForm = function HomepageForm(props) {
   var handleSubmit = props.handleSubmit,
@@ -15103,7 +15034,7 @@ var HomepageForm = function HomepageForm(props) {
         'My name is'
       ),
       _react2.default.createElement('br', null),
-      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userName', component: renderField, type: 'text' })
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userName', component: _validationHomepageForm.renderField, type: 'text' })
     ),
     _react2.default.createElement(
       'div',
@@ -15115,10 +15046,10 @@ var HomepageForm = function HomepageForm(props) {
       ),
       _react2.default.createElement('br', null),
       _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: 'input', type: 'radio', value: 'woman' }),
-      '//If you want this to be default add checked=\'woman\' woman',
+      'woman',
       _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: 'input', type: 'radio', value: 'man' }),
       'man',
-      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: radioRenderField, type: 'text' })
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: _validationHomepageForm.radioRenderField, type: 'text' })
     ),
     _react2.default.createElement(
       'div',
@@ -15129,7 +15060,7 @@ var HomepageForm = function HomepageForm(props) {
         'My lover\'s name is'
       ),
       _react2.default.createElement('br', null),
-      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'loverName', component: renderField, type: 'text' })
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'loverName', component: _validationHomepageForm.renderField, type: 'text' })
     ),
     _react2.default.createElement(
       'div',
@@ -15144,7 +15075,7 @@ var HomepageForm = function HomepageForm(props) {
       'woman',
       _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'loverGender', component: 'input', type: 'radio', value: 'man' }),
       'man',
-      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: radioRenderField, type: 'text' })
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: _validationHomepageForm.radioRenderField, type: 'text' })
     ),
     _react2.default.createElement(
       'button',
@@ -15161,7 +15092,7 @@ var HomepageForm = function HomepageForm(props) {
 
 var createReduxForm = (0, _reduxForm.reduxForm)({
   form: 'homepage',
-  validate: validate
+  validate: _validationHomepageForm.validate
 });
 HomepageForm = createReduxForm(HomepageForm);
 
@@ -40526,6 +40457,96 @@ module.exports = function(module) {
   self.fetch.polyfill = true
 })(typeof self !== 'undefined' ? self : this);
 
+
+/***/ }),
+/* 507 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var validate = function validate(values) {
+  var errors = {};
+  if (!values.userName) {
+    errors.userName = 'Required';
+  }
+  if (!values.userGender) {
+    errors.userGender = 'Required';
+  }
+  if (!values.loverName) {
+    errors.loverName = 'Required';
+  }
+  if (!values.loverGender) {
+    errors.loverName = 'Required';
+  }
+  return errors;
+};
+
+var renderField = function renderField(_ref) {
+  var input = _ref.input,
+      label = _ref.label,
+      type = _ref.type,
+      _ref$meta = _ref.meta,
+      touched = _ref$meta.touched,
+      error = _ref$meta.error;
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'label',
+      null,
+      label
+    ),
+    _react2.default.createElement(
+      'div',
+      { id: 'required' },
+      _react2.default.createElement('input', _extends({}, input, { placeholder: label, type: type })),
+      touched && error && _react2.default.createElement(
+        'span',
+        null,
+        error
+      )
+    )
+  );
+};
+
+var radioRenderField = function radioRenderField(_ref2) {
+  var input = _ref2.input,
+      label = _ref2.label,
+      type = _ref2.type,
+      _ref2$meta = _ref2.meta,
+      touched = _ref2$meta.touched,
+      error = _ref2$meta.error;
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      { id: 'required' },
+      touched && error && _react2.default.createElement(
+        'span',
+        null,
+        error
+      )
+    )
+  );
+};
+
+module.exports = {
+  validate: validate,
+  renderField: renderField,
+  radioRenderField: radioRenderField
+};
 
 /***/ })
 /******/ ]);
