@@ -45,7 +45,6 @@ export default class Form extends React.Component {
   }
 
   render(){
-    console.log("Data is being entered into the form: ", this.state);
     return(
       <div className='form'>
         <p>Welcome! We've been waiting to tell your story!</p>

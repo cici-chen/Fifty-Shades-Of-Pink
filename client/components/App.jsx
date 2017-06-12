@@ -3,7 +3,6 @@ import {HashRouter as Router, Route} from 'react-router-dom'
 
 import Header from './Header'
 import ErrorMessage from './ErrorMessage'
-import Form from './Form'
 import FiftyChapterHeader from './headers/FiftyChapterHeader'
 import FiftyChapOne from './fifty/FiftyChapOne'
 import FiftyChapTwo from './fifty/FiftyChapTwo'
@@ -13,6 +12,7 @@ import HotelChapTwo from './hotel/HotelChapTwo'
 import MaskChapOne from './mask/MaskChapOne'
 
 import StoryLibrary from '../containers/StoryLibrary'
+import HomePage from '../containers/HomePage'
 
 class App extends React.Component {
   constructor(props) {
@@ -32,15 +32,12 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("react state in app now is: ", this.state.user);
     return (
       <Router>
         <div className='app'>
           <ErrorMessage error={this.state.error} />
           <Header />
-          <Route exact path='/' component={() =>
-              <Form passPropGotoStoryLibrary={this.gotoStoryLibrary.bind(this)} /> }
-            />
+          <HomePage />
           <div className='content'>
           <Route path = '/story-library' component={() =>
               <StoryLibrary /> }
