@@ -8,7 +8,7 @@ class HomePage extends React.Component {
   }
   render(){
     return (
-      <div>
+      <div className='home-page'>
         <p>Welcome! We've been waiting to tell your story!</p>
         <HomepageForm onSubmit={this.submit} />
       </div>

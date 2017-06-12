@@ -40299,6 +40299,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
@@ -40307,8 +40309,79 @@ var _reduxForm = __webpack_require__(463);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var validate = function validate(values) {
+  var errors = {};
+  if (!values.userName) {
+    errors.userName = 'Required';
+  }
+  if (!values.userGender) {
+    errors.userGender = 'Required';
+  }
+  if (!values.loverName) {
+    errors.loverName = 'Required';
+  }
+  if (!values.loverGender) {
+    errors.loverName = 'Required';
+  }
+  return errors;
+};
+
+var renderField = function renderField(_ref) {
+  var input = _ref.input,
+      label = _ref.label,
+      type = _ref.type,
+      _ref$meta = _ref.meta,
+      touched = _ref$meta.touched,
+      error = _ref$meta.error;
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'label',
+      null,
+      label
+    ),
+    _react2.default.createElement(
+      'div',
+      { id: 'required' },
+      _react2.default.createElement('input', _extends({}, input, { placeholder: label, type: type })),
+      touched && error && _react2.default.createElement(
+        'span',
+        null,
+        error
+      )
+    )
+  );
+};
+
+var radioRenderField = function radioRenderField(_ref2) {
+  var input = _ref2.input,
+      label = _ref2.label,
+      type = _ref2.type,
+      _ref2$meta = _ref2.meta,
+      touched = _ref2$meta.touched,
+      error = _ref2$meta.error;
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      { id: 'required' },
+      touched && error && _react2.default.createElement(
+        'span',
+        null,
+        error
+      )
+    )
+  );
+};
+
 var HomepageForm = function HomepageForm(props) {
-  var handleSubmit = props.handleSubmit;
+  var handleSubmit = props.handleSubmit,
+      reset = props.reset,
+      submitting = props.submitting;
 
   return _react2.default.createElement(
     'form',
@@ -40318,56 +40391,70 @@ var HomepageForm = function HomepageForm(props) {
       null,
       _react2.default.createElement(
         'label',
-        { className: 'userName' },
+        null,
         'My name is'
       ),
-      _react2.default.createElement(_reduxForm.Field, { name: 'userName', component: 'input', type: 'text' })
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userName', component: renderField, type: 'text' })
     ),
     _react2.default.createElement(
       'div',
       null,
       _react2.default.createElement(
         'label',
-        { className: 'userGender' },
+        null,
         'I am a'
       ),
-      _react2.default.createElement(_reduxForm.Field, { name: 'userGender', component: 'input', type: 'radio', value: 'woman' }),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: 'input', type: 'radio', value: 'woman' }),
       'woman',
-      _react2.default.createElement(_reduxForm.Field, { name: 'userGender', component: 'input', type: 'radio', value: 'man' }),
-      'man'
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: 'input', type: 'radio', value: 'man' }),
+      'man',
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: radioRenderField, type: 'text' })
     ),
     _react2.default.createElement(
       'div',
       null,
       _react2.default.createElement(
         'label',
-        { className: 'loverName' },
+        null,
         'My lover\'s name is'
       ),
-      _react2.default.createElement(_reduxForm.Field, { name: 'loverName', component: 'input', type: 'text' })
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'loverName', component: renderField, type: 'text' })
     ),
     _react2.default.createElement(
       'div',
       null,
       _react2.default.createElement(
         'label',
-        { className: 'loverGender' },
+        null,
         'My lover is a'
       ),
-      _react2.default.createElement(_reduxForm.Field, { name: 'loverGender', component: 'input', type: 'radio', value: 'woman' }),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'loverGender', component: 'input', type: 'radio', value: 'woman' }),
       'woman',
-      _react2.default.createElement(_reduxForm.Field, { name: 'loverGender', component: 'input', type: 'radio', value: 'man' }),
-      'man'
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'loverGender', component: 'input', type: 'radio', value: 'man' }),
+      'man',
+      _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: radioRenderField, type: 'text' })
     ),
     _react2.default.createElement(
       'button',
-      { type: 'submit' },
+      { className: 'input-field', type: 'submit' },
       'Read My Stories'
+    ),
+    _react2.default.createElement(
+      'button',
+      { className: 'input-field', type: 'button', disabled: submitting, onClick: reset },
+      'Clear Values'
     )
   );
 };
 
-var createReduxForm = (0, _reduxForm.reduxForm)({ form: 'homepage' });
+var createReduxForm = (0, _reduxForm.reduxForm)({
+  form: 'homepage',
+  validate: validate
+});
 HomepageForm = createReduxForm(HomepageForm);
 
 exports.default = HomepageForm;
@@ -40425,7 +40512,7 @@ var HomePage = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'home-page' },
         _react2.default.createElement(
           'p',
           null,

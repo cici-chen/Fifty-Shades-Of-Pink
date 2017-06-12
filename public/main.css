@@ -26,6 +26,20 @@ a:link {
 .form {
   font-size: 2.5em;
   font-family: 'Garamond';
+  line-height: 75px;
+}
+
+.home-page p{
+  font-size: 2em;
+}
+
+.input-field{
+  font-size: 1em;
+}
+
+#required{
+  color:pink;
+  font-size: 3em;
 }
 
 /*Not sure what should be the min-width here*/
