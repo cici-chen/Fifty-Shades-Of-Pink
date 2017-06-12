@@ -1,8 +1,11 @@
 /*Mobile First*/
 body {
   text-align: center;
-  background: #1d191f;
-  color: #fff
+  height: 100%;
+  background: #222222;
+	font-family: 'Lato', sans-serif;
+  color: #AAAAAA;
+  /*copied from https://codepen.io/AngelaVelasquez/pen/Eypnq */
 }
 .site-header h1 {
 	color: #fff;
@@ -25,21 +28,58 @@ a:link {
 
 .form {
   font-size: 2.5em;
-  font-family: 'Garamond';
+  font-family: 'Lato', sans-serif;
   line-height: 75px;
+  margin: auto;
+  width: 80%;
 }
 
-.home-page p{
-  font-size: 2em;
+#divider{
+  margin: auto;
+  border-bottom: 0.1em solid #333;
+  width:50%;
 }
 
-.input-field{
+#welcome{
+  font-size: 2.5em;
+}
+
+input[type=text]{
+  padding:0.2em;
   font-size: 1em;
+  width:30%;
+}
+
+input[type=radio]{
+  visibility: hidden;
+}
+
+.check{
+  display: inline-block;
+  border: 5px solid #AAAAAA;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  top: 30px;
+  left: 20px;
+	z-index: 5;
+	transition: border .25s linear;
+	-webkit-transition: border .25s linear;
 }
 
 #required{
   color:pink;
-  font-size: 3em;
+  font-size: 1em;
+}
+
+.form-button{
+  padding:0.5em;
+  font-size: 1em;
+  margin: 0.5em;
+  border-radius: 25px;
+  color:white;
+  font-weight: 600;
+  background-color: lightpink;
 }
 
 /*Not sure what should be the min-width here*/

@@ -1,19 +1,25 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 import HomepageForm from '../components/HomepageForm'
+import {addUser} from '../actions/UserActions'
 
 class HomePage extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
   submit=(values)=>{
-    console.log(values);
+    this.props.dispatch(addUser(values))
   }
   render(){
     return (
       <div className='home-page'>
-        <p>Welcome! We've been waiting to tell your story!</p>
+        <p id='welcome'>Welcome! We've been waiting to tell your story!</p>
         <HomepageForm onSubmit={this.submit} />
       </div>
     )
   }
 }
 
-export default HomePage
+export default connect()(HomePage)

@@ -13,14 +13,14 @@ let HomepageForm = props => {
         <Field className='input-field' name='userName' component={renderField} type='text' />
       </div>
       <div>
-        <label>I am a</label>
-        <br/>
-        <Field className='input-field' name='userGender' component='input' type='radio' value='woman' />
-        woman
-        <Field className='input-field' name='userGender' component='input' type='radio' value='man' />
-        man
+        <label>I am a </label>
+        <Field  id='user-woman' name='userGender' component='input' type='radio' value='woman' />
+        <label for='user-woman'> woman </label>
+        <Field  id='user-man' name='userGender' component='input' type='radio' value='man' />
+        <label for='user-man'> man </label>
         <Field className='input-field' name='userGender' component={radioRenderField} type='text' />
       </div>
+      <div id='divider'></div>
       <div>
         <label>My lover's name is</label>
         <br/>
@@ -35,8 +35,8 @@ let HomepageForm = props => {
         man
         <Field className='input-field' name='userGender'component={radioRenderField} type='text' />
       </div>
-      <button className='input-field' type='submit'>Read My Stories</button>
-      <button className='input-field' type='button' disabled={submitting} onClick={reset}>Clear Values</button>
+      <button className='form-button' type='submit'>Read My Stories</button>
+      <button className='form-button' type='button' disabled={submitting} onClick={reset}>Clear Values</button>
     </form>
   )
 }
