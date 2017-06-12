@@ -14813,10 +14813,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(26);
 
-var _Header = __webpack_require__(183);
-
-var _Header2 = _interopRequireDefault(_Header);
-
 var _ErrorMessage = __webpack_require__(182);
 
 var _ErrorMessage2 = _interopRequireDefault(_ErrorMessage);
@@ -14856,6 +14852,10 @@ var _StoryLibrary2 = _interopRequireDefault(_StoryLibrary);
 var _HomePage = __webpack_require__(195);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
+
+var _HeaderContainer = __webpack_require__(512);
+
+var _HeaderContainer2 = _interopRequireDefault(_HeaderContainer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14903,8 +14903,8 @@ var App = function (_React$Component) {
           'div',
           { className: 'app' },
           _react2.default.createElement(_ErrorMessage2.default, { error: this.state.error }),
-          _react2.default.createElement(_Header2.default, null),
-          _react2.default.createElement(_HomePage2.default, null),
+          _react2.default.createElement(_HeaderContainer2.default, null),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _HomePage2.default }),
           _react2.default.createElement(
             'div',
             { className: 'content' },
@@ -15148,17 +15148,19 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var header = "read my story";
+
 exports.default = function (props) {
   return _react2.default.createElement(
-    'div',
-    { className: 'site-header' },
+    "div",
+    { className: "site-header" },
     _react2.default.createElement(
-      'a',
-      { href: '/' },
+      "a",
+      { href: "/" },
       _react2.default.createElement(
-        'h1',
+        "h1",
         null,
-        'Read My Story'
+        header
       )
     )
   );
@@ -15215,13 +15217,13 @@ var HomepageForm = function HomepageForm(props) {
       _react2.default.createElement(_reduxForm.Field, { id: 'user-woman', name: 'userGender', component: 'input', type: 'radio', value: 'woman' }),
       _react2.default.createElement(
         'label',
-        { 'for': 'user-woman' },
+        null,
         ' woman '
       ),
       _react2.default.createElement(_reduxForm.Field, { id: 'user-man', name: 'userGender', component: 'input', type: 'radio', value: 'man' }),
       _react2.default.createElement(
         'label',
-        { 'for': 'user-man' },
+        null,
         ' man '
       ),
       _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: _validationHomepageForm.radioRenderField, type: 'text' })
@@ -15244,13 +15246,20 @@ var HomepageForm = function HomepageForm(props) {
       _react2.default.createElement(
         'label',
         null,
-        'My lover is a'
+        'My lover is a '
       ),
-      _react2.default.createElement('br', null),
       _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'loverGender', component: 'input', type: 'radio', value: 'woman' }),
-      'woman',
+      _react2.default.createElement(
+        'label',
+        null,
+        ' woman '
+      ),
       _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'loverGender', component: 'input', type: 'radio', value: 'man' }),
-      'man',
+      _react2.default.createElement(
+        'label',
+        null,
+        ' man '
+      ),
       _react2.default.createElement(_reduxForm.Field, { className: 'input-field', name: 'userGender', component: _validationHomepageForm.radioRenderField, type: 'text' })
     ),
     _react2.default.createElement(
@@ -16645,6 +16654,7 @@ var HomePage = function (_React$Component) {
 
     _this.submit = function (values) {
       _this.props.dispatch((0, _UserActions.addUser)(values));
+      location.href = '#story-library';
     };
 
     return _this;
@@ -16659,7 +16669,7 @@ var HomePage = function (_React$Component) {
         _react2.default.createElement(
           'p',
           { id: 'welcome' },
-          'Welcome! We\'ve been waiting to tell your story!'
+          'We\'ve been waiting to tell your story!'
         ),
         _react2.default.createElement(_HomepageForm2.default, { onSubmit: this.submit })
       );
@@ -40646,6 +40656,65 @@ function user() {
       return state;
   }
 }
+
+/***/ }),
+/* 511 */,
+/* 512 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(18);
+
+var _Header = __webpack_require__(183);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import fetchPageHeader from '../actions/PageActions'
+
+var HeaderContainer = function (_React$Component) {
+  _inherits(HeaderContainer, _React$Component);
+
+  function HeaderContainer(props) {
+    _classCallCheck(this, HeaderContainer);
+
+    var _this = _possibleConstructorReturn(this, (HeaderContainer.__proto__ || Object.getPrototypeOf(HeaderContainer)).call(this, props));
+
+    console.log(window.location.hash);
+    return _this;
+  }
+
+  _createClass(HeaderContainer, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(_Header2.default, null);
+    }
+  }]);
+
+  return HeaderContainer;
+}(_react2.default.Component);
+
+exports.default = HeaderContainer;
+// export default connect(state=>{header:state.page.header}) HeaderContainer
 
 /***/ })
 /******/ ]);

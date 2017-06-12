@@ -11,11 +11,12 @@ class HomePage extends React.Component {
 
   submit=(values)=>{
     this.props.dispatch(addUser(values))
+    location.href='#story-library'
   }
   render(){
     return (
       <div className='home-page'>
-        <p id='welcome'>Welcome! We've been waiting to tell your story!</p>
+        <p id='welcome'>We've been waiting to tell your story!</p>
         <HomepageForm onSubmit={this.submit} />
       </div>
     )

@@ -1,7 +1,6 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 
-import Header from './Header'
 import ErrorMessage from './ErrorMessage'
 import FiftyChapterHeader from './headers/FiftyChapterHeader'
 import FiftyChapOne from './fifty/FiftyChapOne'
@@ -13,6 +12,7 @@ import MaskChapOne from './mask/MaskChapOne'
 
 import StoryLibrary from '../containers/StoryLibrary'
 import HomePage from '../containers/HomePage'
+import HeaderContainer from '../containers/HeaderContainer'
 
 class App extends React.Component {
   constructor(props) {
@@ -36,8 +36,8 @@ class App extends React.Component {
       <Router>
         <div className='app'>
           <ErrorMessage error={this.state.error} />
-          <Header />
-          <HomePage />
+          <HeaderContainer />
+          <Route exact path='/' component={HomePage}/>
           <div className='content'>
           <Route path = '/story-library' component={() =>
               <StoryLibrary /> }

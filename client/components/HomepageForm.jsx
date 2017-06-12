@@ -15,9 +15,9 @@ let HomepageForm = props => {
       <div>
         <label>I am a </label>
         <Field  id='user-woman' name='userGender' component='input' type='radio' value='woman' />
-        <label for='user-woman'> woman </label>
+        <label> woman </label>
         <Field  id='user-man' name='userGender' component='input' type='radio' value='man' />
-        <label for='user-man'> man </label>
+        <label> man </label>
         <Field className='input-field' name='userGender' component={radioRenderField} type='text' />
       </div>
       <div id='divider'></div>
@@ -27,12 +27,11 @@ let HomepageForm = props => {
         <Field className='input-field' name='loverName' component={renderField} type='text' />
       </div>
       <div>
-        <label>My lover is a</label>
-        <br/>
+        <label>My lover is a </label>
         <Field className='input-field' name='loverGender' component='input' type='radio' value='woman'/>
-        woman
+        <label> woman </label>
         <Field className='input-field' name='loverGender' component='input' type='radio' value='man'/>
-        man
+        <label> man </label>
         <Field className='input-field' name='userGender'component={radioRenderField} type='text' />
       </div>
       <button className='form-button' type='submit'>Read My Stories</button>
