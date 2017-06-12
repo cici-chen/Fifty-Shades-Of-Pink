@@ -1,0 +1,12 @@
+
+exports.seed = function(knex, Promise) {
+  // Deletes ALL existing entries
+  return knex('headers').del()
+    .then(function () {
+      // Inserts seed entries
+      return knex('headers').insert([
+        {id: 1, pageUrl:'/', header:'read my story'},
+        {id: 2, pageUrl:'/story-library', header:'choose a story'}
+      ]);
+    });
+};

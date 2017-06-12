@@ -18,7 +18,7 @@ test('getUser gets a single user by id in the database', function (t) {
     })
 })
 
-var object={
+let object={
   user_name:'Mary',
   user_gender:'woman',
   lover_name:'George Clooney',
@@ -47,5 +47,14 @@ test('getStories get all stories in the database', function (t){
     .then((result)=>{
       t.is(result.length,3)
       t.is(result[1].name,"hotel-room")
+    })
+})
+
+let pageUrl='/'
+
+test('getHeader gets one header corresponding to pageUrl', function(t){
+  return db.getHeader(pageUrl,t.context.connection)
+    .then((result)=>{
+      t.is(result.header,'read my story')
     })
 })

@@ -17,8 +17,13 @@ function getStories(connection){
   return connection('stories').select()
 }
 
+function getHeader(pageUrl,connection){
+  return connection('headers').where('pageUrl',pageUrl).first()
+}
+
 module.exports = {
   getUser,
   saveUser,
-  getStories
+  getStories,
+  getHeader
 }

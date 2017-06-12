@@ -30,4 +30,12 @@ router.get('/stories', function(req,res){
 }
 )
 
+router.get('/headers', function(req,res){
+  let db=req.app.get('knex-database')
+  dbFunctions.getHeader((req.query.url),db)
+    .then(result=>{
+      res.json(result.header)
+    })
+} )
+
 module.exports = router

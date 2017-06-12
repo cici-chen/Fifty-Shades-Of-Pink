@@ -17,7 +17,6 @@ const StoryLibrary = ({stories}) => {
 
   return(
       <div className="story-library">
-        <h2>Choose A Story</h2>
         <div className='row'>
           {renderStories()}
         </div>

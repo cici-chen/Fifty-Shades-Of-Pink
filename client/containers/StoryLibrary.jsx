@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
+import HeaderContainer from './HeaderContainer'
 import StoryLibrary from '../components/StoryLibrary.jsx'
+
 import {fetchStories} from '../actions/StoriesActions'
 
 class StoryLibraryContainer extends React.Component{
@@ -17,6 +19,7 @@ class StoryLibraryContainer extends React.Component{
   render(){
     return(
       <div>
+        <HeaderContainer />
         <StoryLibrary stories={this.props.stories}/>
       </div>
     )

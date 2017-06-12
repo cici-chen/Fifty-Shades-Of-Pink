@@ -1,5 +1,6 @@
 import * as StoryActions from '../../client/actions/StoriesActions'
 import * as UserActions from '../../client/actions/UserActions'
+import * as PageActions from '../../client/actions/PageActions'
 import * as types from '../../client/actions/actionTypes'
 
 describe('story actions', ()=> {
@@ -55,5 +56,25 @@ describe('user actions', ()=> {
       err
     }
     expect(UserActions.addUserFailure(err)).toEqual(expectedAction)
+  })
+})
+
+describe('page actions', ()=> {
+  test('fetchHeaderSuccess creates an action to add page header to store',()=>{
+    const header='read my story'
+    const expectedAction = {
+      type: types.FETCH_HEADER_SUCCESS,
+      header
+    }
+    expect(PageActions.fetchHeaderSuccess(header)).toEqual(expectedAction)
+  })
+
+  test('fetchHeaderFailure creates an action to return err',()=>{
+    const err = "internal server error"
+    const expectedAction = {
+      type: types.FETCH_HEADER_FAILURE,
+      err
+    }
+    expect(PageActions.fetchHeaderFailure(err)).toEqual(expectedAction)
   })
 })
