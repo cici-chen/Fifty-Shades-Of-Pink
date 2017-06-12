@@ -52,9 +52,10 @@ let HomepageForm = props => {
       <div>
         <label>I am a</label>
         <br/>
-        <Field className='input-field' name='userGender' component='input' type='radio' value='woman'/>
+        <Field className='input-field' name='userGender' component='input' type='radio' value='woman' />
+        //If you want this to be default add checked='woman'
         woman
-        <Field className='input-field' name='userGender' component='input' type='radio' value='man'/>
+        <Field className='input-field' name='userGender' component='input' type='radio' value='man' />
         man
         <Field className='input-field' name='userGender' component={radioRenderField} type='text' />
       </div>
