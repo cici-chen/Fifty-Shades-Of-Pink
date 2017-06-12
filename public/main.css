@@ -51,7 +51,8 @@ input[type=text]{
 }
 
 input[type=radio]{
-  size:2em;
+  transform:scale(2.5);
+  margin:1em;
 }
 
 #required{
