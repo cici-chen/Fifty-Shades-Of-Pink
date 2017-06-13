@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+import {getUser} from '../actions/UserActions'
+
 import HeaderContainer from './HeaderContainer'
 
 class ChapterContainer extends React.Component {
@@ -13,9 +15,13 @@ class ChapterContainer extends React.Component {
     };
   }
 
+  componentWillMount(){
+    this.props.dispatch(getUser())
+  }
+
   render() {
     let {Sabrina, her, she, Lily, his, he, NewYork, GongYoo} = "DOH"
-    console.log(this.props);
+    console.log(this.props.user.user);
     return (
       <div>
         <HeaderContainer storyTitle={this.state.storyTitle}/>

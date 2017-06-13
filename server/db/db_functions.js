@@ -1,5 +1,5 @@
-function getUser(id, connection){
-  return connection('users').where('id', id)
+function getUsers(connection){
+  return connection('users').select()
 }
 
 function saveUser(object, connection){
@@ -22,7 +22,7 @@ function getHeader(pageUrl,connection){
 }
 
 module.exports = {
-  getUser,
+  getUsers,
   saveUser,
   getStories,
   getHeader

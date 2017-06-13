@@ -23,12 +23,12 @@ describe('user reducers', ()=> {
     expect(
       reducer(initalState,{
         type:types.ADD_USER_SUCCESS,
-        user:user
+        add_user_status:201
       })
     ).toEqual(
       {
         ...initalState,
-        user
+        add_user_status:201
       }
     )
   })
@@ -42,6 +42,33 @@ describe('user reducers', ()=> {
       {
         ...initalState,
         err:"something is just no right..."
+      }
+    )
+  })
+
+  test('handles GET_USER_SUCCESS, add user to state', ()=>{
+    expect(
+      reducer(initalState,{
+        type:types.GET_USER_SUCCESS,
+        user:user
+      })
+    ).toEqual(
+      {
+        ...initalState,
+        user
+      }
+    )
+  })
+
+  test('handles GET_USER_FAILURE by adding error to state', ()=>{
+    expect(
+      reducer(initalState,{
+        type:types.GET_USER_FAILURE,
+        err:"shiet is broken"})
+    ).toEqual(
+      {
+        ...initalState,
+        get_user_error:"shiet is broken"
       }
     )
   })

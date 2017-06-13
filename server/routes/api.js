@@ -5,11 +5,21 @@ const dbFunctions = require('../db/db_functions')
 
 //url is set as having api/v1 as prefix
 
-router.get('/users/:id',function(req,res){
+//this is not being used by app, but it's a nice way for me to see the table
+router.get('/users',function(req,res){
   let db=req.app.get('knex-database')
-  dbFunctions.getUser(req.params.id, db)
-    .then(userData => {
-      res.json(userData)
+  dbFunctions.getUsers(db)
+    .then(users => {
+      res.json(users)
+    })
+})
+
+router.get('/users/newest',function(req,res){
+  let db=req.app.get('knex-database')
+  dbFunctions.getUsers(db)
+    .then(users=>{
+      let index=users.length-1
+      res.json(users[index])
     })
 })
 

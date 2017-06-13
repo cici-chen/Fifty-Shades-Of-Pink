@@ -9,12 +9,11 @@ configurationDatabase(test)
 
 var db = require('../../server/db/db_functions')
 
-test('getUser gets a single user by id in the database', function (t) {
-  var expected = 'Sabrina'
-  return db.getUser(1, t.context.connection)
+test('getUsers gets a all users in the database', function (t) {
+  return db.getUsers(t.context.connection)
     .then(function(result){
-      var actual = result[0].user_name
-      t.is(expected, actual)
+      var actual = result.length
+      t.is(3, actual)
     })
 })
 
@@ -35,7 +34,7 @@ test('saveUser saves a gingle user to the database', function (t){
 test('saveUser saves user info into the database', function (t){
   return db.saveUser(object, t.context.connection)
     .then((res)=>{
-      return t.context.connection('users').select().where('id',2).first()
+      return t.context.connection('users').select().where('id',4).first()
     })
     .then((res)=>{
       t.is(res.user_name,"Mary")

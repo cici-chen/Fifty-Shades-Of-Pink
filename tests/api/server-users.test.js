@@ -15,15 +15,27 @@ configureDatabase(test, function (db) {
   app.set('knex-database', db)
 })
 
-test.cb('GET /api/v1/users/:id gets single user', function (t) {
+test.cb('GET /api/v1/users gets all users', function (t) {
   request(app)
-    .get('/api/v1/users/1')
+    .get('/api/v1/users')
     .expect('Content-Type', /json/)
     .expect(200)
     .end(function (err, res) {
       if (err) throw err
-      t.is(res.body.length, 1)
+      t.is(res.body.length, 3)
       t.is(res.body[0].user_name, 'Sabrina')
+      t.end()
+    })
+})
+
+test.cb('GET /api/v1/users/newest gets the newest user', function (t) {
+  request(app)
+    .get('/api/v1/users/newest')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .end(function (err, res) {
+      if (err) throw err
+      t.is(res.body.user_name, 'John Snow')
       t.end()
     })
 })
@@ -44,8 +56,8 @@ test.cb('POST /api/v1/users adds a new user to database', (t) => {
     .end((err, res) => {
       if (err) throw err
       return t.context.connection('users').select().then((result)=>{
-        t.is(result.length, 2)
-        t.is(result[1].user_name, 'Mary')
+        t.is(result.length, 4)
+        t.is(result[3].user_name, 'Mary')
         t.end()
       })
     })

@@ -34,19 +34,20 @@ describe('story actions', ()=> {
 })
 
 describe('user actions', ()=> {
-  test('addUserSuccess creates an action to add a user to store',()=>{
-    const user={
-      userName: "Sabrina",
-      userGender: "woman",
-      loverName: "Brad Pitt",
-      loverGender: "man"
-    }
 
+  const user={
+    userName: "Sabrina",
+    userGender: "woman",
+    loverName: "Brad Pitt",
+    loverGender: "man"
+  }
+
+  test('addUserSuccess creates an action to add a user to store',()=>{
     const expectedAction = {
       type: types.ADD_USER_SUCCESS,
-      user
+      add_user_status:201
     }
-    expect(UserActions.addUserSuccess(user)).toEqual(expectedAction)
+    expect(UserActions.addUserSuccess(201)).toEqual(expectedAction)
   })
 
   test('addUserFailure creates an action to return err',()=>{
@@ -57,6 +58,24 @@ describe('user actions', ()=> {
     }
     expect(UserActions.addUserFailure(err)).toEqual(expectedAction)
   })
+
+  test('getUserSuccess creates an action to get a user to store',()=>{
+    const expectedAction = {
+      type: types.GET_USER_SUCCESS,
+      user
+    }
+    expect(UserActions.getUserSuccess(user)).toEqual(expectedAction)
+  })
+
+  test('getUserFailure creates an action to return err',()=>{
+    const err = "fiakkkkkk broken"
+    const expectedAction = {
+      type: types.GET_USER_FAILURE,
+      err
+    }
+    expect(UserActions.getUserFailure(err)).toEqual(expectedAction)
+  })
+
 })
 
 describe('page actions', ()=> {
