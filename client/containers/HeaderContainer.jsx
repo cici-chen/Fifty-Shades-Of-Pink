@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Header from '../components/Header'
-// import fetchPageHeader from '../actions/PageActions'
+import {fetchPageHeader} from '../actions/PageActions'
 
 class HeaderContainer extends React.Component {
   constructor(props){
@@ -10,16 +10,14 @@ class HeaderContainer extends React.Component {
   }
 
   componentWillMount(){
-
+    //get rid of the # in url, thanks to Harrison
     let url = window.location.hash.split('').filter(char => char != '#').join('')
     this.props.dispatch(fetchPageHeader(url))
-    console.log({url});
   }
 
   render(){
-    return <Header/>
+      return <Header header={this.props.header}/>
   }
 }
 
-export default connect()(HeaderContainer)
-// export default connect(state=>{header:state.page.header}) HeaderContainer
+export default connect(state=>state.header)(HeaderContainer)

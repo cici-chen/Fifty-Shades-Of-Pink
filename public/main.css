@@ -72,6 +72,30 @@ input[type=radio]{
 }
 
 /*story-library page*/
+.story-library-item{
+  display: flex;
+  margin: 1em;
+  border-bottom: 0.1em solid #333;
+}
+.bookcover img{
+  width:376px;
+  height:642px;
+}
+.book-info{
+  padding: 1em 1em 1em 2em;
+}
+#story-title{
+  font-size: 3em;
+  border-bottom: 0.2em solid #333;
+  text-align:left;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.story-description{
+  font-size: 1.5em;
+  text-align: left;
+}
 
 /*Not sure what should be the min-width here*/
 /*DESKTOP VERSION*/
