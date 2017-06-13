@@ -24,7 +24,6 @@ export function addUser(user){
     return fetch('/api/v1/users',{
       method:'POST',
       body:user})
-      .then(res=>res.send(201))
       .then(user=>dispatch(addUserSuccess(user)))
       .catch(ex=>dispatch(addUserFailure(ex)))
   }

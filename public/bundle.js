@@ -15122,9 +15122,7 @@ function addUser(user) {
   return function (dispatch) {
     return (0, _isomorphicFetch2.default)('/api/v1/users', {
       method: 'POST',
-      body: user }).then(function (res) {
-      return res.send(201);
-    }).then(function (user) {
+      body: user }).then(function (user) {
       return dispatch(addUserSuccess(user));
     }).catch(function (ex) {
       return dispatch(addUserFailure(ex));
@@ -15454,10 +15452,132 @@ var ChapterContainer = function (_React$Component) {
   _createClass(ChapterContainer, [{
     key: 'render',
     value: function render() {
+      var _DOH = "DOH",
+          Sabrina = _DOH.Sabrina,
+          her = _DOH.her,
+          she = _DOH.she,
+          Lily = _DOH.Lily,
+          his = _DOH.his,
+          he = _DOH.he,
+          NewYork = _DOH.NewYork,
+          GongYoo = _DOH.GongYoo;
+
+      console.log(this.props);
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_HeaderContainer2.default, { storyTitle: this.state.storyTitle })
+        _react2.default.createElement(_HeaderContainer2.default, { storyTitle: this.state.storyTitle }),
+        _react2.default.createElement(
+          'div',
+          { className: 'single-chapter' },
+          _react2.default.createElement(
+            'div',
+            { className: 'story-container' },
+            _react2.default.createElement(
+              'p',
+              { className: 'chapter-number' },
+              'CHAPTER ONE'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              Sabrina,
+              ' woke up this morning being damn annoyed at ',
+              her,
+              ' hair. It always looks like a mess after a night\'s sleep. But this morning is particularly stressful because ',
+              she,
+              ' is running late to a meeting, a meeting which ',
+              she,
+              ' didn\'t sign up for. Early this morning ',
+              Sabrina,
+              ' got a phone call from ',
+              her,
+              ' friend ',
+              Lily,
+              ' who is an internationally renowned photographer.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              Lily,
+              ' apparently drank way too much at a gallery opening and had been throwing up all night. There was not way that ',
+              Lily,
+              ' could make it to a photoshoot scheduled today.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Why can\'t you just postpone it?" ',
+              Sabrina,
+              ' asked while still half asleep.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Dude I wish I could duh! I called my assisant. But this person is apparently some big shot, and ',
+              his,
+              ' schedule is ridiculously unflexible. The shoot was apparently scheduled 3 months ago and ',
+              he,
+              ' is flying to another country this afternoon. Vogue will kill me if I mess up their magazine cover photo." said ',
+              Lily
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"What?! This is for Vogue? And it\'s the cover photoshoot? Is this a joke? You are telling me that you want me to pretend to be you and shoot a cover for Vogue? Have you lost your mind?" ',
+              Sabrina,
+              ' was shocked by ',
+              her,
+              ' friend\'s request.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"You will be fine. I have seen portraits you\'ve shot on your instagram. You have amazing athestics, and a natural grasp on light and framing. I know a great photographer when I see one. I will photoshop the photos afterwards. I\'ve been doing this for a long time. Trust me, you will be fine." ',
+              Lily,
+              ' said affirmatively.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Um... No thanks. I can not handle this kind of pressure." ',
+              Sabrina,
+              ' was not convinced.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Pleaseeee pleassseee. Just think of it this way. No matter how bad a job you do, it can not be worse than my not having photos at all.. I\'m begging you. If I mess this up Vogue will never gives me gigs again. And they pay me well. I really need this. You know that I\'ve been working really hard to have enough saving to open my own gallery." ',
+              Lily,
+              ' started to choke on the other end of the phone.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              '"Ahhh. I can\'t believe I\'m saying this... But OK. I\'ll go. Send me the address." Somestimes ',
+              Sabrina,
+              ' really wish ',
+              she,
+              ' knew how to say no to a crying friend.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'In a hurry, ',
+              Sabrina,
+              ' threw on a lightblue cotton shirt and a pair of jeans, and jumped into a taxi.'
+            )
+          ),
+          _react2.default.createElement(
+            'a',
+            { href: '/stories/fifty-shades-of-pink/chapter/2' },
+            _react2.default.createElement(
+              'button',
+              { className: 'next-chapter' },
+              'Next Chapter'
+            )
+          )
+        )
       );
     }
   }]);
@@ -15465,7 +15585,9 @@ var ChapterContainer = function (_React$Component) {
   return ChapterContainer;
 }(_react2.default.Component);
 
-exports.default = (0, _reactRedux.connect)()(ChapterContainer);
+exports.default = (0, _reactRedux.connect)(function (state) {
+  return state;
+})(ChapterContainer);
 
 /***/ }),
 /* 191 */
@@ -15485,6 +15607,10 @@ var _react = __webpack_require__(3);
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(11);
+
+var _ErrorMessage = __webpack_require__(513);
+
+var _ErrorMessage2 = _interopRequireDefault(_ErrorMessage);
 
 var _HeaderContainer = __webpack_require__(61);
 
@@ -15507,29 +15633,42 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var HomePage = function (_React$Component) {
   _inherits(HomePage, _React$Component);
 
-  function HomePage() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
+  function HomePage(props) {
     _classCallCheck(this, HomePage);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    var _this = _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this, props));
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call.apply(_ref, [this].concat(args))), _this), _this.submit = function (values) {
-      // this.props.dispatch(addUser(values))
-      location.href = '#story-library';
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    _this.submit = function (values) {
+      var what = new Promise(function (resolve, reject) {
+        _this.props.dispatch((0, _UserActions.addUser)(values)).then(function () {
+          _this.setState(function () {
+            return { err: _this.props.user.err };
+          });
+        });
+      });
+    };
+
+    _this.state = {
+      err: null
+    };
+    return _this;
   }
 
   _createClass(HomePage, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (!nextProps.user.err) {
+        location.href = '#story-library';
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var err = this.state.err;
       return _react2.default.createElement(
         'div',
         null,
+        err && _react2.default.createElement(_ErrorMessage2.default, { err: String(err) }),
         _react2.default.createElement(_HeaderContainer2.default, null),
         _react2.default.createElement(
           'div',
@@ -15548,7 +15687,11 @@ var HomePage = function (_React$Component) {
   return HomePage;
 }(_react2.default.Component);
 
-exports.default = (0, _reactRedux.connect)()(HomePage);
+function mapStateToProps(state) {
+  return { user: state.user };
+}
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(HomePage);
 
 /***/ }),
 /* 192 */
@@ -15617,7 +15760,8 @@ var StoryLibraryContainer = function (_React$Component) {
 }(_react2.default.Component);
 
 function mapStateToProps(state) {
-  return { stories: state.storyLibrary.stories };
+  return { stories: state.storyLibrary.stories,
+    user: state.user };
 }
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(StoryLibraryContainer);
@@ -41527,6 +41671,74 @@ module.exports = function(module) {
   self.fetch.polyfill = true
 })(typeof self !== 'undefined' ? self : this);
 
+
+/***/ }),
+/* 513 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ErrorMessage = function (_React$Component) {
+  _inherits(ErrorMessage, _React$Component);
+
+  function ErrorMessage() {
+    _classCallCheck(this, ErrorMessage);
+
+    return _possibleConstructorReturn(this, (ErrorMessage.__proto__ || Object.getPrototypeOf(ErrorMessage)).apply(this, arguments));
+  }
+
+  _createClass(ErrorMessage, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'error-message' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          'D\'OH!!! AN ERROR OCCURED!!!'
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'error' },
+          _react2.default.createElement(
+            'p',
+            null,
+            this.props.err
+          )
+        ),
+        _react2.default.createElement(
+          'p',
+          { id: 'personal-message' },
+          'In case of emergency (if you are in desperately need of personalized romance story), contact web guru cicichen2015@qq.com for asssistance.'
+        )
+      );
+    }
+  }]);
+
+  return ErrorMessage;
+}(_react2.default.Component);
+
+exports.default = ErrorMessage;
 
 /***/ })
 /******/ ]);

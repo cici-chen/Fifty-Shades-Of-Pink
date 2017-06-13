@@ -10,7 +10,7 @@ body {
 .site-header h1 {
 	color: #fff;
   font-family: 'Cormorant Garamond';
-  font-size: 4em;
+  font-size: 3em;
   margin-top: 1em;
   border-bottom: 0.1em solid #e66c7e;
   font-weight: 800;
@@ -24,6 +24,31 @@ body {
 
 a:link {
   text-decoration: none;
+}
+
+/*Error Message*/
+.error-message{
+  box-sizing: border-box;
+	background-color: #0DFF92;
+	width: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	padding: 20px 40px;
+	color: #333;
+  text-align: left;
+}
+.error-message h2{
+  font-size: 22px;
+	color: #232323;
+	margin-top: 0;
+}
+.error-message p {
+	line-height: 1.6em;
+	font-size:15px;
+}
+#personal-message{
+  font-size: 10px;
 }
 
 /*Form*/
