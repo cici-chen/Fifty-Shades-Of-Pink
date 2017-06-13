@@ -15,7 +15,7 @@ body {
   border-bottom: 0.1em solid #e66c7e;
   font-weight: 800;
   line-height: 72px;
-  letter-spacing: 20px;
+  letter-spacing: 10px;
   margin-bottom: 57px;
   text-align: center;
   text-indent: 24px;
@@ -83,6 +83,7 @@ input[type=radio]{
 }
 .book-info{
   padding: 1em 1em 1em 2em;
+  text-align: left;
 }
 #story-title{
   font-size: 3em;

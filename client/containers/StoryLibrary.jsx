@@ -8,10 +8,6 @@ import {fetchStories} from '../actions/StoriesActions'
 
 class StoryLibraryContainer extends React.Component{
 
-  constructor(props) {
-   super(props);
- }
-
   componentWillMount(){
     this.props.dispatch(fetchStories())
   }

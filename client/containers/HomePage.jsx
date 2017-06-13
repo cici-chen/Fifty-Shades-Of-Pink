@@ -6,9 +6,6 @@ import HomepageForm from '../components/HomepageForm'
 import {addUser} from '../actions/UserActions'
 
 class HomePage extends React.Component {
-  constructor(props){
-    super(props)
-  }
 
   submit=(values)=>{
     // this.props.dispatch(addUser(values))
