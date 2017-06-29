@@ -15,13 +15,9 @@ class HomePage extends React.Component {
   }
 
   submit=(values)=>{
-    let what= new Promise((resolve, reject) =>{
-      .then(()=>{
         this.setState(()=>{
           return {err:this.props.user.err}
         })
-      })
-    })
   }
 
   componentWillReceiveProps(nextProps){
