@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import ErrorMessage from '../components/ErrorMessage'
 import HeaderContainer from './HeaderContainer'
 import HomepageForm from '../components/HomepageForm'
+
 import {addUser} from '../actions/UserActions'
 
 class HomePage extends React.Component {
