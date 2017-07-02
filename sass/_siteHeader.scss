@@ -1,0 +1,17 @@
+.site-header{
+  font-family: 'Cormorant Garamond';
+  letter-spacing: 0.5em;
+  a{
+    &:hover {
+        color: $theme-1;
+      }
+  }
+  h1{
+    margin-bottom: 0;
+    @media (min-width: $screen-sm) {
+      font-size: floor(($font-size-base * 3));
+      letter-spacing: 0.7em;
+    }
+  }
+  border-bottom: 0.15em solid $theme-1;
+}

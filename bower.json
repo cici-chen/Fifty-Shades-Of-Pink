@@ -1,0 +1,22 @@
+{
+  "name": "fifty-shades-of-pink",
+  "description": "A personal romance story generator",
+  "main": "server/index.js",
+  "authors": [
+    "Cici-Chen"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/cici-chen/Fifty-Shades-Of-Pink",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}

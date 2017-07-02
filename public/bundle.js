@@ -15340,7 +15340,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = function (props) {
   return _react2.default.createElement(
     'div',
-    { className: 'site-header' },
+    { className: 'container-fluid site-header text-uppercase text-center text-nowrap' },
     _react2.default.createElement(
       'a',
       { href: '/' },
