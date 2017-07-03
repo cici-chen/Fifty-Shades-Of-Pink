@@ -30,7 +30,7 @@ class HomePage extends React.Component {
       <div>
         {err && <ErrorMessage err={String(err)}/>}
         <HeaderContainer />
-        <div className='home-page'>
+        <div className='home-page-form container-fluid text-center'>
           <p id='welcome'>We've been waiting to tell your story!</p>
           <HomepageForm onSubmit={this.submit} />
         </div>

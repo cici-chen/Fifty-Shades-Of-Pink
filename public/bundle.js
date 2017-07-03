@@ -15403,19 +15403,15 @@ var HomepageForm = function (_React$Component) {
   _createClass(HomepageForm, [{
     key: 'fieldChanged',
     value: function fieldChanged(e) {
-      this.setState(_defineProperty({}, e.target.name, e.target.value));
+      this.setState(_defineProperty({}, e.target.id, e.target.value));
     }
-  }, {
-    key: 'handleTouch',
-    value: function handleTouch(e) {
-      this.setState([e.target.name + 'Hint']);
-    }
+
     //Do not add preventDefault otherwise the button won't change until the form is rerendered
 
   }, {
     key: 'handleOptionChange',
     value: function handleOptionChange(e) {
-      this.setState(_defineProperty({}, e.target.name, e.target.value));
+      this.setState(_defineProperty({}, e.target.id, e.target.value));
     }
   }, {
     key: 'validateForm',
@@ -15439,83 +15435,111 @@ var HomepageForm = function (_React$Component) {
       var _this2 = this;
 
       return _react2.default.createElement(
-        'div',
-        { className: 'form' },
+        'form',
+        { className: 'form-horizontal' },
         _react2.default.createElement(
-          'form',
-          null,
+          'div',
+          { className: 'form-group' },
+          _react2.default.createElement(
+            'span',
+            { id: 'form-text-1' },
+            'My name is'
+          ),
+          _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'userName', placeholder: '',
+            onChange: function onChange(e) {
+              return _this2.fieldChanged(e);
+            },
+            value: this.state.userName })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'form-group' },
+          _react2.default.createElement(
+            'span',
+            { id: 'form-text-2' },
+            'I am a'
+          ),
           _react2.default.createElement(
             'div',
-            { className: 'input-field' },
+            { className: 'radio' },
             _react2.default.createElement(
-              'div',
+              'label',
               null,
-              'My name is ',
-              _react2.default.createElement('input', { type: 'text', name: 'userName',
-                onFocus: function onFocus(e) {
-                  return _this2.handleTouch(e);
-                },
-                onChange: function onChange(e) {
-                  return _this2.fieldChanged(e);
-                },
-                value: this.state.userName })
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
-              'I am a',
-              _react2.default.createElement('input', { type: 'radio', name: 'userGender', value: 'woman',
+              _react2.default.createElement('input', { type: 'radio', name: 'optionsRadios1', id: 'userGender', value: 'woman',
                 onChange: function onChange(e) {
                   return _this2.handleOptionChange(e);
                 },
                 checked: this.state.userGender == "woman" }),
-              'woman',
-              _react2.default.createElement('input', { type: 'radio', name: 'userGender', value: 'man',
+              'woman'
+            ),
+            _react2.default.createElement(
+              'label',
+              null,
+              _react2.default.createElement('input', { type: 'radio', name: 'optionsRadios1', id: 'userGender', value: 'man',
                 onChange: function onChange(e) {
                   return _this2.handleOptionChange(e);
                 },
                 checked: this.state.userGender == "man" }),
               'man'
-            ),
-            _react2.default.createElement('p', null),
-            _react2.default.createElement(
-              'div',
-              null,
-              'My lover\'s name is ',
-              _react2.default.createElement('input', { type: 'text', name: 'loverName',
-                onChange: function onChange(e) {
-                  return _this2.fieldChanged(e);
-                },
-                value: this.state.loverName })
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
-              'My lover is a',
-              _react2.default.createElement('input', { type: 'radio', name: 'loverGender', value: 'woman',
-                checked: this.state.loverGender === 'woman',
-                onChange: function onChange(e) {
-                  return _this2.handleOptionChange(e);
-                } }),
-              'woman',
-              _react2.default.createElement('input', { type: 'radio', name: 'loverGender', value: 'man',
-                checked: this.state.loverGender === 'man',
-                onChange: function onChange(e) {
-                  return _this2.handleOptionChange(e);
-                } }),
-              'man'
             )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'form-group' },
+          _react2.default.createElement(
+            'span',
+            { id: 'form-text-1', className: 'text-nowrap' },
+            'My lover\'s name is'
+          ),
+          _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'loverName', placeholder: '',
+            onChange: function onChange(e) {
+              return _this2.fieldChanged(e);
+            },
+            value: this.state.loverName })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'form-group' },
+          _react2.default.createElement(
+            'span',
+            { id: 'form-text-2' },
+            'My lover is a'
           ),
           _react2.default.createElement(
             'div',
-            null,
+            { className: 'radio' },
             _react2.default.createElement(
-              'button',
-              { className: 'submit-button', onClick: function onClick(e) {
-                  return _this2.save(e);
-                } },
-              'Read My Stories'
+              'label',
+              null,
+              _react2.default.createElement('input', { type: 'radio', name: 'optionsRadios2', id: 'loverGender', value: 'woman',
+                onChange: function onChange(e) {
+                  return _this2.handleOptionChange(e);
+                },
+                checked: this.state.loverGender == "woman" }),
+              'woman'
+            ),
+            _react2.default.createElement(
+              'label',
+              null,
+              _react2.default.createElement('input', { type: 'radio', name: 'optionsRadios2', id: 'loverGender', value: 'man',
+                onChange: function onChange(e) {
+                  return _this2.handleOptionChange(e);
+                },
+                checked: this.state.loverGender == "man" }),
+              'man'
             )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'button',
+            { className: 'submit-button', onClick: function onClick(e) {
+                return _this2.save(e);
+              } },
+            'Read My Stories'
           )
         )
       );
@@ -15922,7 +15946,7 @@ var HomePage = function (_React$Component) {
         _react2.default.createElement(_HeaderContainer2.default, null),
         _react2.default.createElement(
           'div',
-          { className: 'home-page' },
+          { className: 'home-page-form container-fluid text-center' },
           _react2.default.createElement(
             'p',
             { id: 'welcome' },

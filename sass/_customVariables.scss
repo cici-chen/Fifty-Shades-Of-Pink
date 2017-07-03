@@ -4,6 +4,7 @@ $bootstrap-sass-asset-helper: false !default;
 // --------------------------------------------------
 
 $theme-1 : #e66c7e;
+$font-1: 'Cormorant Garamond';
 
 //== Colors
 //
@@ -54,7 +55,7 @@ $font-size-base:          14px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
-$font-size-h1:            floor(($font-size-base * 2.4)) !default; // ~36px
+$font-size-h1:            floor(($font-size-base * 2)) !default; // ~36px
 $font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
 $font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
 $font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
@@ -187,7 +188,7 @@ $btn-border-radius-small:        $border-radius-small !default;
 //##
 
 //** `<input>` background color
-$input-bg:                       #fff !default;
+$input-bg:                       transparent !default;
 //** `<input disabled>` background color
 $input-bg-disabled:              $gray-lighter !default;
 

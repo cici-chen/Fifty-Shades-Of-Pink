@@ -1206,7 +1206,7 @@ h6, .h6 {
     font-size: 75%; }
 
 h1, .h1 {
-  font-size: 33px; }
+  font-size: 28px; }
 
 h2, .h2 {
   font-size: 30px; }
@@ -2445,7 +2445,7 @@ output {
   font-size: 14px;
   line-height: 1.42857;
   color: #555555;
-  background-color: #fff;
+  background-color: transparent;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -5806,8 +5806,41 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+.home-page-form, #form-text-1, #form-text-2, .form-group, .form-control, .form-horizontal {
+  font-family: "Cormorant Garamond";
+  margin-top: 0.5em;
+  font-size: 16px; }
+
+#form-text-1 {
+  margin-top: 14px; }
+
+#form-text-2 {
+  margin-top: 5px; }
+
+.form-horizontal .form-group {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0; }
+
+.form-group {
+  display: flex;
+  width: 80%; }
+
+.form-control {
+  border: none;
+  width: 50%;
+  padding: 6px 3px;
+  margin-left: 4px; }
+
+.form-horizontal {
+  background-color: #e66c7e;
+  border-radius: 1em; }
+
+.radio label {
+  padding-left: 30px; }
+
 .site-header {
-  font-family: 'Cormorant Garamond';
+  font-family: "Cormorant Garamond";
   letter-spacing: 0.5em;
   border-bottom: 0.15em solid #e66c7e; }
   .site-header a:hover {

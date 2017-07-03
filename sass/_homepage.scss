@@ -1,0 +1,47 @@
+.home-page-form {
+  font-family: $font-1;
+  margin-top: 0.5em;
+  font-size: floor(($font-size-base * 1.2));
+}
+
+#form-text-1 {
+  @extend .home-page-form;
+  margin-top: 14px;
+}
+
+#form-text-2 {
+  @extend .home-page-form;
+  margin-top: 5px;
+}
+
+.form-horizontal .form-group {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+.form-group{
+  @extend .home-page-form;
+  display: flex;
+  width:80%;
+}
+
+.form-control{
+  @extend .home-page-form;
+  border:none;
+  width:50%;
+  padding: 6px 3px;
+  margin-left: 4px;
+}
+
+.form-horizontal{
+  @extend .home-page-form;
+  background-color: $theme-1;
+  border-radius: 1em;
+}
+
+.radio{
+  label{
+    padding-left: 30px;
+  }
+}

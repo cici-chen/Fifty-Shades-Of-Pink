@@ -15,21 +15,16 @@ class HomepageForm extends React.Component {
   fieldChanged(e){
     this.setState(
       {
-        [e.target.name]:e.target.value
+        [e.target.id]:e.target.value
       }
     )
   }
 
-  handleTouch(e){
-    this.setState(
-      [`${e.target.name}Hint`]:"boya"
-    )
-  }
 //Do not add preventDefault otherwise the button won't change until the form is rerendered
   handleOptionChange(e){
     this.setState(
       {
-        [e.target.name]:e.target.value
+        [e.target.id]:e.target.value
       }
     )
   }
@@ -52,49 +47,57 @@ class HomepageForm extends React.Component {
 
   render(){
     return(
-      <div className='form'>
-        <form>
-          <div className='input-field'>
-            <div>
-              My name is <input type='text' name='userName'
-              onFocus={e => this.handleTouch(e)}
-              onChange={e => this.fieldChanged(e)}
-              value={this.state.userName}/>
-            </div>
-            <div>
-              I am a
-              <input type='radio' name='userGender' value="woman"
-                onChange={e => this.handleOptionChange(e)}
-                checked={this.state.userGender=="woman"}/>
+      <form className='form-horizontal'>
+        <div className="form-group">
+          <span id="form-text-1">My name is</span>
+             <input type="text" className="form-control" id="userName" placeholder=""
+               onChange={e => this.fieldChanged(e)}
+               value={this.state.userName} />
+        </div>
+        <div className="form-group">
+          <span id="form-text-2">I am a</span>
+          <div className='radio'>
+            <label>
+              <input type="radio" name="optionsRadios1" id="userGender" value="woman"
+              onChange={e => this.handleOptionChange(e)}
+              checked={this.state.userGender=="woman"} />
               woman
-              <input type='radio' name='userGender' value="man"
-                onChange={e => this.handleOptionChange(e)}
-                checked={this.state.userGender=="man"}/>
-              man
-            </div>
-            <p></p>
-            <div>
-              My lover's name is <input type='text' name='loverName'
-              onChange={e => this.fieldChanged(e)}
-              value={this.state.loverName}/>
-            </div>
-            <div>
-              My lover is a
-              <input type='radio' name='loverGender' value='woman'
-                checked={this.state.loverGender==='woman'}
-                onChange={e => this.handleOptionChange(e)}/>
-              woman
-              <input type='radio' name='loverGender' value='man'
-                checked={this.state.loverGender==='man'}
-                onChange={e => this.handleOptionChange(e)}/>
-              man
-            </div>
+            </label>
+            <label>
+            <input type="radio" name="optionsRadios1" id="userGender" value="man"
+              onChange={e => this.handleOptionChange(e)}
+              checked={this.state.userGender=="man"} />
+            man
+            </label>
           </div>
+        </div>
+        <div className="form-group">
+          <span id="form-text-1" className="text-nowrap">My lover's name is</span>
+             <input type="text" className="form-control" id="loverName" placeholder=""
+               onChange={e => this.fieldChanged(e)}
+               value={this.state.loverName} />
+        </div>
+        <div className="form-group">
+          <span id="form-text-2">My lover is a</span>
+          <div className='radio'>
+            <label>
+              <input type="radio" name="optionsRadios2" id="loverGender" value="woman"
+              onChange={e => this.handleOptionChange(e)}
+              checked={this.state.loverGender=="woman"} />
+              woman
+            </label>
+            <label>
+            <input type="radio" name="optionsRadios2" id="loverGender" value="man"
+              onChange={e => this.handleOptionChange(e)}
+              checked={this.state.loverGender=="man"} />
+            man
+            </label>
+          </div>
+        </div>
           <div>
           <button className="submit-button" onClick={e => this.save(e)}>Read My Stories</button>
           </div>
-        </form>
-      </div>
+      </form>
     )
   }
 
