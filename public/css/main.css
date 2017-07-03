@@ -5806,7 +5806,7 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-.home-page-form, #form-text-1, #form-text-2, .form-group, .form-control, .form-horizontal {
+.home-page-form, #form-text-1, #form-text-2, .form-group, .form-control, .form-horizontal, .submit-button {
   font-family: "Cormorant Garamond";
   margin-top: 0.5em;
   font-size: 16px; }
@@ -5833,11 +5833,19 @@ button.close {
   margin-left: 4px; }
 
 .form-horizontal {
-  background-color: #e66c7e;
+  border: 1px solid rgba(230, 108, 126, 0.95);
   border-radius: 1em; }
 
 .radio label {
   padding-left: 30px; }
+
+.submit-button {
+  background-color: transparent;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border-radius: 5px;
+  border: none;
+  border: #df4058 solid 1px; }
 
 .site-header {
   font-family: "Cormorant Garamond";

@@ -39,8 +39,8 @@ class HomepageForm extends React.Component {
   save (e){
     e.preventDefault()
     const userInput=this.state
-    if (this.validateForm()) console.log('banana')
-    else console.log('yo')
+    if (this.validateForm()) console.log(this.props.onSubmit)
+    else this.props.onError()
     // else alert('please fill in all fields')
 
   }
@@ -78,7 +78,7 @@ class HomepageForm extends React.Component {
                value={this.state.loverName} />
         </div>
         <div className="form-group">
-          <span id="form-text-2">My lover is a</span>
+          <span id="form-text-2">{this.state.loverName} is a</span>
           <div className='radio'>
             <label>
               <input type="radio" name="optionsRadios2" id="loverGender" value="woman"

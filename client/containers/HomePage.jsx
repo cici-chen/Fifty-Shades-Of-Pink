@@ -21,6 +21,10 @@ class HomePage extends React.Component {
         })
   }
 
+  formNotValidated=()=>{
+    alert('yayyyy')
+  }
+
   componentWillReceiveProps(nextProps){
     if(!nextProps.user.err){ location.href='#story-library' }
   }
@@ -32,7 +36,7 @@ class HomePage extends React.Component {
         <HeaderContainer />
         <div className='home-page-form container-fluid text-center'>
           <p id='welcome'>We've been waiting to tell your story!</p>
-          <HomepageForm onSubmit={this.submit} />
+          <HomepageForm onSubmit={this.submit} onError={this.formNotValidated}/>
         </div>
       </div>
     )

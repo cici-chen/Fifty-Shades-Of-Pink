@@ -15426,7 +15426,7 @@ var HomepageForm = function (_React$Component) {
     value: function save(e) {
       e.preventDefault();
       var userInput = this.state;
-      if (this.validateForm()) console.log('banana');else console.log('yo');
+      if (this.validateForm()) console.log(this.props.onSubmit);else this.props.onError();
       // else alert('please fill in all fields')
     }
   }, {
@@ -15504,7 +15504,8 @@ var HomepageForm = function (_React$Component) {
           _react2.default.createElement(
             'span',
             { id: 'form-text-2' },
-            'My lover is a'
+            this.state.loverName,
+            ' is a'
           ),
           _react2.default.createElement(
             'div',
@@ -15922,6 +15923,10 @@ var HomePage = function (_React$Component) {
       });
     };
 
+    _this.formNotValidated = function () {
+      alert('yayyyy');
+    };
+
     _this.state = {
       err: null
     };
@@ -15952,7 +15957,7 @@ var HomePage = function (_React$Component) {
             { id: 'welcome' },
             'We\'ve been waiting to tell your story!'
           ),
-          _react2.default.createElement(_HomepageForm2.default, { onSubmit: this.submit })
+          _react2.default.createElement(_HomepageForm2.default, { onSubmit: this.submit, onError: this.formNotValidated })
         )
       );
     }

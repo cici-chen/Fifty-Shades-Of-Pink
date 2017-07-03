@@ -36,7 +36,7 @@
 
 .form-horizontal{
   @extend .home-page-form;
-  background-color: $theme-1;
+  border: 1px solid rgba(230, 108, 126,0.95);
   border-radius: 1em;
 }
 
@@ -44,4 +44,14 @@
   label{
     padding-left: 30px;
   }
+}
+
+.submit-button{
+  @extend .home-page-form;
+  background-color: transparent;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border-radius: 5px;
+  border: none;
+  border: darken($theme-1, 10%) solid 1px;
 }
