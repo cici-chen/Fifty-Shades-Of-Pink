@@ -15,16 +15,8 @@ class HomePage extends React.Component {
     }
   }
 
-  submit=(values)=>{
-        this.setState(()=>{
-          return {err:this.props.user.err}
-        })
-  }
-
-  formNotValidated=()=>{
-    this.setState({
-      err:true
-    })
+  submit=(userInput)=>{
+    this.props.dispatch(addUser(userInput))
   }
 
   componentWillReceiveProps(nextProps){
@@ -34,7 +26,7 @@ class HomePage extends React.Component {
     let err=this.state.err
     return (
       <div>
-        {err && <ErrorMessage err={String(err)}/>}
+        {err && <ErrorMessage displayText={String(err)}/>}
         <HeaderContainer />
         <div className='home-page-form container-fluid text-center'>
           <p id='welcome'>We've been waiting to tell your story!</p>
