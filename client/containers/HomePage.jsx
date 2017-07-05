@@ -22,7 +22,9 @@ class HomePage extends React.Component {
   }
 
   formNotValidated=()=>{
-    alert('yayyyy')
+    this.setState({
+      err:true
+    })
   }
 
   componentWillReceiveProps(nextProps){
@@ -36,7 +38,7 @@ class HomePage extends React.Component {
         <HeaderContainer />
         <div className='home-page-form container-fluid text-center'>
           <p id='welcome'>We've been waiting to tell your story!</p>
-          <HomepageForm onSubmit={this.submit} onError={this.formNotValidated}/>
+          <HomepageForm submit={this.submit} />
         </div>
       </div>
     )

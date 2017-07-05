@@ -24,14 +24,19 @@
   @extend .home-page-form;
   display: flex;
   width:80%;
+  @media (min-width: $screen-sm) {
+    width:20%;
+  }
 }
 
 .form-control{
   @extend .home-page-form;
+  color: darkgray;
   border:none;
   width:50%;
   padding: 6px 3px;
   margin-left: 4px;
+  border-bottom: 2px dotted;
 }
 
 .form-horizontal{

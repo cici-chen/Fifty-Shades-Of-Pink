@@ -15287,30 +15287,18 @@ var ErrorMessage = function (_React$Component) {
   }
 
   _createClass(ErrorMessage, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return _react2.default.createElement(
-        'div',
-        { className: 'error-message' },
+        "div",
+        { className: "alert alert-danger", role: "alert" },
+        _react2.default.createElement("i", { className: "fa fa-exclamation-circle", "aria-hidden": "true" }),
         _react2.default.createElement(
-          'h2',
-          null,
-          'D\'OH!!! AN ERROR OCCURED!!!'
+          "span",
+          { className: "sr-only" },
+          "Error:"
         ),
-        _react2.default.createElement(
-          'div',
-          { id: 'error' },
-          _react2.default.createElement(
-            'p',
-            null,
-            this.props.err
-          )
-        ),
-        _react2.default.createElement(
-          'p',
-          { id: 'personal-message' },
-          'In case of emergency (if you are in desperately need of personalized romance story), contact web guru cicichen2015@qq.com for asssistance.'
-        )
+        this.props.displayText
       );
     }
   }]);
@@ -15370,6 +15358,10 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _ErrorMessage = __webpack_require__(186);
+
+var _ErrorMessage2 = _interopRequireDefault(_ErrorMessage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -15392,7 +15384,12 @@ var HomepageForm = function (_React$Component) {
       userName: '',
       userGender: '',
       loverName: '',
-      loverGender: ''
+      loverGender: '',
+      err: false,
+      userNameEM: '',
+      userGenderEM: '',
+      loverNameEM: '',
+      loverGenderEM: ''
     };
     return _this;
   }
@@ -15416,17 +15413,45 @@ var HomepageForm = function (_React$Component) {
   }, {
     key: 'validateForm',
     value: function validateForm() {
-      for (var key in this.state) {
-        if (this.state[key] == null || this.state[key] == '') return false;
+      var _state = this.state,
+          userName = _state.userName,
+          userGender = _state.userGender,
+          loverName = _state.loverName,
+          loverGender = _state.loverGender;
+
+      if (userName == '') {
+        this.setState({ userNameEM: 'What is your name? ' });
       }
-      return true;
+      if (userGender == '') {
+        this.setState({ userGenderEM: 'What is your gender? ' });
+      }
+      if (loverName == '') {
+        this.setState({ loverNameEM: 'What is your lover\'s name? ' });
+      }
+      if (loverGender == '') {
+        this.setState({ loverGenderEM: 'What is your lover\'s name?' });
+      }
+      for (var key in this.state) {
+        if (this.state[key] == '') return false;else return true;
+      }
+    }
+  }, {
+    key: 'clearError',
+    value: function clearError(e) {
+      var _setState3;
+
+      this.setState((_setState3 = {}, _defineProperty(_setState3, e.target.id + 'EM', null), _defineProperty(_setState3, 'err', false), _setState3));
     }
   }, {
     key: 'save',
     value: function save(e) {
       e.preventDefault();
       var userInput = this.state;
-      if (this.validateForm()) console.log(this.props.onSubmit);else this.props.onError();
+      if (this.validateForm()) {
+        console.log('boya');
+      } else {
+        this.setState({ err: true });
+      }
       // else alert('please fill in all fields')
     }
   }, {
@@ -15437,6 +15462,7 @@ var HomepageForm = function (_React$Component) {
       return _react2.default.createElement(
         'form',
         { className: 'form-horizontal' },
+        this.state.err && _react2.default.createElement(_ErrorMessage2.default, { displayText: '' + this.state.userNameEM + this.state.userGenderEM + this.state.loverNameEM + this.state.loverGenderEM }),
         _react2.default.createElement(
           'div',
           { className: 'form-group' },
@@ -15446,6 +15472,9 @@ var HomepageForm = function (_React$Component) {
             'My name is'
           ),
           _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'userName', placeholder: '',
+            onFocus: function onFocus(e) {
+              return _this2.clearError(e);
+            },
             onChange: function onChange(e) {
               return _this2.fieldChanged(e);
             },
@@ -15466,6 +15495,9 @@ var HomepageForm = function (_React$Component) {
               'label',
               null,
               _react2.default.createElement('input', { type: 'radio', name: 'optionsRadios1', id: 'userGender', value: 'woman',
+                onFocus: function onFocus(e) {
+                  return _this2.clearError(e);
+                },
                 onChange: function onChange(e) {
                   return _this2.handleOptionChange(e);
                 },
@@ -15476,6 +15508,9 @@ var HomepageForm = function (_React$Component) {
               'label',
               null,
               _react2.default.createElement('input', { type: 'radio', name: 'optionsRadios1', id: 'userGender', value: 'man',
+                onFocus: function onFocus(e) {
+                  return _this2.clearError(e);
+                },
                 onChange: function onChange(e) {
                   return _this2.handleOptionChange(e);
                 },
@@ -15493,6 +15528,9 @@ var HomepageForm = function (_React$Component) {
             'My lover\'s name is'
           ),
           _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'loverName', placeholder: '',
+            onFocus: function onFocus(e) {
+              return _this2.clearError(e);
+            },
             onChange: function onChange(e) {
               return _this2.fieldChanged(e);
             },
@@ -15503,7 +15541,7 @@ var HomepageForm = function (_React$Component) {
           { className: 'form-group' },
           _react2.default.createElement(
             'span',
-            { id: 'form-text-2' },
+            { className: 'text-capitalize', id: 'form-text-2' },
             this.state.loverName,
             ' is a'
           ),
@@ -15514,6 +15552,9 @@ var HomepageForm = function (_React$Component) {
               'label',
               null,
               _react2.default.createElement('input', { type: 'radio', name: 'optionsRadios2', id: 'loverGender', value: 'woman',
+                onFocus: function onFocus(e) {
+                  return _this2.clearError(e);
+                },
                 onChange: function onChange(e) {
                   return _this2.handleOptionChange(e);
                 },
@@ -15524,6 +15565,9 @@ var HomepageForm = function (_React$Component) {
               'label',
               null,
               _react2.default.createElement('input', { type: 'radio', name: 'optionsRadios2', id: 'loverGender', value: 'man',
+                onFocus: function onFocus(e) {
+                  return _this2.clearError(e);
+                },
                 onChange: function onChange(e) {
                   return _this2.handleOptionChange(e);
                 },
@@ -15924,7 +15968,9 @@ var HomePage = function (_React$Component) {
     };
 
     _this.formNotValidated = function () {
-      alert('yayyyy');
+      _this.setState({
+        err: true
+      });
     };
 
     _this.state = {
@@ -15957,7 +16003,7 @@ var HomePage = function (_React$Component) {
             { id: 'welcome' },
             'We\'ve been waiting to tell your story!'
           ),
-          _react2.default.createElement(_HomepageForm2.default, { onSubmit: this.submit, onError: this.formNotValidated })
+          _react2.default.createElement(_HomepageForm2.default, { submit: this.submit })
         )
       );
     }
