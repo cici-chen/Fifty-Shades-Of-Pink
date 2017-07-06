@@ -5806,7 +5806,7 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-.home-page-form, #form-text-1, #form-text-2, .form-group, .form-control, .form-horizontal, .submit-button {
+.home-page-form, #form-text-1, #form-text-2, .form-horizontal .form-group, .form-group, .form-control, .form-horizontal, .radio, .submit-button {
   font-family: "Cormorant Garamond";
   margin-top: 0.5em;
   font-size: 16px; }
@@ -5885,9 +5885,9 @@ button.close {
   @media (min-width: 768px) {
     .book-cover {
       padding-left: 0px;
-      padding-right: 0px; } }
-  .book-cover:hover {
-    border: solid 3px #e66c7e; }
+      padding-right: 0px; }
+      .book-cover:hover {
+        border: solid 3px #e66c7e; } }
 
 .book-info {
   padding-left: 0px;
@@ -5925,5 +5925,30 @@ button.close {
 
 .fa {
   margin-right: 2px; }
+
+.extra {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  font-size: 12px; }
+
+#extra-title {
+  padding-left: 3px;
+  font-size: larger; }
+
+.extra .form-horizontal {
+  border: none; }
+
+.extra .form-group {
+  margin-left: 3px;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px; }
+
+.extra .submit-button {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 95%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 5px; }
 
 /*# sourceMappingURL=main.css.map */

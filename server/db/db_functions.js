@@ -3,13 +3,13 @@ function getUsers(connection){
 }
 
 function saveUser(object, connection){
+  var obj = {}
+  for (var key in object) {
+    obj[key]=object.key
+  }
+  console.log(obj)
   return connection('users').insert(
-    {
-    user_name:object.user_name,
-    user_gender:object.user_gender,
-    lover_name:object.lover_name,
-    lover_gender:object.lover_gender
-    }
+    obj
   )
 }
 

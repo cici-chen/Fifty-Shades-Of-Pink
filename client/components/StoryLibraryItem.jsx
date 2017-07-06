@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Extra from './Extra'
+
 class StoryLibraryItem extends React.Component{
   constructor(props){
     super(props)
@@ -13,20 +15,18 @@ class StoryLibraryItem extends React.Component{
     })
   }
   render(){
+    console.log(this.state.showExtra)
     let {story}=this.props
-    console.log('whyyyyyy')
     return (
       <div className="col-md-3 col-container">
       <div className="story-library-item container-fluid">
             <div className="row">
               <div className="col-md-12 col-sm-6 col-xs-6 book-cover" onClick={e=>this.showExtra(e)}>
-                <a href={story.storyUrl}>
                   <img className="img-responsive center-block" src={story.image} alt="a book cover"></img>
-                </a>
-                {this.state.showExtra && <Extra storyUrl={story.storyUrl} />}
               </div>
               <div className="col-md-12 col-sm-6 col-xs-6 book-info">
                 <p id='story-title'>{story.title}</p>
+                {this.state.showExtra ? <Extra storyUrl={story.storyUrl}/> :
                 <div className="boxes">
                 <div className='upper-box'>
                   <p>Author:JK Rowling</p>
@@ -40,6 +40,7 @@ class StoryLibraryItem extends React.Component{
                   <i className="fa fa-list" aria-hidden="true"></i>
                 </div>
                 </div>
+              }
               </div>
               <div className="row">
                 <p className="col-sm-12 col-xs-12 story-description">{story.description}</p>
