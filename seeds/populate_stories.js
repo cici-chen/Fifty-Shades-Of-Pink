@@ -28,6 +28,14 @@ exports.seed = function(knex, Promise) {
           image:"http://www.victoriajanssen.com/wp-content/uploads/2011/08/softcoverB0890.jpg",
           description:"bby swirled the amber liquid in her glass. It was a fine scotch, full of aroma and spice. A nice finish, not much kick on the back end - overall very smooth. She always felt sexy drinking it. It made her very aware of the way the silky, navy blue fabric felt on her skin.",
           storyUrl:"#/stories/behind-the-mask/1"
+        },
+        {
+          id:4,
+          name:"behind-the-mask",
+          title:"Behind the Mask",
+          image:"http://www.victoriajanssen.com/wp-content/uploads/2011/08/softcoverB0890.jpg",
+          description:"bby swirled the amber liquid in her glass. It was a fine scotch, full of aroma and spice. A nice finish, not much kick on the back end - overall very smooth. She always felt sexy drinking it. It made her very aware of the way the silky, navy blue fabric felt on her skin.",
+          storyUrl:"#/stories/behind-the-mask/1"
         }
       ]);
     });

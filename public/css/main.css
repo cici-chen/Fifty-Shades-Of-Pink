@@ -5865,28 +5865,65 @@ button.close {
         font-size: 42px;
         letter-spacing: 0.7em; } }
 
+@media (min-width: 768px) {
+  .story-library {
+    margin-left: 150px;
+    margin-right: 150px; } }
+
+.col-container {
+  padding-left: 0px;
+  padding-right: 0px; }
+
 .story-library-item {
   display: flex;
   margin: 1em;
-  border-bottom: 0.1em solid #333; }
+  border-bottom: 0.15em solid #333; }
 
-.bookcover img {
-  width: 376px;
-  height: 642px; }
+.book-cover {
+  padding-left: 10px;
+  padding-right: 5px; }
+  @media (min-width: 768px) {
+    .book-cover {
+      padding-left: 0px;
+      padding-right: 0px; } }
+  .book-cover:hover {
+    border: solid 3px #e66c7e; }
 
 .book-info {
-  padding: 1em 1em 1em 2em;
-  text-align: left; }
+  padding-left: 0px;
+  font-size: 12px; }
+  .book-info p {
+    margin-bottom: 2px; }
+  @media (min-width: 768px) {
+    .book-info {
+      padding-left: 10px; } }
 
 #story-title {
-  font-size: 3em;
-  border-bottom: 0.2em solid #333;
+  font-size: 18px;
+  border-bottom: 0.15em solid #333;
   text-align: left;
   margin-top: 0;
   margin-bottom: 0.5em; }
 
 .story-description {
-  font-size: 1.5em;
-  text-align: left; }
+  font-size: 12px;
+  padding-left: 24px; }
+
+.boxes {
+  background-color: rgba(255, 255, 255, 0.4); }
+  @media (min-width: 768px) {
+    .boxes {
+      padding: 2px;
+      display: flex; } }
+
+.lower-box, .fa {
+  margin-top: 35px;
+  display: flex; }
+  @media (min-width: 768px) {
+    .lower-box, .fa {
+      margin-top: 0px; } }
+
+.fa {
+  margin-right: 2px; }
 
 /*# sourceMappingURL=main.css.map */

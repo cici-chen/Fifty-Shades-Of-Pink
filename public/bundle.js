@@ -15621,8 +15621,6 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(11);
-
 var _StoryLibraryItem = __webpack_require__(190);
 
 var _StoryLibraryItem2 = _interopRequireDefault(_StoryLibraryItem);
@@ -15648,7 +15646,11 @@ var StoryLibrary = function StoryLibrary(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'story-library' },
-    renderStories()
+    _react2.default.createElement(
+      'div',
+      { className: 'row' },
+      renderStories()
+    )
   );
 };
 
@@ -15665,75 +15667,131 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var StoryLibraryItem = function StoryLibraryItem(_ref) {
-  var story = _ref.story;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  return _react2.default.createElement(
-    'div',
-    { className: 'story-library-item container-fluid' },
-    _react2.default.createElement(
-      'div',
-      { className: 'row' },
-      _react2.default.createElement(
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var StoryLibraryItem = function (_React$Component) {
+  _inherits(StoryLibraryItem, _React$Component);
+
+  function StoryLibraryItem(props) {
+    _classCallCheck(this, StoryLibraryItem);
+
+    var _this = _possibleConstructorReturn(this, (StoryLibraryItem.__proto__ || Object.getPrototypeOf(StoryLibraryItem)).call(this, props));
+
+    _this.state = {
+      showExtra: false
+    };
+    return _this;
+  }
+
+  _createClass(StoryLibraryItem, [{
+    key: 'showExtra',
+    value: function showExtra(e) {
+      this.setState({
+        showExtra: true
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var story = this.props.story;
+
+      console.log('whyyyyyy');
+      return _react2.default.createElement(
         'div',
-        { className: 'col-md-4' },
+        { className: 'col-md-3 col-container' },
         _react2.default.createElement(
           'div',
-          { className: 'row' },
+          { className: 'story-library-item container-fluid' },
           _react2.default.createElement(
             'div',
-            { className: 'col-sm-6 bookcover' },
+            { className: 'row' },
             _react2.default.createElement(
-              'a',
-              { href: story.storyUrl },
-              _react2.default.createElement('img', { src: story.image, alt: 'a book cover' })
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-sm-6 book-info' },
-            _react2.default.createElement(
-              'p',
-              { id: 'story-title' },
-              story.title
+              'div',
+              { className: 'col-md-12 col-sm-6 col-xs-6 book-cover', onClick: function onClick(e) {
+                  return _this2.showExtra(e);
+                } },
+              _react2.default.createElement(
+                'a',
+                { href: story.storyUrl },
+                _react2.default.createElement('img', { className: 'img-responsive center-block', src: story.image, alt: 'a book cover' })
+              ),
+              this.state.showExtra && _react2.default.createElement(Extra, { storyUrl: story.storyUrl })
             ),
             _react2.default.createElement(
-              'p',
-              { className: 'story-description' },
-              story.description
+              'div',
+              { className: 'col-md-12 col-sm-6 col-xs-6 book-info' },
+              _react2.default.createElement(
+                'p',
+                { id: 'story-title' },
+                story.title
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'boxes' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'upper-box' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Author:JK Rowling'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Rating:\u2661\u2661\u2661\u2661\u2661 200 '
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    { className: 'text-nowrap' },
+                    '3432 people have read it'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Published: 2017/05/04'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'lower-box' },
+                  _react2.default.createElement('i', { className: 'fa fa-bath', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('i', { className: 'fa fa-heart', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('i', { className: 'fa fa-list', 'aria-hidden': 'true' })
+                )
+              )
             ),
             _react2.default.createElement(
-              'p',
-              null,
-              'Author:JK Rowling'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Rating:\u2661\u2661\u2661\u2661\u2661 200 people rated '
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              '3432 people have read it'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Published: 2017/05/04'
+              'div',
+              { className: 'row' },
+              _react2.default.createElement(
+                'p',
+                { className: 'col-sm-12 col-xs-12 story-description' },
+                story.description
+              )
             )
           )
         )
-      )
-    )
-  );
-};
+      );
+    }
+  }]);
+
+  return StoryLibraryItem;
+}(_react2.default.Component);
 
 exports.default = StoryLibraryItem;
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import {connect} from 'react-redux'
 
 import StoryLibraryItem from './StoryLibraryItem'
 
@@ -17,7 +16,9 @@ const StoryLibrary = ({stories}) => {
 
   return(
       <div className="story-library">
+        <div className='row'>
           {renderStories()}
+        </div>
       </div>
     )
 }

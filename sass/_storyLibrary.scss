@@ -1,25 +1,71 @@
+.story-library{
+  @media (min-width: $screen-sm) {
+    margin-left: 150px;
+    margin-right:150px;
+  }
+}
+.col-container{
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .story-library-item{
   display: flex;
   margin: 1em;
-  border-bottom: 0.1em solid #333;
+  border-bottom: 0.15em solid #333;
 }
-.bookcover img{
-  width:376px;
-  height:642px;
+
+.book-cover{
+  padding-left: 10px;
+  padding-right: 5px;
+  @media (min-width: $screen-sm) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  &:hover{
+    border:solid 3px $theme-1;
+  }
 }
+
 .book-info{
-  padding: 1em 1em 1em 2em;
-  text-align: left;
+  padding-left: 0px;
+  font-size: ceil(($font-size-base * 0.85));
+  p{
+    margin-bottom: 2px;
+  }
+  @media (min-width: $screen-sm) {
+    padding-left: 10px;
+  }
 }
+
 #story-title{
-  font-size: 3em;
-  border-bottom: 0.2em solid #333;
+  font-size: ceil(($font-size-base * 1.25));
+  border-bottom: 0.15em solid #333;
   text-align:left;
   margin-top: 0;
   margin-bottom: 0.5em;
 }
 
 .story-description{
-  font-size: 1.5em;
-  text-align: left;
+  font-size: ceil(($font-size-base * 0.85));
+  padding-left: 24px;
+}
+
+.boxes{
+  background-color: rgba(255, 255, 255, 0.4);
+  @media (min-width: $screen-sm) {
+    padding: 2px;
+    display: flex;
+  }
+}
+
+.lower-box{
+  margin-top: 35px;
+  display: flex;
+  @media (min-width: $screen-sm) {
+    margin-top:0px;
+  }
+}
+.fa{
+  @extend .lower-box;
+  margin-right: 2px;
 }
