@@ -21,7 +21,8 @@ let object={
   user_name:'Mary',
   user_gender:'woman',
   lover_name:'George Clooney',
-  lover_gender:'man'
+  lover_gender:'man',
+  friend_name:'Lily'
 }
 
 test('saveUser saves a gingle user to the database', function (t){
@@ -44,7 +45,7 @@ test('saveUser saves user info into the database', function (t){
 test('getStories get all stories in the database', function (t){
   return db.getStories(t.context.connection)
     .then((result)=>{
-      t.is(result.length,3)
+      t.is(result.length,4)
       t.is(result[1].name,"hotel-room")
     })
 })

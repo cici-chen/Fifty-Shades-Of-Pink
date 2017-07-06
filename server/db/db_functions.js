@@ -5,9 +5,8 @@ function getUsers(connection){
 function saveUser(object, connection){
   var obj = {}
   for (var key in object) {
-    obj[key]=object.key
+    obj[key]=object[key]
   }
-  console.log(obj)
   return connection('users').insert(
     obj
   )

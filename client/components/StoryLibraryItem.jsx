@@ -15,7 +15,6 @@ class StoryLibraryItem extends React.Component{
     })
   }
   render(){
-    console.log(this.state.showExtra)
     let {story}=this.props
     return (
       <div className="col-md-3 col-container">

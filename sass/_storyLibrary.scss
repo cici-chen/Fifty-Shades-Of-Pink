@@ -73,24 +73,28 @@
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 2px;
   font-size: ceil(($font-size-base * 0.85));
-}
-#extra-title{
+  #extra-title{
   padding-left: 3px;
-  font-size: larger;
-}
-.extra .form-horizontal{
+  font-size: $font-size-base;
+  }
+  .form-horizontal{
   border:none;
-}
-.extra .form-group{
+  }
+  .form-group{
   margin-left: 3px;
   display:block;
   font-family:$font-family-base;
   font-size: ceil(($font-size-base * 0.85));
-}
-.extra .submit-button{
+  }
+  .submit-button{
   font-family:$font-family-base;
   width:95%;
   margin-top: 2px;
   margin-bottom: 2px;
   margin-left: 5px;
+  font-size: $font-size-base;
+  }
+  .form-control{
+  width: 90%;
+  }
 }

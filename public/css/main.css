@@ -5930,25 +5930,24 @@ button.close {
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 2px;
   font-size: 12px; }
-
-#extra-title {
-  padding-left: 3px;
-  font-size: larger; }
-
-.extra .form-horizontal {
-  border: none; }
-
-.extra .form-group {
-  margin-left: 3px;
-  display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px; }
-
-.extra .submit-button {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 95%;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 5px; }
+  .extra #extra-title {
+    padding-left: 3px;
+    font-size: 14px; }
+  .extra .form-horizontal {
+    border: none; }
+  .extra .form-group {
+    margin-left: 3px;
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px; }
+  .extra .submit-button {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    font-size: 14px; }
+  .extra .form-control {
+    width: 90%; }
 
 /*# sourceMappingURL=main.css.map */

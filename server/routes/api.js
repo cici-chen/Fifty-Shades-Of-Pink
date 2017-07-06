@@ -27,6 +27,7 @@ router.post('/users', (req,res)=>{
   let db=req.app.get('knex-database')
   dbFunctions.saveUser(req.body, db)
     .then((result)=>{
+      console.log(req.body)
       res.status(201).send()
     })
 })

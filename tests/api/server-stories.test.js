@@ -16,7 +16,7 @@ test.cb('GET /api/v1/stories gets all stories', function (t) {
     .expect(200)
     .end(function (err, res) {
       if (err) throw err
-      t.is(res.body.length, 3)
+      t.is(res.body.length, 4)
       t.is(res.body[2].title, "Behind the Mask")
       t.end()
     })

@@ -21,7 +21,7 @@ class Extra extends React.Component{
     location.href=this.props.storyUrl
   }
   render(){
-    return(
+    return (
       <div className='extra'>
         <div id='extra-title'>
           <p className='text-capitalize'>Add more elements </p>
@@ -40,4 +40,4 @@ class Extra extends React.Component{
   }
 }
 
-export default connect(Extra)
+export default connect()(Extra)

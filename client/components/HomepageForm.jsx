@@ -65,11 +65,12 @@ class HomepageForm extends React.Component {
 
   save (e){
     e.preventDefault()
+    //user_name is the name in the knex table column
     const userInput={
-      userName:this.state.userName,
-      userGender:this.state.userGender,
-      loverName:this.state.loverName,
-      loverGender:this.state.loverGender
+      user_name:this.state.userName,
+      user_gender:this.state.userGender,
+      lover_name:this.state.loverName,
+      lover_gender:this.state.loverGender
     }
     if (this.validateForm()){
       this.props.submit(userInput)
