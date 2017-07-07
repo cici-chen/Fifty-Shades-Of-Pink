@@ -40,7 +40,7 @@ test.cb('GET /api/v1/users/newest gets the newest user', function (t) {
     })
 })
 
-var object={
+var userInput={
   id:'',
   user_name:'Mary',
   user_gender:'woman',
@@ -51,13 +51,34 @@ var object={
 test.cb('POST /api/v1/users adds a new user to database', function(t){
   request(app)
     .post('/api/v1/users')
-    .send(object)
+    .send(userInput)
     .expect(201)
     .end(function(err, res){
       if (err) throw err
       return t.context.connection('users').select().then((result)=>{
         t.is(result.length, 4)
         t.is(result[3].user_name, 'Mary')
+        t.end()
+      })
+    })
+})
+
+var friendInput = {
+  user_id:3,
+  friend_name:"Tyrion"
+}
+
+test.cb('POST /api/v1/users/friend adds a new friend of user to database', function(t){
+  request(app)
+    .post('/api/v1/users/friend')
+    .send(friendInput)
+    .expect(201)
+    .end(function(err, res){
+      if (err) throw err
+      return t.context.connection('users_friends')
+        .first()
+        .then((result)=>{
+        t.is(result.friend_name, 'Tyrion')
         t.end()
       })
     })

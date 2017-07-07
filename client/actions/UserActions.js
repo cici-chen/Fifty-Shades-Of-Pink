@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import request from 'superagent'
 
 import {
   ADD_USER_SUCCESS,
@@ -10,7 +10,7 @@ import {
 export function addUserSuccess(suc){
   return{
     type: ADD_USER_SUCCESS,
-    add_user_status:suc
+    user_info:suc.body
   }
 }
 
@@ -21,21 +21,18 @@ export function addUserFailure(err){
   }
 }
 
-
-var myHeaders = new Headers();
-myHeaders.append('Content-Type', 'application/json');
-
 export function addUser(user){
   return dispatch => {
-    console.log(user)
-    return fetch('/api/v1/users',{
-      method:'POST',
-      headers: myHeaders,
-      mode: 'cors',
-      body:user})
-      .then(res=>dispatch(addUserSuccess(res)))
-      .catch(ex=>dispatch(addUserFailure(ex)))
-  }
+    request
+      .post('/api/v1/users')
+      .send(user) // sends a JSON post body
+      .set('Accept', 'application/json')
+      .end(function(err, res){
+        if (err) {dispatch(addUserFailure(err))} else{
+          dispatch(addUserSuccess(res))
+        }
+      })
+    }
 }
 
 export function getUserSuccess(user){
@@ -54,9 +51,24 @@ export function getUserFailure(err){
 
 export function getUser(){
   return dispatch => {
-    return fetch('api/v1/users/newest')
-      .then(res=>res.json())
-      .then(user=>dispatch(getUserSuccess(user)))
-      .catch(ex=>dispatch(getUserFailure(ex)))
+    request
+      .get('/api/v1/users/newest')
+      .end(function(err, res){
+        err ? dispatch(getUserFailure(err)) : dispatch(getUserSuccess(res.body))
+      })
   }
+}
+
+export function addFriend(friend){
+  return dispatch => {
+    request
+      .post('/api/v1/users/friend')
+      .send(friend)
+      .set('Accept', 'application/json')
+      .end(function(err, res){
+        if (err) {dispatch(addUserFailure(err))} else{
+          dispatch(addUserSuccess(res))
+        }
+      })
+    }
 }

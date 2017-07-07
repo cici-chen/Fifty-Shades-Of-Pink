@@ -3,7 +3,7 @@ export default function user(state={}, action){
     case 'ADD_USER_SUCCESS':
       return {
         ...state,
-        add_user_status:action.add_user_status
+        add_user_status:action.user_info
       }
 
     case 'ADD_USER_FAILURE':

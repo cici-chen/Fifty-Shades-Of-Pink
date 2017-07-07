@@ -17,23 +17,22 @@ test('getUsers gets a all users in the database', function (t) {
     })
 })
 
-let object={
+let userInput={
   user_name:'Mary',
   user_gender:'woman',
   lover_name:'George Clooney',
   lover_gender:'man',
-  friend_name:'Lily'
 }
 
 test('saveUser saves a gingle user to the database', function (t){
-  return db.saveUser(object, t.context.connection)
+  return db.saveUser(userInput, t.context.connection)
     .then((res)=>{
       t.is(res.length,1) //the length of array of id of items inserted should be only one
     })
 })
 
 test('saveUser saves user info into the database', function (t){
-  return db.saveUser(object, t.context.connection)
+  return db.saveUser(userInput, t.context.connection)
     .then((res)=>{
       return t.context.connection('users').select().where('id',4).first()
     })
@@ -56,5 +55,21 @@ test('getHeader gets one header corresponding to pageUrl', function(t){
   return db.getHeader(pageUrl,t.context.connection)
     .then((result)=>{
       t.is(result.header,'read my story')
+    })
+})
+
+let friendInput ={
+  user_id:3,
+  friend_name:'Lily'
+}
+
+test('saveFriend saves friend info into the database', function (t){
+  return db.saveFriend(friendInput, t.context.connection)
+    .then((res)=>{
+      return t.context.connection('users_friends').select()
+    })
+    .then((res)=>{
+      t.is(res.length,1)
+      t.is(res[0].friend_name,'Lily')
     })
 })

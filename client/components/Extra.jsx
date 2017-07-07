@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {addUser} from '../actions/UserActions'
+import {getUser, addFriend} from '../actions/UserActions'
 
 class Extra extends React.Component{
   constructor(props){
@@ -9,6 +9,9 @@ class Extra extends React.Component{
     this.state=({
       friendName:''
     })
+  }
+  componentDidMount(){
+    this.props.dispatch(getUser())
   }
   fieldChanged(e){
     this.setState(
@@ -18,7 +21,10 @@ class Extra extends React.Component{
     )
   }
   save(e){
-    this.props.dispatch(addUser({friend_name:this.state.friendName}))
+    this.props.dispatch(addFriend({
+      user_id:this.props.user.id,
+      friend_name:this.state.friendName
+    }))
     location.href=this.props.storyUrl
   }
   render(){
@@ -41,4 +47,8 @@ class Extra extends React.Component{
   }
 }
 
-export default connect()(Extra)
+function mapStateToProps(state) {
+  return {user:state.user.user}
+}
+
+export default connect(mapStateToProps)(Extra)
