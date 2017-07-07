@@ -45,7 +45,7 @@ var object={
   user_name:'Mary',
   user_gender:'woman',
   lover_name:'George Clooney',
-  lover_gender:'man',
+  lover_gender:'man'
 }
 
 test.cb('POST /api/v1/users adds a new user to database', function(t){
@@ -53,8 +53,7 @@ test.cb('POST /api/v1/users adds a new user to database', function(t){
     .post('/api/v1/users')
     .send(object)
     .expect(201)
-    .end((err, res) => {
-      console.log(err)
+    .end(function(err, res){
       if (err) throw err
       return t.context.connection('users').select().then((result)=>{
         t.is(result.length, 4)

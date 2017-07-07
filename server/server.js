@@ -13,6 +13,9 @@ var app = express()
 app.set('knex-database', knex)
 
 //Configure to handles post requests
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../public')))
 

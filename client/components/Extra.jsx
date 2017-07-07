@@ -18,6 +18,7 @@ class Extra extends React.Component{
     )
   }
   save(e){
+    this.props.dispatch(addUser({friend_name:this.state.friendName}))
     location.href=this.props.storyUrl
   }
   render(){

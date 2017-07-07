@@ -21,12 +21,19 @@ export function addUserFailure(err){
   }
 }
 
+
+var myHeaders = new Headers();
+myHeaders.append('Content-Type', 'application/json');
+
 export function addUser(user){
   return dispatch => {
+    console.log(user)
     return fetch('/api/v1/users',{
       method:'POST',
+      headers: myHeaders,
+      mode: 'cors',
       body:user})
-      .then(res=>dispatch(addUserSuccess(res.status)))
+      .then(res=>dispatch(addUserSuccess(res)))
       .catch(ex=>dispatch(addUserFailure(ex)))
   }
 }

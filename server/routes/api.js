@@ -24,11 +24,12 @@ router.get('/users/newest',function(req,res){
 })
 
 router.post('/users', (req,res)=>{
+  console.log(req.body)
   let db=req.app.get('knex-database')
   dbFunctions.saveUser(req.body, db)
     .then((result)=>{
-      console.log(req.body)
-      res.status(201).send()
+      res.status(201)
+      res.send(req.body)
     })
 })
 

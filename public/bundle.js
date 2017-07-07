@@ -5726,12 +5726,18 @@ function addUserFailure(err) {
   };
 }
 
+var myHeaders = new Headers();
+myHeaders.append('Content-Type', 'application/json');
+
 function addUser(user) {
   return function (dispatch) {
+    console.log(user);
     return (0, _isomorphicFetch2.default)('/api/v1/users', {
       method: 'POST',
+      headers: myHeaders,
+      mode: 'cors',
       body: user }).then(function (res) {
-      return dispatch(addUserSuccess(res.status));
+      return dispatch(addUserSuccess(res));
     }).catch(function (ex) {
       return dispatch(addUserFailure(ex));
     });
@@ -15361,6 +15367,7 @@ var Extra = function (_React$Component) {
   }, {
     key: 'save',
     value: function save(e) {
+      this.props.dispatch((0, _UserActions.addUser)({ friend_name: this.state.friendName }));
       location.href = this.props.storyUrl;
     }
   }, {
