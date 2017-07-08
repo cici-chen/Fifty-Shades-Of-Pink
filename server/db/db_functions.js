@@ -21,6 +21,11 @@ function saveFriend(object, connection){
   )
 }
 
+function getFriend(userID, connection){
+  return connection('users_friends').where('users_id', userID).first("friend_name")
+}
+//output= {"friend_name": "'lily'"}
+
 function getStories(connection){
   return connection('stories').select()
 }
@@ -34,5 +39,6 @@ module.exports = {
   saveUser,
   getStories,
   getHeader,
-  saveFriend
+  saveFriend,
+  getFriend
 }

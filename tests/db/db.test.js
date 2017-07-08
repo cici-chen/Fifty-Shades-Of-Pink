@@ -69,7 +69,14 @@ test('saveFriend saves friend info into the database', function (t){
       return t.context.connection('users_friends').select()
     })
     .then((res)=>{
-      t.is(res.length,1)
+      t.is(res.length,2)
       t.is(res[0].friend_name,'Lily')
+    })
+})
+
+test('getFriend gets friend name of one user', function (t){
+  return db.getFriend(1, t.context.connection)
+    .then((res)=>{
+      t.is(res.friend_name,'Lily')
     })
 })

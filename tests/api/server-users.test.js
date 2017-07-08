@@ -76,10 +76,22 @@ test.cb('POST /api/v1/users/friend adds a new friend of user to database', funct
     .end(function(err, res){
       if (err) throw err
       return t.context.connection('users_friends')
-        .first()
+        .where('users_id',friendInput.user_id).first()
         .then((result)=>{
         t.is(result.friend_name, 'Tyrion')
         t.end()
       })
+    })
+})
+
+test.cb('GET /api/v1/users/friend adds a new friend of user to database', function(t){
+  request(app)
+    .get('/api/v1/users/friend/1')
+    .expect(200)
+    .expect('Content-Type', /json/)
+    .end(function (err, res) {
+      if (err) throw err
+      t.is(res.body.friend_name, 'Lily')
+      t.end()
     })
 })

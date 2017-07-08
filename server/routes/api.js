@@ -31,13 +31,22 @@ router.post('/users', (req,res)=>{
       res.send(req.body)
     })
 })
+
 router.post('/users/friend', (req,res)=>{
-  console.log(req.body)
   let db=req.app.get('knex-database')
   dbFunctions.saveFriend(req.body, db)
     .then((result)=>{
       res.status(201)
       res.send(req.body)
+    })
+})
+
+router.get('/users/friend/:userid', (req,res)=>{
+  let db=req.app.get('knex-database')
+  dbFunctions.getFriend(req.params.userid, db)
+    .then((result)=>{
+      res.status(200)
+      res.json(result)
     })
 })
 

@@ -23,12 +23,12 @@ describe('user reducers', ()=> {
     expect(
       reducer(initalState,{
         type:types.ADD_USER_SUCCESS,
-        add_user_status:201
+        payload:'test'
       })
     ).toEqual(
       {
         ...initalState,
-        add_user_status:201
+        add_user_status:'test'
       }
     )
   })
@@ -71,5 +71,53 @@ describe('user reducers', ()=> {
         get_user_error:"shiet is broken"
       }
     )
+  })
+
+  it('handles ADD_FRIEND_FAILURE', ()=>{
+    expect(
+      reducer(initalState,{
+        type:'ADD_FRIEND_FAILURE',
+        err:'test'
+      })
+    ).toEqual({
+        ...initalState,
+        add_friend_error:'test'
+      })
+  })
+
+  it('handles ADD_FRIEND_SUCCESS', ()=>{
+    expect(
+      reducer(initalState,{
+        type:'ADD_FRIEND_SUCCESS',
+        payload:'test'
+      })
+    ).toEqual({
+        ...initalState,
+        friend:'test'
+      })
+  })
+
+  it('handles GET_FRIEND_FAILURE', ()=>{
+    expect(
+      reducer(initalState,{
+        type:'GET_FRIEND_FAILURE',
+        err:'test'
+      })
+    ).toEqual({
+        ...initalState,
+        get_friend_error:'test'
+      })
+  })
+
+  it('handles GET_FRIEND_SUCCESS', ()=>{
+    expect(
+      reducer(initalState,{
+        type:'GET_FRIEND_SUCCESS',
+        payload:'test'
+      })
+    ).toEqual({
+        ...initalState,
+        friend:'test'
+      })
   })
 })

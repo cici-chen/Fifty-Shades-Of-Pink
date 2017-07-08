@@ -63,3 +63,56 @@ describe('getUser action', () => {
     store.dispatch(actions.getUser())
 })
 })
+
+const testFriendInfo={
+  "user_id": 173,
+  "friend_name": "Lily"
+}
+
+describe('addFriend action', () => {
+  afterEach(() => {
+    nock.cleanAll()
+  })
+
+  it('create addFriendSuccess', () => {
+    const scope = nock('http://localhost:80')
+      .post('/api/v1/users/friend')
+      .reply(201, testFriendInfo)
+
+    const dispatch = sinon.stub()
+      .onFirstCall()
+      .callsFake((action) => {
+        t.is(action.type, ADD_FRIEND_SUCCESS)
+        t.deepEqual(action.payload, testFriendInfo)
+        t.end()
+        scope.done()
+      })
+
+    const store = mockStore({ stories: [] })
+    store.dispatch(actions.addFriend())
+})
+})
+
+describe('getFriend action', () => {
+  afterEach(() => {
+    nock.cleanAll()
+  })
+
+  it('create getFriendSuccess', () => {
+    const scope = nock('http://localhost:80')
+      .get('/api/v1/users/friend/:userid')
+      .reply(200, testFriendInfo)
+
+    const dispatch = sinon.stub()
+      .onFirstCall()
+      .callsFake((action) => {
+        t.is(action.type, 'GET_FRIEND_SUCCESS')
+        t.deepEqual(action.payload, testFriendInfo)
+        t.end()
+        scope.done()
+      })
+
+    const store = mockStore({ stories: [] })
+    store.dispatch(actions.getFriend())
+})
+})

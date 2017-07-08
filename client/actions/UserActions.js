@@ -10,7 +10,7 @@ import {
 export function addUserSuccess(suc){
   return{
     type: ADD_USER_SUCCESS,
-    user_info:suc.body
+    payload:suc.body
   }
 }
 
@@ -59,6 +59,20 @@ export function getUser(){
   }
 }
 
+export function addFriendSuccess(suc){
+  return{
+    type: 'ADD_FRIEND_SUCCESS',
+    payload:suc.body
+  }
+}
+
+export function addFriendFailure(err){
+  return{
+    type:'ADD_FRIEND_FAILURE',
+    err
+  }
+}
+
 export function addFriend(friend){
   return dispatch => {
     request
@@ -66,9 +80,33 @@ export function addFriend(friend){
       .send(friend)
       .set('Accept', 'application/json')
       .end(function(err, res){
-        if (err) {dispatch(addUserFailure(err))} else{
-          dispatch(addUserSuccess(res))
+        if (err) {dispatch(addFriendFailure(err))} else{
+          dispatch(addFriendSuccess(res))
         }
+      })
+    }
+}
+
+export function getFriendSuccess(suc){
+  return{
+    type: 'GET_FRIEND_SUCCESS',
+    payload:suc.body
+  }
+}
+
+export function getFriendFailure(err){
+  return{
+    type:'GET_FRIEND_FAILURE',
+    err
+  }
+}
+
+export function getFriend(userID){
+  return dispatch => {
+    request
+      .get('/api/v1/users/friend/:`${userID}`')
+      .end(function(err, res){
+        err ? dispatch(getFriendFailure(err)) : dispatch(getFriendSuccess(res))
       })
     }
 }

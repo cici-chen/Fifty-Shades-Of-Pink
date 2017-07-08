@@ -3,7 +3,7 @@ export default function user(state={}, action){
     case 'ADD_USER_SUCCESS':
       return {
         ...state,
-        add_user_status:action.user_info
+        add_user_status:action.payload
       }
 
     case 'ADD_USER_FAILURE':
@@ -20,6 +20,26 @@ export default function user(state={}, action){
       return{
         ...state,
         get_user_error:action.err
+      }
+    case 'ADD_FRIEND_FAILURE':
+      return{
+        ...state,
+        add_friend_error:action.err
+      }
+    case 'ADD_FRIEND_SUCCESS':
+      return{
+        ...state,
+        friend:action.payload
+      }
+    case 'GET_FRIEND_FAILURE':
+      return{
+        ...state,
+        get_friend_error:action.err
+      }
+    case 'GET_FRIEND_SUCCESS':
+      return{
+        ...state,
+        friend:action.payload
       }
     default:
       return state
