@@ -5809,7 +5809,7 @@ function getFriendFailure(err) {
 
 function getFriend(userID) {
   return function (dispatch) {
-    _superagent2.default.get('/api/v1/users/friend/:`${userID}`').end(function (err, res) {
+    _superagent2.default.get('/api/v1/users/friend/' + userID).end(function (err, res) {
       err ? dispatch(getFriendFailure(err)) : dispatch(getFriendSuccess(res));
     });
   };
@@ -16300,151 +16300,9 @@ function fetchStories() {
 
 /***/ }),
 /* 188 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ChapterContent = function (_React$Component) {
-  _inherits(ChapterContent, _React$Component);
-
-  function ChapterContent() {
-    _classCallCheck(this, ChapterContent);
-
-    return _possibleConstructorReturn(this, (ChapterContent.__proto__ || Object.getPrototypeOf(ChapterContent)).apply(this, arguments));
-  }
-
-  _createClass(ChapterContent, [{
-    key: "render",
-    value: function render() {
-      var _DOH = "DOH",
-          Sabrina = _DOH.Sabrina,
-          her = _DOH.her,
-          she = _DOH.she,
-          Lily = _DOH.Lily,
-          his = _DOH.his,
-          he = _DOH.he,
-          NewYork = _DOH.NewYork,
-          GongYoo = _DOH.GongYoo;
-
-      return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(
-          "p",
-          null,
-          Sabrina,
-          " woke up this morning being damn annoyed at ",
-          her,
-          " hair. It always looks like a mess after a night's sleep. But this morning is particularly stressful because ",
-          she,
-          " is running late to a meeting, a meeting which ",
-          she,
-          " didn't sign up for. Early this morning ",
-          Sabrina,
-          " got a phone call from ",
-          her,
-          " friend ",
-          Lily,
-          " who is an internationally renowned photographer."
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          Lily,
-          " apparently drank way too much at a gallery opening and had been throwing up all night. There was not way that ",
-          Lily,
-          " could make it to a photoshoot scheduled today."
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "\"Why can't you just postpone it?\" ",
-          Sabrina,
-          " asked while still half asleep."
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "\"Dude I wish I could duh! I called my assisant. But this person is apparently some big shot, and ",
-          his,
-          " schedule is ridiculously unflexible. The shoot was apparently scheduled 3 months ago and ",
-          he,
-          " is flying to another country this afternoon. Vogue will kill me if I mess up their magazine cover photo.\" said ",
-          Lily
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "\"What?! This is for Vogue? And it's the cover photoshoot? Is this a joke? You are telling me that you want me to pretend to be you and shoot a cover for Vogue? Have you lost your mind?\" ",
-          Sabrina,
-          " was shocked by ",
-          her,
-          " friend's request."
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "\"You will be fine. I have seen portraits you've shot on your instagram. You have amazing athestics, and a natural grasp on light and framing. I know a great photographer when I see one. I will photoshop the photos afterwards. I've been doing this for a long time. Trust me, you will be fine.\" ",
-          Lily,
-          " said affirmatively."
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "\"Um... No thanks. I can not handle this kind of pressure.\" ",
-          Sabrina,
-          " was not convinced."
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "\"Pleaseeee pleassseee. Just think of it this way. No matter how bad a job you do, it can not be worse than my not having photos at all.. I'm begging you. If I mess this up Vogue will never gives me gigs again. And they pay me well. I really need this. You know that I've been working really hard to have enough saving to open my own gallery.\" ",
-          Lily,
-          " started to choke on the other end of the phone."
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "\"Ahhh. I can't believe I'm saying this... But OK. I'll go. Send me the address.\" Somestimes ",
-          Sabrina,
-          " really wish ",
-          she,
-          " knew how to say no to a crying friend."
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "In a hurry, ",
-          Sabrina,
-          " threw on a lightblue cotton shirt and a pair of jeans, and jumped into a taxi."
-        )
-      );
-    }
-  }]);
-
-  return ChapterContent;
-}(_react2.default.Component);
-
-exports.default = ChapterContent;
+throw new Error("Module build failed: SyntaxError: Unexpected token (8:4)\n\n\u001b[0m \u001b[90m  6 | \u001b[39m    \u001b[36mreturn\u001b[39m (\n \u001b[90m  7 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 | \u001b[39m    )\n \u001b[90m    | \u001b[39m    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 | \u001b[39m  }\n \u001b[90m 10 | \u001b[39m}\n \u001b[90m 11 | \u001b[39m\u001b[0m\n");
 
 /***/ }),
 /* 189 */
@@ -17124,12 +16982,19 @@ var ChapterContainer = function (_React$Component) {
         loverName: lover_name,
         loverGender: lover_gender
       });
-      this.props.dispatch(getFriend(id));
+      if (this.state.userName == undefined) {
+        this.props.dispatch((0, _UserActions.getFriend)(nextProps.user.user.id));
+      }
+      if (nextProps.user.friend) {
+        this.setState({
+          friendName: nextProps.user.friend.friend_name
+        });
+      }
     }
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.props.user);
+      console.log(this.state);
       return _react2.default.createElement(
         'div',
         null,
@@ -17143,9 +17008,10 @@ var ChapterContainer = function (_React$Component) {
             _react2.default.createElement(
               'p',
               { className: 'chapter-number' },
-              'CHAPTER ONE'
+              ' CHAPTER ',
+              this.state.chapter
             ),
-            this.state.userName ? _react2.default.createElement(_ChapterContent2.default, null) : _react2.default.createElement(
+            this.state.friendName ? _react2.default.createElement(_ChapterContent2.default, null) : _react2.default.createElement(
               'p',
               null,
               'Content Loading...'

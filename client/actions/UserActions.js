@@ -104,7 +104,7 @@ export function getFriendFailure(err){
 export function getFriend(userID){
   return dispatch => {
     request
-      .get('/api/v1/users/friend/:`${userID}`')
+      .get(`/api/v1/users/friend/${userID}`)
       .end(function(err, res){
         err ? dispatch(getFriendFailure(err)) : dispatch(getFriendSuccess(res))
       })

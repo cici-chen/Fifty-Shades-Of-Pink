@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {getUser} from '../actions/UserActions'
+import {getUser,getFriend} from '../actions/UserActions'
 
 import HeaderContainer from './HeaderContainer'
 import ChapterContent from '../components/ChapterContent'
@@ -26,20 +26,27 @@ class ChapterContainer extends React.Component {
       userName:user_name,
       userGender:user_gender,
       loverName:lover_name,
-      loverGender:lover_gender
+      loverGender:lover_gender,
     })
-    this.props.dispatch(getFriend(id))
+    if (this.state.userName == undefined) {
+      this.props.dispatch(getFriend(nextProps.user.user.id))
+    }
+    if (nextProps.user.friend){
+      this.setState({
+        friendName:nextProps.user.friend.friend_name
+      })
+    }
   }
 
   render() {
-    console.log(this.props.user);
+    console.log(this.state);
     return (
       <div>
         <HeaderContainer storyTitle={this.state.storyTitle}/>
           <div className='single-chapter'>
             <div className="story-container">
-              <p className="chapter-number">CHAPTER ONE</p>
-              {this.state.userName ? <ChapterContent /> : <p>Content Loading...</p>}
+              <p className="chapter-number"> CHAPTER {this.state.chapter}</p>
+              {this.state.friendName ? <ChapterContent /> : <p>Content Loading...</p>}
             </div>
             <a href="/stories/fifty-shades-of-pink/chapter/2"><button className='next-chapter'>Next Chapter</button></a>
           </div>
