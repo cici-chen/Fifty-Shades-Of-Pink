@@ -39,16 +39,23 @@ class ChapterContainer extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    let {userName, userGender, loverName, loverGender, friendName,chapter} = this.state
+    let link = `?#/stories/fifty-shades-of-pink/${parseInt(this.state.chapter)+1}`
     return (
       <div>
         <HeaderContainer storyTitle={this.state.storyTitle}/>
           <div className='single-chapter'>
-            <div className="story-container">
-              <p className="chapter-number"> CHAPTER {this.state.chapter}</p>
-              {this.state.friendName ? <ChapterContent /> : <p>Content Loading...</p>}
+            <div className="story-container container-fluid chapter-content">
+              <p className="chapter-number text-center"> CHAPTER {this.state.chapter}</p>
+              {this.state.friendName ? <ChapterContent
+                userName={userName}
+                userGender={userGender}
+                loverName={loverName}
+                loverGender={loverGender}
+                friendName={friendName}
+                chapter={chapter} /> : <p>Content Loading...</p>}
             </div>
-            <a href="/stories/fifty-shades-of-pink/chapter/2"><button className='next-chapter'>Next Chapter</button></a>
+            <a href={link}><button className='next-chapter'>Next Chapter</button></a>
           </div>
       </div>
     )

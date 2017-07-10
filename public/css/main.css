@@ -5950,4 +5950,12 @@ button.close {
   .extra .form-control {
     width: 90%; }
 
+@media (min-width: 992px) {
+  .chapter-content {
+    margin-left: 130px;
+    margin-right: 130px; } }
+
+.chapter-number {
+  margin-top: 5px; }
+
 /*# sourceMappingURL=main.css.map */

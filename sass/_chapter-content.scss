@@ -1,0 +1,9 @@
+.chapter-content{
+  @media (min-width: $screen-md) {
+    margin-left: 130px;
+    margin-right:130px;
+  }
+}
+.chapter-number{
+  margin-top: 5px;
+}
