@@ -5897,6 +5897,9 @@ button.close {
   @media (min-width: 768px) {
     .book-info {
       padding-left: 10px; } }
+  @media (min-width: 768px) {
+    .book-info .form-group {
+      width: 80%; } }
 
 #story-title {
   font-size: 18px;
@@ -5939,7 +5942,7 @@ button.close {
     margin-left: 3px;
     display: block;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px; }
+    font-size: 14px; }
   .extra .submit-button {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     width: 95%;
@@ -5955,7 +5958,22 @@ button.close {
     margin-left: 130px;
     margin-right: 130px; } }
 
-.chapter-number {
-  margin-top: 5px; }
+.single-chapter .chapter-nav {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+.single-chapter .btn-default {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  border-bottom: solid 1px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px; }
+  .single-chapter .btn-default:hover {
+    color: #e66c7e; }
 
 /*# sourceMappingURL=main.css.map */

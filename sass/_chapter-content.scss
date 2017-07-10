@@ -4,6 +4,30 @@
     margin-right:130px;
   }
 }
-.chapter-number{
-  margin-top: 5px;
+
+@mixin center-margin($margin) {
+  display: block;
+  margin-left: $margin;
+  margin-right: $margin;
+  text-align: center;
+}
+
+.single-chapter{
+  .chapter-nav{
+    @include center-margin(auto);
+  }
+  .btn-default{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: solid 1px;
+    padding-bottom: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+    &:hover{
+      color:$theme-1;
+    }
+  }
 }

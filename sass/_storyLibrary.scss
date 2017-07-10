@@ -3,6 +3,7 @@
     margin-left: 150px;
     margin-right:150px;
   }
+
 }
 .col-container{
   padding-left: 0px;
@@ -34,6 +35,11 @@
   }
   @media (min-width: $screen-sm) {
     padding-left: 10px;
+  }
+  .form-group{
+    @media (min-width: 768px) {
+      width: 80%;
+    }
   }
 }
 
@@ -84,7 +90,7 @@
   margin-left: 3px;
   display:block;
   font-family:$font-family-base;
-  font-size: ceil(($font-size-base * 0.85));
+  font-size: ceil(($font-size-base));
   }
   .submit-button{
   font-family:$font-family-base;

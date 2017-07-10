@@ -15,7 +15,7 @@ class ChapterContainer extends React.Component {
     chapter:this.props.match.params.chapter
     };
   }
-
+  
   componentWillMount(){
     this.props.dispatch(getUser())
   }
@@ -39,8 +39,10 @@ class ChapterContainer extends React.Component {
   }
 
   render() {
-    let {userName, userGender, loverName, loverGender, friendName,chapter} = this.state
-    let link = `?#/stories/fifty-shades-of-pink/${parseInt(this.state.chapter)+1}`
+    console.log(this.props.match.params.chapter)
+    let {userName, userGender, loverName, loverGender, friendName,chapter,storyTitle} = this.state
+    let linkPrev = `?#/stories/fifty-shades-of-pink/${parseInt(this.state.chapter)-1}`
+    let linkNext = `?#/stories/fifty-shades-of-pink/${parseInt(this.state.chapter)+1}`
     return (
       <div>
         <HeaderContainer storyTitle={this.state.storyTitle}/>
@@ -53,9 +55,13 @@ class ChapterContainer extends React.Component {
                 loverName={loverName}
                 loverGender={loverGender}
                 friendName={friendName}
+                story={storyTitle}
                 chapter={chapter} /> : <p>Content Loading...</p>}
             </div>
-            <a href={link}><button className='next-chapter'>Next Chapter</button></a>
+            <div className="chapter-nav">
+              {this.state.chapter !=1 && <a href={linkPrev}><button type="button" className="btn btn-default">Previous  Chapter</button></a>}
+              <a href={linkNext}><button type="button" className="btn btn-default" onClick={this.changeChapter}>Next Chapter</button></a>
+            </div>
           </div>
       </div>
     )
