@@ -4,7 +4,7 @@ import FiftyShadeChapTwo from './fifty/ChapTwo'
 import FiftyShadeChapThree from './fifty/ChapThree'
 
 const Components = {
-    "fifty-shades-of-pink-1":FiftyShadeChapOne,
+  "fifty-shades-of-pink-1":FiftyShadeChapOne,
   "fifty-shades-of-pink-2":FiftyShadeChapTwo,
   "fifty-shades-of-pink-3":FiftyShadeChapThree};
 

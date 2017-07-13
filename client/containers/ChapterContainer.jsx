@@ -5,6 +5,7 @@ import {getUser,getFriend} from '../actions/UserActions'
 
 import HeaderContainer from './HeaderContainer'
 import ChapterContent from '../components/ChapterContent'
+import ProgressBar from '../components/ProgressBar'
 
 class ChapterContainer extends React.Component {
 
@@ -15,7 +16,7 @@ class ChapterContainer extends React.Component {
     chapter:this.props.match.params.chapter
     };
   }
-  
+
   componentWillMount(){
     this.props.dispatch(getUser())
   }
@@ -27,6 +28,8 @@ class ChapterContainer extends React.Component {
       userGender:user_gender,
       loverName:lover_name,
       loverGender:lover_gender,
+      chapter:nextProps.match.params.chapter,
+      storyTitle:nextProps.match.params.story
     })
     if (this.state.userName == undefined) {
       this.props.dispatch(getFriend(nextProps.user.user.id))
@@ -58,6 +61,7 @@ class ChapterContainer extends React.Component {
                 story={storyTitle}
                 chapter={chapter} /> : <p>Content Loading...</p>}
             </div>
+            <ProgressBar progress="0.3"/>
             <div className="chapter-nav">
               {this.state.chapter !=1 && <a href={linkPrev}><button type="button" className="btn btn-default">Previous  Chapter</button></a>}
               <a href={linkNext}><button type="button" className="btn btn-default" onClick={this.changeChapter}>Next Chapter</button></a>
@@ -73,13 +77,5 @@ function mapStateToProps(state){
     user:state.user.user
   }
 }
-//props.user = {
-// user:{
-//   id:3,
-//   lover_gender:"woman",
-//   lover_name:"Dragon Girl",
-//   user_gender:"man",
-//   user_name:"John Snow"
-// }
 
 export default connect(state=>state)(ChapterContainer)
