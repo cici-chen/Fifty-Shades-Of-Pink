@@ -33,7 +33,6 @@ class ChapterContent extends React.Component {
   }
 
   render() {
-    console.log("rerender why not",this.props.chapter)
     let {
       userName,
       her,

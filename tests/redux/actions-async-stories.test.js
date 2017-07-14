@@ -20,7 +20,7 @@ const testStoriesInfo=[
   }
 ]
 
-describe('async actions', () => {
+describe('fetchStories', () => {
   afterEach(() => {
     nock.cleanAll()
   })
@@ -45,5 +45,29 @@ describe('async actions', () => {
 
     const store = mockStore({ stories: [] })
     store.dispatch(actions.fetchStories())
+})
+})
+
+describe('getStoryInfo', () => {
+  afterEach(() => {
+    nock.cleanAll()
+  })
+
+  it('create GET_STORY_INFO_SUCCESS', () => {
+    const scope = nock('http://localhost:80')
+      .get('/api/v1/stories/fifty-shades-of-pink')
+      .reply(200, {message:test})
+
+    const dispatch = sinon.stub()
+      .onFirstCall()
+      .callsFake((action) => {
+        t.is(action.type, "GET_STORY_INFO_SUCCESS")
+        t.deepEqual(action.payload, {message:test})
+        t.end()
+        scope.done()
+      })
+
+    const store = mockStore({ stories: [] })
+    store.dispatch(actions.getStoryInfo('fifty-shades-of-pink'))
 })
 })

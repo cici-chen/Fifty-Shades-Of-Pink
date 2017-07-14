@@ -21,3 +21,15 @@ test.cb('GET /api/v1/stories gets all stories', function (t) {
       t.end()
     })
 })
+
+test.cb('GET /api/v1/stories/:hotel-room gets total chapters of the story', function(t){
+  request(app)
+    .get('/api/v1/stories/:hotel-room')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .end(function(err, res) {
+      if(err) throw err
+      t.is(res.body[total_chapters],4)
+      t.end()
+    })
+})

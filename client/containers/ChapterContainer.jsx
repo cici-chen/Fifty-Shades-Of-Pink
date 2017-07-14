@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import {getUser,getFriend} from '../actions/UserActions'
+import {getStoryInfo} from '../actions/StoriesActions'
 
 import HeaderContainer from './HeaderContainer'
 import ChapterContent from '../components/ChapterContent'
@@ -18,7 +19,8 @@ class ChapterContainer extends React.Component {
   }
 
   componentWillMount(){
-    this.props.dispatch(getUser())
+    this.props.dispatch(getUser(this.state.storyTitle))
+    this.props.dispatch(getStoryInfo(this.state.storyTitle))
   }
 
   componentWillReceiveProps(nextProps){
@@ -39,13 +41,16 @@ class ChapterContainer extends React.Component {
         friendName:nextProps.user.friend.friend_name
       })
     }
+    this.setState({
+      total_chapters:nextProps.storyInfo['total_chapters']
+    })
   }
 
   render() {
-    console.log(this.props.match.params.chapter)
     let {userName, userGender, loverName, loverGender, friendName,chapter,storyTitle} = this.state
     let linkPrev = `?#/stories/fifty-shades-of-pink/${parseInt(this.state.chapter)-1}`
     let linkNext = `?#/stories/fifty-shades-of-pink/${parseInt(this.state.chapter)+1}`
+    let chapterProgress = (this.state.chapter/this.state.total_chapters)
     return (
       <div>
         <HeaderContainer storyTitle={this.state.storyTitle}/>
@@ -61,7 +66,7 @@ class ChapterContainer extends React.Component {
                 story={storyTitle}
                 chapter={chapter} /> : <p>Content Loading...</p>}
             </div>
-            <ProgressBar progress="0.3"/>
+            <ProgressBar progress={chapterProgress}/>
             <div className="chapter-nav">
               {this.state.chapter !=1 && <a href={linkPrev}><button type="button" className="btn btn-default">Previous  Chapter</button></a>}
               <a href={linkNext}><button type="button" className="btn btn-default" onClick={this.changeChapter}>Next Chapter</button></a>
@@ -74,7 +79,8 @@ class ChapterContainer extends React.Component {
 
 function mapStateToProps(state){
   return {
-    user:state.user.user
+    user:state.user.user,
+    storyInfo:state.storyInfo
   }
 }
 

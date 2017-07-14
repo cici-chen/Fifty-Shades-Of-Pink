@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
     table.string('image')
     table.string('description')
     table.string('storyUrl')
+    table.integer('total_chapters')
   })
 };
 

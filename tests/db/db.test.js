@@ -80,3 +80,10 @@ test('getFriend gets friend name of one user', function (t){
       t.is(res.friend_name,'Lily')
     })
 })
+
+test('getStoryInfo gets total chapter numbers of a story', function(t){
+  return db.getStoryInfo('hotel-room', t.context.connection)
+    .then((res)=>{
+      t.deepEqual(res,{total_chapters: 2})
+    })
+})

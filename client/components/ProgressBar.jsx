@@ -3,13 +3,10 @@ import React from 'react'
 class ProgressBar extends React.Component {
   constructor(props){
     super(props)
-    this.state={
-      progress:this.props.progress
-    }
   }
   render(){
     const divStyle={
-      width:Number(this.state.progress)*100+'%'
+      width:Number(this.props.progress)*100+'%'
     }
     return(
       <div className="progress">

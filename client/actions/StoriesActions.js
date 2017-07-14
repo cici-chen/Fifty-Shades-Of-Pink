@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch'
+import request from 'superagent'
 
 import {
   FETCH_STORIES_REQUEST,
@@ -34,5 +35,29 @@ export function fetchStories(){
       .then(res => res.json())
       .then(data=>dispatch(fetchStoriesSuccess(data)))
       .catch(ex => dispatch(fetchStoriesFailure(ex)))
+  }
+}
+
+export function getStoryInfoSuccess(chapterInfoObject){
+  return{
+    type: "GET_STORY_INFO_SUCCESS",
+    payload:chapterInfoObject['total_chapters']
+  }
+}
+
+export function getStoryInfoFailure(err){
+  return{
+    type: "GET_STORY_INFO_FAILURE",
+    payload:err
+  }
+}
+
+export function getStoryInfo(storyTitle){
+  return dispatch => {
+    request
+      .get(`/api/v1/stories/${storyTitle}`)
+      .end(function(err,res){
+        err ? dispatch(getStoryInfoFailure(err)) : dispatch(getStoryInfoSuccess(res.body))
+      })
   }
 }

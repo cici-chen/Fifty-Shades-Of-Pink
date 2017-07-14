@@ -30,6 +30,10 @@ function getStories(connection){
   return connection('stories').select()
 }
 
+function getStoryInfo(storyName, connection){
+  return connection('stories').where('name', storyName).first("total_chapters")
+}
+
 function getHeader(pageUrl,connection){
   return connection('headers').where('pageUrl',pageUrl).first()
 }
@@ -40,5 +44,6 @@ module.exports = {
   getStories,
   getHeader,
   saveFriend,
-  getFriend
+  getFriend,
+  getStoryInfo
 }
