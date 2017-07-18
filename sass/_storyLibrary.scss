@@ -93,9 +93,14 @@
   margin-right: 2px;
 }
 .extra {
-  background-color: rgba(255, 255, 255, 0.35);
-  border-radius: 2px;
-  font-size: ceil(($font-size-base * 0.85));
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 1px;
+  @media (min-width: $screen-sm){
+    margin-left: 15px;
+  }
+  p{
+    font-size: 12px;
+  }
   #extra-title{
   padding-left: 3px;
   font-size: $font-size-base;
@@ -107,17 +112,31 @@
   margin-left: 3px;
   display:block;
   font-family:$font-family-base;
-  font-size: ceil(($font-size-base));
+  font-size: 12px;
   }
   .submit-button{
   font-family:$font-family-base;
-  width:95%;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 5px;
-  font-size: $font-size-base;
+  width:50%;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 3px;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color:white;
+  border-radius: 1px;
+  border: none;
   }
   .form-control{
-  width: 90%;
+   margin-top: 5px;
+   margin-left: 0;
+   margin-bottom: 2px;
+   height: 28px;
+   padding-left: 3px;
+   border-bottom:1px solid;
+   border-radius: 0;
+   width:100%;
+   @media (min-width: $screen-sm) {
+     width:50%;
+   }
   }
 }

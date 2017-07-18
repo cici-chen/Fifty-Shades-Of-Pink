@@ -14472,9 +14472,7 @@ var StoryLibraryItem = function (_React$Component) {
   }, {
     key: 'showExtra',
     value: function showExtra(e) {
-      this.setState({
-        showExtra: true
-      });
+      this.state.showExtra ? this.setState({ showExtra: false }) : this.setState({ showExtra: true });
     }
   }, {
     key: 'render',

@@ -32,9 +32,7 @@ class StoryLibraryItem extends React.Component{
   }
 
   showExtra(e){
-    this.setState({
-      showExtra:true
-    })
+    this.state.showExtra ? this.setState({showExtra:false}) : this.setState({showExtra:true})
   }
   render(){
     let {story}=this.props

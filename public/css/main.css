@@ -5946,9 +5946,13 @@ button.close {
   margin-right: 2px; }
 
 .extra {
-  background-color: rgba(255, 255, 255, 0.35);
-  border-radius: 2px;
-  font-size: 12px; }
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 1px; }
+  @media (min-width: 768px) {
+    .extra {
+      margin-left: 15px; } }
+  .extra p {
+    font-size: 12px; }
   .extra #extra-title {
     padding-left: 3px;
     font-size: 14px; }
@@ -5958,16 +5962,30 @@ button.close {
     margin-left: 3px;
     display: block;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px; }
+    font-size: 12px; }
   .extra .submit-button {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    width: 95%;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-left: 5px;
-    font-size: 14px; }
+    width: 50%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 3px;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-radius: 1px;
+    border: none; }
   .extra .form-control {
-    width: 90%; }
+    margin-top: 5px;
+    margin-left: 0;
+    margin-bottom: 2px;
+    height: 28px;
+    padding-left: 3px;
+    border-bottom: 1px solid;
+    border-radius: 0;
+    width: 100%; }
+    @media (min-width: 768px) {
+      .extra .form-control {
+        width: 50%; } }
 
 @media (min-width: 992px) {
   .chapter-content {
