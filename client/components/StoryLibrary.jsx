@@ -1,25 +1,16 @@
 import React from 'react'
-import { connect } from 'react-redux';
-
-import {getStoryTags} from '../actions/StoriesActions'
 
 import StoryLibraryItem from './StoryLibraryItem'
 
 class StoryLibrary extends React.Component{
   renderStory (story) {
-    this.props.dispatch(getStoryTags(story.id))
-    if(this.props.tags){
-      return <StoryLibraryItem
-        key={story.id}
-        story={story}
-        tags={this.props.tags}
-        />
-    }
+    return <StoryLibraryItem
+      key={story.id}
+      story={story}/>
   }
   renderStories() {
     return this.props.stories.map((story)=>this.renderStory(story))
   }
-
   render(){
     return (
       <div className="story-library">
@@ -31,10 +22,4 @@ class StoryLibrary extends React.Component{
   }
 }
 
-function mapStateToProps(state){
-  return {
-    tags:state.storyInfo.tags
-  }
-}
-
-export default connect(mapStateToProps)(StoryLibrary)
+export default StoryLibrary

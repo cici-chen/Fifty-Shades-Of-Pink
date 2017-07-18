@@ -41,7 +41,7 @@ test.cb('GET /api/v1/stories/tags/1 gets tags of a story', function(t){
     .expect(200)
     .end(function(err,res) {
       if(err) throw err
-      t.deepEqual(res.body, [ { tag: 'romantic' }, { tag: 'celebrity' } ])
+      t.deepEqual(res.body, [ { stories_id:1, tag: 'romantic' }, { stories_id:1, tag: 'celebrity' } ])
       t.end()
     })
 })

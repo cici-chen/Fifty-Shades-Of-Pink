@@ -9,9 +9,9 @@
 ### GET http://localhost:3000/api/v1/stories/tags/1
 [
   {
-    "tag": "romantic"
+    stories_id：1，"tag": "romantic"
   },
   {
-    "tag": "celebrity"
+    stories_id:1, "tag": "celebrity"
   }
 ]

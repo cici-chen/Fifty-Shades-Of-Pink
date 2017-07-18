@@ -39,7 +39,7 @@ function getHeader(pageUrl,connection){
 }
 
 function getStoryTags(storyID, connection){
-  return connection('stories_tags').where('stories_id',storyID).select("tag")
+  return connection('stories_tags').where('stories_id',storyID).select("tag","stories_id")
 }
 
 module.exports = {

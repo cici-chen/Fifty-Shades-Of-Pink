@@ -1,21 +1,43 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
+import {getStoryTags} from '../actions/StoriesActions'
 import Extra from './Extra'
 
 class StoryLibraryItem extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      showExtra:false
+      showExtra:false,
+      tags:[]
     }
   }
+  componentWillMount(){
+    this.props.dispatch(getStoryTags(this.props.story.id))
+  }
+  componentWillReceiveProps(nextProps){
+    if(nextProps.tags){
+      nextProps.tags.map((item)=>{
+        this.state.tags.push(item)
+      })
+    }
+  }
+  renderTags(storyID){
+    let tags=this.state.tags.filter((element)=>{
+      return element.stories_id == storyID
+    })
+    return tags.map((item,index)=>{
+      return <span key={index} id='tag'>{item.tag}</span>
+    })
+  }
+
   showExtra(e){
     this.setState({
       showExtra:true
     })
   }
   render(){
-    let {story,tags}=this.props
+    let {story}=this.props
     return (
       <div className="col-md-3 col-container">
       <div className="story-library-item container-fluid">
@@ -34,7 +56,7 @@ class StoryLibraryItem extends React.Component{
                     <p>Rating:♡♡♡♡♡ 200 </p>
                     <p className='text-nowrap' >3432 people have read it</p>
                     <p>Published: {story.publish_date}</p>
-                    <p>Genre: {this.props.tags && this.renderTags()}</p>
+                    <p>Genre: {this.state.tags.length>0 && this.renderTags(story.id)}</p>
                   </div>
                   <div className='lower-box'>
                     <i className="fa fa-bath" aria-hidden="true"></i>
@@ -52,4 +74,10 @@ class StoryLibraryItem extends React.Component{
   )}
 }
 
-export default StoryLibraryItem
+function mapStateToProps(state){
+  return {
+    tags:state.storyInfo.tags
+  }
+}
+
+export default connect(mapStateToProps)(StoryLibraryItem)

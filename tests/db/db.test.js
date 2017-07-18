@@ -91,6 +91,6 @@ test('getStoryInfo gets total chapter numbers of a story', function(t){
 test('getStoryTags gets all tags of a story', function(t){
   return db.getStoryTags(1, t.context.connection)
     .then((res)=>{
-      t.deepEqual(res,[ { tag: 'romantic' }, { tag: 'celebrity' } ])
+      t.deepEqual(res,[ { stories_id:1, tag: 'romantic' }, { stories_id:1, tag: 'celebrity' } ])
     })
 })
