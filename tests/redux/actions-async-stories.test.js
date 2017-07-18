@@ -71,3 +71,27 @@ describe('getStoryInfo', () => {
     store.dispatch(actions.getStoryInfo('fifty-shades-of-pink'))
 })
 })
+
+describe('getStoryTags', () => {
+  afterEach(() => {
+    nock.cleanAll()
+  })
+
+  it('create GET_STORY_TAGS_SUCCESS', () => {
+    const scope = nock('http://localhost:80')
+      .get('/api/v1/stories/tags/1')
+      .reply(200, {message:test})
+
+    const dispatch = sinon.stub()
+      .onFirstCall()
+      .callsFake((action) => {
+        t.is(action.type, "GET_STORY_TAGS_SUCCESS")
+        t.deepEqual(action.payload, {message:test})
+        t.end()
+        scope.done()
+      })
+
+    const store = mockStore({ stories: [] })
+    store.dispatch(actions.getStoryTags(1))
+})
+})

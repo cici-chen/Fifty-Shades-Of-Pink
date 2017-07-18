@@ -69,7 +69,8 @@ class ChapterContainer extends React.Component {
             <ProgressBar progress={chapterProgress}/>
             <div className="chapter-nav">
               {this.state.chapter !=1 && <a href={linkPrev}><button type="button" className="btn btn-default">Previous  Chapter</button></a>}
-              <a href={linkNext}><button type="button" className="btn btn-default" onClick={this.changeChapter}>Next Chapter</button></a>
+              {this.state.chapter >= this.state.total_chapters ? <button type="button" className="btn btn-default">This is the last Chapter</button> : <a href={linkNext}><button type="button" className="btn btn-default" onClick={this.changeChapter}>Next Chapter</button></a>
+              }
             </div>
           </div>
       </div>

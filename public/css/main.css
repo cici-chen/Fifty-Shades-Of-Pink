@@ -5877,7 +5877,8 @@ button.close {
 .story-library-item {
   display: flex;
   margin: 1em;
-  border-bottom: 0.15em solid #333; }
+  border-bottom: 0.1em solid #333;
+  padding-bottom: 10px; }
 
 .book-cover {
   padding-left: 10px;
@@ -5885,46 +5886,61 @@ button.close {
   @media (min-width: 768px) {
     .book-cover {
       padding-left: 0px;
-      padding-right: 0px; }
+      padding-right: 0px;
+      width: 175px;
+      height: 260px;
+      overflow: hidden; }
       .book-cover:hover {
-        border: solid 3px #e66c7e; } }
+        border: solid 2px #e66c7e; } }
 
 .book-info {
   padding-left: 0px;
-  font-size: 12px; }
+  font-size: 10px; }
   .book-info p {
     margin-bottom: 2px; }
-  @media (min-width: 768px) {
-    .book-info {
-      padding-left: 10px; } }
   @media (min-width: 768px) {
     .book-info .form-group {
       width: 80%; } }
 
 #story-title {
-  font-size: 18px;
-  border-bottom: 0.15em solid #333;
+  font-size: 16px;
   text-align: left;
-  margin-top: 0;
-  margin-bottom: 0.5em; }
+  margin-top: 0.1em;
+  margin-bottom: 0.1em; }
+  @media (min-width: 768px) {
+    #story-title {
+      text-align: center; } }
 
 .story-description {
   font-size: 12px;
-  padding-left: 24px; }
+  color: silver;
+  padding-left: 0px;
+  padding-right: 0px;
+  line-height: 1.2; }
+  @media (min-width: 768px) {
+    .story-description {
+      padding-left: 0px;
+      margin-left: 15px;
+      width: 80%;
+      height: 80px;
+      overflow: scroll; } }
 
 .boxes {
-  background-color: rgba(255, 255, 255, 0.4); }
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 2px; }
   @media (min-width: 768px) {
     .boxes {
-      padding: 2px;
-      display: flex; } }
+      display: flex;
+      margin-left: 10px; } }
+  .boxes #tag {
+    padding: 1px;
+    border-radius: 2px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-right: 2px; }
 
 .lower-box, .fa {
-  margin-top: 35px;
   display: flex; }
-  @media (min-width: 768px) {
-    .lower-box, .fa {
-      margin-top: 0px; } }
 
 .fa {
   margin-right: 2px; }
@@ -5958,36 +5974,38 @@ button.close {
     margin-left: 130px;
     margin-right: 130px; } }
 
-.single-chapter .progress {
-  height: 10px;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  width: 80%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center; }
-  @media (min-width: 992px) {
-    .single-chapter .progress {
-      width: 50%; } }
-.single-chapter .progress-bar {
-  background-color: #e66c7e;
-  opacity: 0.9; }
-.single-chapter .chapter-nav {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center; }
-.single-chapter .btn-default {
-  margin: 5px;
-  background-color: transparent;
-  border-radius: 0;
-  border: none;
-  border-bottom: solid 1px;
-  padding-bottom: 1px;
-  padding-left: 3px;
-  padding-right: 3px; }
-  .single-chapter .btn-default:hover {
-    color: #e66c7e; }
+.single-chapter {
+  color: silver; }
+  .single-chapter .progress {
+    height: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+    @media (min-width: 992px) {
+      .single-chapter .progress {
+        width: 50%; } }
+  .single-chapter .progress-bar {
+    background-color: #e66c7e;
+    opacity: 0.9; }
+  .single-chapter .chapter-nav {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+  .single-chapter .btn-default {
+    margin: 5px;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: solid 1px;
+    padding-bottom: 1px;
+    padding-left: 3px;
+    padding-right: 3px; }
+    .single-chapter .btn-default:hover {
+      color: #e66c7e; }
 
 /*# sourceMappingURL=main.css.map */

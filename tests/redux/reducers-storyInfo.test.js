@@ -37,4 +37,28 @@ describe('storyInfo reducers', ()=> {
       }
     )
   })
+  it('handles GET_STORY_TAGS_FAILURE by adding error to state', ()=>{
+    expect(
+      reducer(initalState,{
+        type:"GET_STORY_TAGS_FAILURE",
+        payload:"test"})
+    ).toEqual(
+      {
+        ...initalState,
+        get_story_tag_err:"test"
+      }
+    )
+  })
+  it('handles GET_STORY_TAGS_FAILURE by adding error to state', ()=>{
+    expect(
+      reducer(initalState,{
+        type:"GET_STORY_TAGS_SUCCESS",
+        payload:"test"})
+    ).toEqual(
+      {
+        ...initalState,
+        tags:"test"
+      }
+    )
+  })
 })

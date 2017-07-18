@@ -15,7 +15,7 @@ class StoryLibraryItem extends React.Component{
     })
   }
   render(){
-    let {story}=this.props
+    let {story,tags}=this.props
     return (
       <div className="col-md-3 col-container">
       <div className="story-library-item container-fluid">
@@ -23,26 +23,27 @@ class StoryLibraryItem extends React.Component{
               <div className="col-md-12 col-sm-6 col-xs-6 book-cover" onClick={e=>this.showExtra(e)}>
                   <img className="img-responsive center-block" src={story.image} alt="a book cover"></img>
               </div>
-              <div className="col-md-12 col-sm-6 col-xs-6 book-info">
-                <p id='story-title'>{story.title}</p>
-                {this.state.showExtra ? <Extra storyUrl={story.storyUrl}/> :
-                <div className="boxes">
-                <div className='upper-box'>
-                  <p>Author:JK Rowling</p>
-                  <p>Rating:♡♡♡♡♡ 200 </p>
-                  <p className='text-nowrap' >3432 people have read it</p>
-                  <p>Published: 2017/05/04</p>
-                </div>
-                <div className='lower-box'>
-                  <i className="fa fa-bath" aria-hidden="true"></i>
-                  <i className="fa fa-heart" aria-hidden="true"></i>
-                  <i className="fa fa-list" aria-hidden="true"></i>
-                </div>
-                </div>
-              }
-              </div>
+              <p id='story-title'>{story.title}</p>
               <div className="row">
-                <p className="col-sm-12 col-xs-12 story-description">{story.description}</p>
+                <p className="col-sm-6 col-xs-6 story-description">{story.description}</p>
+                <div className="col-md-12 col-sm-6 col-xs-6 book-info">
+                  {this.state.showExtra ? <Extra storyUrl={story.storyUrl}/> :
+                  <div className="boxes">
+                  <div className='upper-box'>
+                    <p>Author: {story.author}</p>
+                    <p>Rating:♡♡♡♡♡ 200 </p>
+                    <p className='text-nowrap' >3432 people have read it</p>
+                    <p>Published: {story.publish_date}</p>
+                    <p>Genre: {this.props.tags && this.renderTags()}</p>
+                  </div>
+                  <div className='lower-box'>
+                    <i className="fa fa-bath" aria-hidden="true"></i>
+                    <i className="fa fa-heart" aria-hidden="true"></i>
+                    <i className="fa fa-list" aria-hidden="true"></i>
+                  </div>
+                  </div>
+                  }
+                </div>
               </div>
             </div>
 

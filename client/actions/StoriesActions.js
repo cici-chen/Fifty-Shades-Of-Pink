@@ -61,3 +61,27 @@ export function getStoryInfo(storyTitle){
       })
   }
 }
+
+export function getStoryTagsSuccess(storyTagsArray){
+  return{
+    type: "GET_STORY_TAGS_SUCCESS",
+    payload:storyTagsArray
+  }
+}
+
+export function getStoryTagsFailure(err){
+  return{
+    type: "GET_STORY_TAGS_FAILURE",
+    payload:err
+  }
+}
+
+export function getStoryTags(storyID){
+  return dispatch => {
+    request
+      .get(`/api/v1/stories/tags/${storyID}`)
+      .end(function(err,res){
+        err ? dispatch(getStoryTagsFailure(err)) : dispatch(getStoryTagsSuccess(res.body))
+      })
+  }
+}

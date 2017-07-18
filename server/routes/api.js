@@ -76,5 +76,13 @@ router.get('/headers', function(req,res){
     })
 } )
 
+router.get('/stories/tags/:id',function(req,res){
+  let db=req.app.get('knex-database')
+  dbFunctions.getStoryTags(req.params.id, db)
+    .then((result)=>{
+      res.status(200)
+      res.json(result)
+    })
+})
 
 module.exports = router

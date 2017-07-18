@@ -38,6 +38,10 @@ function getHeader(pageUrl,connection){
   return connection('headers').where('pageUrl',pageUrl).first()
 }
 
+function getStoryTags(storyID, connection){
+  return connection('stories_tags').where('stories_id',storyID).select("tag")
+}
+
 module.exports = {
   getUsers,
   saveUser,
@@ -45,5 +49,6 @@ module.exports = {
   getHeader,
   saveFriend,
   getFriend,
-  getStoryInfo
+  getStoryInfo,
+  getStoryTags
 }

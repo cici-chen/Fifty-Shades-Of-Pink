@@ -12,7 +12,8 @@
 .story-library-item{
   display: flex;
   margin: 1em;
-  border-bottom: 0.15em solid #333;
+  border-bottom: 0.1em solid #333;
+  padding-bottom: 10px;
 }
 
 .book-cover{
@@ -21,20 +22,20 @@
   @media (min-width: $screen-sm) {
     padding-left: 0px;
     padding-right: 0px;
+    width: 175px;
+    height: 260px;
+    overflow: hidden;
     &:hover{
-      border:solid 3px $theme-1;
+      border:solid 2px $theme-1;
     }
   }
 }
 
 .book-info{
   padding-left: 0px;
-  font-size: ceil(($font-size-base * 0.85));
+  font-size: ceil(($font-size-base * 0.65));
   p{
     margin-bottom: 2px;
-  }
-  @media (min-width: $screen-sm) {
-    padding-left: 10px;
   }
   .form-group{
     @media (min-width: 768px) {
@@ -44,32 +45,48 @@
 }
 
 #story-title{
-  font-size: ceil(($font-size-base * 1.25));
-  border-bottom: 0.15em solid #333;
+  font-size: ceil(($font-size-base * 1.1));
   text-align:left;
-  margin-top: 0;
-  margin-bottom: 0.5em;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  @media (min-width: $screen-sm) {
+    text-align: center;
+  }
 }
 
 .story-description{
   font-size: ceil(($font-size-base * 0.85));
-  padding-left: 24px;
+  color:silver;
+  padding-left: 0px;
+  padding-right: 0px;
+  line-height: 1.2;
+  @media (min-width: $screen-sm) {
+    padding-left: 0px;
+    margin-left: 15px;
+    width: 80%;
+    height: 80px;
+    overflow: scroll;
+  }
 }
 
 .boxes{
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 2px;
   @media (min-width: $screen-sm) {
-    padding: 2px;
     display: flex;
+    margin-left: 10px;
+  }
+  #tag{
+    padding: 1px;
+    border-radius: 2px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-right: 2px;
   }
 }
 
 .lower-box{
-  margin-top: 35px;
   display: flex;
-  @media (min-width: $screen-sm) {
-    margin-top:0px;
-  }
 }
 .fa{
   @extend .lower-box;

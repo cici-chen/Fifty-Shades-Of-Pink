@@ -24,12 +24,24 @@ test.cb('GET /api/v1/stories gets all stories', function (t) {
 
 test.cb('GET /api/v1/stories/:hotel-room gets total chapters of the story', function(t){
   request(app)
-    .get('/api/v1/stories/:hotel-room')
+    .get('/api/v1/stories/hotel-room')
     .expect('Content-Type', /json/)
     .expect(200)
     .end(function(err, res) {
       if(err) throw err
-      t.is(res.body[total_chapters],4)
+      t.is(res.body['total_chapters'],2)
+      t.end()
+    })
+})
+
+test.cb('GET /api/v1/stories/tags/1 gets tags of a story', function(t){
+  request(app)
+    .get('/api/v1/stories/tags/1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .end(function(err,res) {
+      if(err) throw err
+      t.deepEqual(res.body, [ { tag: 'romantic' }, { tag: 'celebrity' } ])
       t.end()
     })
 })

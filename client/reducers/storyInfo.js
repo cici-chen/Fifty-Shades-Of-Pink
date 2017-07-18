@@ -10,6 +10,16 @@ export default function storyInfo (state={}, action){
         ...state,
         err:action.payload
       }
+    case 'GET_STORY_TAGS_SUCCESS':
+      return {
+        ...state,
+        tags:action.payload
+      }
+    case 'GET_STORY_TAGS_FAILURE':
+      return {
+        ...state,
+        get_story_tag_err:action.payload
+      }
     default:
       return state
   }

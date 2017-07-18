@@ -23,8 +23,10 @@ class StoryLibraryContainer extends React.Component{
 }
 
 function mapStateToProps(state) {
-   return { stories:state.storyLibrary.stories,
-   user:state.user };
+   return {
+     stories:state.storyLibrary.stories,
+     user:state.user
+   };
 }
 
 export default connect(mapStateToProps)(StoryLibraryContainer)
