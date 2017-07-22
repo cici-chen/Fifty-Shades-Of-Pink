@@ -47,13 +47,15 @@ class StoryLibraryItem extends React.Component{
               <div className="row">
                 <p className="col-sm-6 col-xs-6 story-description">{story.description}</p>
                 <div className="col-md-12 col-sm-6 col-xs-6 book-info">
-                  {this.state.showExtra ? <Extra storyUrl={story.storyUrl}/> :
+                  {this.state.showExtra ? <Extra storyUrl={story.storyUrl} /> :
                   <div className="boxes">
                   <div className='upper-box'>
                     <p>Author: {story.author}</p>
                     <p>Rating:♡♡♡♡♡ 200 </p>
                     <p className='text-nowrap' >3432 people have read it</p>
                     <p>Published: {story.publish_date}</p>
+                    <p>Status: {story.status=="finished" ? <span id="finished">{story.status}</span> : <span id="unfinished">{story.status}</span>}</p>
+                    <p>Length: {story.total_chapters} chapters</p>
                     <p>Genre: {this.state.tags.length>0 && this.renderTags(story.id)}</p>
                   </div>
                   <div className='lower-box'>

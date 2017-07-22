@@ -3,12 +3,16 @@ import FiftyShadeChapOne from './fifty/ChapOne'
 import FiftyShadeChapTwo from './fifty/ChapTwo'
 import FiftyShadeChapThree from './fifty/ChapThree'
 import FiftyShadeChapFour from './fifty/ChapFour'
+import HotelChapOne from './hotel/HotelChapOne'
+import HotelChapTwo from './hotel/HotelChapTwo'
 
 const Components = {
   "fifty-shades-of-pink-1":FiftyShadeChapOne,
   "fifty-shades-of-pink-2":FiftyShadeChapTwo,
   "fifty-shades-of-pink-3":FiftyShadeChapThree,
-  "fifty-shades-of-pink-4":FiftyShadeChapFour
+  "fifty-shades-of-pink-4":FiftyShadeChapFour,
+  "hotel-room-1":HotelChapOne,
+  "hotel-room-2":HotelChapTwo
 };
 
 class ChapterContent extends React.Component {
@@ -18,6 +22,7 @@ class ChapterContent extends React.Component {
       userName: this.props.userName,
       loverName: this.props.loverName,
       herher:this.props.userGender === 'woman' ? 'her' : 'him',
+      him:this.props.loverGender === 'man' ? 'him' : 'her',
       her: this.props.userGender === 'woman'
         ? 'her'
         : 'his',
@@ -54,7 +59,7 @@ class ChapterContent extends React.Component {
     const Content = Components[`${this.props.story}-${this.props.chapter}`]
     return (
       <div>
-      <Content userName={userName} herher={herher} her={her} she={she} loverName={loverName} his={his} he={he} friendName={friendName} man={man} Mr={Mr} />
+      <Content userGender={this.props.userGender} loverGender={this.props.loverGender} userName={userName} herher={herher} her={her} she={she} loverName={loverName} his={his} he={he} friendName={friendName} man={man} Mr={Mr} />
       </div>
     )
   }

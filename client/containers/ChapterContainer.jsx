@@ -48,8 +48,8 @@ class ChapterContainer extends React.Component {
 
   render() {
     let {userName, userGender, loverName, loverGender, friendName,chapter,storyTitle} = this.state
-    let linkPrev = `?#/stories/fifty-shades-of-pink/${parseInt(this.state.chapter)-1}`
-    let linkNext = `?#/stories/fifty-shades-of-pink/${parseInt(this.state.chapter)+1}`
+    let linkPrev = `?#/stories/${this.state.storyTitle}/${parseInt(this.state.chapter)-1}`
+    let linkNext = `?#/stories/${this.state.storyTitle}/${parseInt(this.state.chapter)+1}`
     let chapterProgress = (this.state.chapter/this.state.total_chapters)
     return (
       <div>
@@ -57,14 +57,15 @@ class ChapterContainer extends React.Component {
           <div className='single-chapter'>
             <div className="story-container container-fluid chapter-content">
               <p className="chapter-number text-center"> CHAPTER {this.state.chapter}</p>
-              {this.state.friendName ? <ChapterContent
+              {userName ?
+              <ChapterContent
                 userName={userName}
                 userGender={userGender}
                 loverName={loverName}
                 loverGender={loverGender}
                 friendName={friendName}
                 story={storyTitle}
-                chapter={chapter} /> : <p>Content Loading...</p>}
+                chapter={chapter} /> : <p>Content Loading</p>}
             </div>
             <ProgressBar progress={chapterProgress}/>
             <div className="chapter-nav">

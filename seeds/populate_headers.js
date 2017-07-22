@@ -7,7 +7,8 @@ exports.seed = function(knex, Promise) {
       return knex('headers').insert([
         {id: 1, pageUrl:'/', header:'read my story'},
         {id: 2, pageUrl:'/story-library', header:'choose a story'},
-        {id: 3, pageUrl:'fifty-shades-of-pink', header:'fifty shades of pink'}
+        {id: 3, pageUrl:'fifty-shades-of-pink', header:'fifty shades of pink'},
+        {id: 4, pageUrl:'hotel-room', header:'hotel room'}
       ]);
     });
 };
