@@ -3,5 +3,5 @@ static
 npm-debug.log
 leaflet
 .sass-cache
-bundle.**
+
 **.css.map

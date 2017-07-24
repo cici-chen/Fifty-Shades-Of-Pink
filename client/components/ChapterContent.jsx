@@ -5,6 +5,7 @@ import FiftyShadeChapThree from './fifty/ChapThree'
 import FiftyShadeChapFour from './fifty/ChapFour'
 import HotelChapOne from './hotel/HotelChapOne'
 import HotelChapTwo from './hotel/HotelChapTwo'
+import MaskChapOne from './mask/MaskChapOne'
 
 const Components = {
   "fifty-shades-of-pink-1":FiftyShadeChapOne,
@@ -12,7 +13,8 @@ const Components = {
   "fifty-shades-of-pink-3":FiftyShadeChapThree,
   "fifty-shades-of-pink-4":FiftyShadeChapFour,
   "hotel-room-1":HotelChapOne,
-  "hotel-room-2":HotelChapTwo
+  "hotel-room-2":HotelChapTwo,
+  "behind-the-mask-1":MaskChapOne
 };
 
 class ChapterContent extends React.Component {
@@ -30,7 +32,7 @@ class ChapterContent extends React.Component {
         ? 'she'
         : 'he',
       friendName: this.props.friendName === ''
-        ? 'friendName'
+        ? 'Alex'
         : this.props.friendName,
       his: this.props.loverGender === 'man'
         ? 'his'
