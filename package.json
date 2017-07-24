@@ -15,7 +15,8 @@
     "test-ava": "ava -v --serial tests/**/*.test.js",
     "test-db": "ava -v --serial tests/db/*.test.js",
     "test-api": "ava -v --serial tests/api/*.test.js",
-    "watch": "nodemon -e js,jsx -x npm test"
+    "watch": "nodemon -e js,jsx -x npm test",
+    "knex": "knex"
   },
   "ava": {
     "require": "babel-register",
