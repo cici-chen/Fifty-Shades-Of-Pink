@@ -63,6 +63,7 @@
     "express": "^4.14.0",
     "isomorphic-fetch": "^2.2.1",
     "knex": "^0.13.0",
+    "pg": "^7.0.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "redux-form": "^6.8.0",
