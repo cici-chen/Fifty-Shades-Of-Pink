@@ -13826,6 +13826,11 @@ var ChapterContent = function (_React$Component) {
   }
 
   _createClass(ChapterContent, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      window.scrollTo(0, 0);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _state = this.state,
