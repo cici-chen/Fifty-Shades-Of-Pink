@@ -45,6 +45,7 @@ class ChapterContent extends React.Component {
 
   componentDidUpdate () {
   window.scrollTo(0, 0)
+  friendName:this.props.friendName
 }
 
   render() {

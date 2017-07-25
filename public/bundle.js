@@ -13829,6 +13829,7 @@ var ChapterContent = function (_React$Component) {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       window.scrollTo(0, 0);
+      friendName: this.props.friendName;
     }
   }, {
     key: 'render',
@@ -14520,7 +14521,7 @@ var StoryLibraryItem = function (_React$Component) {
             ),
             _react2.default.createElement(
               'p',
-              { id: 'story-title' },
+              { className: 'col-md-12 col-sm-6 col-xs-6', id: 'story-title' },
               story.title
             ),
             _react2.default.createElement(
@@ -15951,7 +15952,7 @@ var ChapterContainer = function (_React$Component) {
               ' CHAPTER ',
               this.state.chapter
             ),
-            friendName ? _react2.default.createElement(_ChapterContent2.default, {
+            userName ? _react2.default.createElement(_ChapterContent2.default, {
               userName: userName,
               userGender: userGender,
               loverName: loverName,

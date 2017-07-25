@@ -43,7 +43,7 @@ class StoryLibraryItem extends React.Component{
               <div className="col-md-12 col-sm-6 col-xs-6 book-cover" onClick={e=>this.showExtra(e)}>
                   <img className="img-responsive center-block" src={story.image} alt="a book cover"></img>
               </div>
-              <p id='story-title'>{story.title}</p>
+              <p className="col-md-12 col-sm-6 col-xs-6" id='story-title'>{story.title}</p>
               <div className="row">
                 <p className="col-sm-6 col-xs-6 story-description">{story.description}</p>
                 <div className="col-md-12 col-sm-6 col-xs-6 book-info">
