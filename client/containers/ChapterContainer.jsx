@@ -57,7 +57,7 @@ class ChapterContainer extends React.Component {
           <div className='single-chapter'>
             <div className="story-container container-fluid chapter-content">
               <p className="chapter-number text-center"> CHAPTER {this.state.chapter}</p>
-              {userName ?
+              {friendName ?
               <ChapterContent
                 userName={userName}
                 userGender={userGender}

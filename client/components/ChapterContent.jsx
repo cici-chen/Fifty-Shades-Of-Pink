@@ -31,9 +31,7 @@ class ChapterContent extends React.Component {
       she: this.props.userGender === 'woman'
         ? 'she'
         : 'he',
-      friendName: this.props.friendName === ''
-        ? 'Alex'
-        : this.props.friendName,
+      friendName:this.props.friendName === ''? 'Alex' : this.props.friendName,
       his: this.props.loverGender === 'man'
         ? 'his'
         : 'her',

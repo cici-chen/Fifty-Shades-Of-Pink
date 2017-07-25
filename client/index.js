@@ -6,8 +6,6 @@ import {Provider} from 'react-redux'
 import store from './store'
 import App from './components/App'
 
-console.log('State of the entire app', store.getState())
-
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
